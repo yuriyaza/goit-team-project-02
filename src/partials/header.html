@@ -1,9 +1,47 @@
-<header class="header">
-  <div class="container">
-    <div class="header-content">
-      === HEADER SECTION === Lorem ipsum dolor sit amet consectetur adipisicing
-      elit. Mollitia provident aut laudantium iste saepe veritatis qui! Vitae
-      animi.
-    </div>
-  </div>
+<header class="page-header ">
+  <div class="container header-content">   
+<!--logo-->
+<div class="logo">
+<a href="/src/index.html" class="logo-bookshelf">
+  <svg class="header-logo" width="24" height="24" aria-label="logo bookshelf">
+    <use href="/src/images/sprite-header.svg#icon-logo"></use>
+  </svg>
+  <svg class="header-logo-name" width="77" height="14" aria-label="logo name">
+    <use href="/src/images/sprite-header.svg#icon-Bookshelf"></use>
+  </svg>
+</a>
+</div>
+<!--nav menu -->
+<div class="header-nav">
+  <button type="button" class="header-home-btn">Home
+  </button>
+ <a href=" " class="header-shopping">Shopping liste
+  <svg class="header-shopping-logo" width="20" height="20" margin-left="4" aria-label="shopping logo">
+    <use href="/src/images/sprite-header.svg#icon-uil_cart"></use>
+  </svg>
+  </a>
+</div>
+<!--swither and borger-menu -->
+<div class="form-check">
+  <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+  <button type="button" class="header-menu-open js-open-menu"  >
+    <svg class="icon-menu-burger" width="28" height="28" aria-label="Switch-on mobile menu">
+      <use href="/src/images/sprite-header.svg#icon-align-left"></use>
+  </svg>
+  </button>
+</div>
+<!--swither and borger-menu -->
+<div class="header-sign-btn">
+  <button type="button" class="header-sign-open">Sign up
+    <svg class="icon-sign" width="20" height="20" aria-label="sign up">
+      <use href="/src/images/sprite-header.svg#icon-arrow-narrow-right"></use>
+  </svg>
+  </button>
+</div>
+
+
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" crossorigin="anonymous"></script>
+<script src="/src/js/header.js"></script>
+<script>$.switcher();</script>
 </header>
