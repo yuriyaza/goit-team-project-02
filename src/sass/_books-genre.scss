@@ -21,16 +21,17 @@
 
 .books-genre-item {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 0px;
-    gap: 8px;
+    position: relative;
+    // flex-direction: column;
+    // align-items: flex-start;
+    // padding: 0px;
+    // gap: 8px;
 
-    position: absolute;
-    width: 335px;
-    height: 535px;
-    left: 20px;
-    top: 842px;
+    // position: absolute;
+    max-width: 335px;
+    // height: 535px;
+    // left: 20px;
+    // top: 842px;
 }
 
 .books-card-title {
