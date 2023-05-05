@@ -1,5 +1,16 @@
-// Border можна видалити, він лише для візуалізації розмітки
-
 .categories-list {
-  border: 2px solid black;
+  border: 1px solid red;
+  width: 335px;
+  height: 228px;
+  font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 112%;  
+    letter-spacing: -0.02em;  
+    color: rgba(17, 17, 17, 0.6);
+}
+
+.category-li{
+  margin-top: 24px;
 }
