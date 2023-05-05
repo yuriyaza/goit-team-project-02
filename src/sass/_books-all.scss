@@ -1,5 +1,71 @@
-// Border можна видалити, він лише для візуалізації розмітки
-
-.books-all {
-  border: 2px solid black;
+.books-all-title {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 1.19;
+  letter-spacing: -0.04em;
+  color: var(--color-black);
 }
+.books-all-menu {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.29;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #B4AFAF;
+}
+.books-all-item {
+  max-width: 335px;
+  display: flex;
+  position: relative;
+}
+.info-item {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.12;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  color: var(--color-black);
+}
+.info-detail-item {
+  font-family: 'DM Sans';
+  font-style: italic;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: -0.04em;
+  color: #B4AFAF;
+}
+.see-more {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 14px 28px;
+  gap: 10px;
+  position: absolute;
+  width: 124px;
+  height: 46px;
+  
+  border: 2px solid var(--color-violet);
+  border-radius: 40px;
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.29;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  color: var(--color-black);
+}
+@media (min-width: 768px) {
+
+}
+@media (min-width: 1440px) {
+
+}
+
