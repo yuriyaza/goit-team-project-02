@@ -29,14 +29,26 @@ wheelSpeed: 1,
 //         ps.update();
 //     });
 
-async function catListMarkup() {
+async function getData() {
+    console.log('local storage');
     const categoryList = await api.getCategoryList();
+    localStorage.setItem("category-list", JSON.stringify(categoryList));
+
+}
+getData();
+
+function catListMarkup() {
+    // const categoryList = await api.getCategoryList();
     // console.log(categoryList);
-    const markup = categoryList.reduce((acc, { list_name }) => {
+    const savedData = localStorage.getItem("category-list");
+    const parsedData = JSON.parse(savedData);
+    const markup = parsedData.reduce((acc, { list_name }) => {
         return acc += `
+        <a href="#">
         <li class="category-li">
-                ${list_name};
+            ${list_name}
         </li>
+        </a>
     `},''
     )
     catListEl.insertAdjacentHTML('beforeend', markup);
