@@ -9,7 +9,7 @@ const api = new BookAPI;
 let upperCaseNow = 'All categories';
 let upperCase = '';
 
-(getData());
+(getData())();
 
 async function getData() {
     // console.log('local storage');
