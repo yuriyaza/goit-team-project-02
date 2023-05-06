@@ -7,14 +7,14 @@ import { renderSectionBooksGenre } from "./books-genre";
 const catListEl = document.querySelector('.category-list');
 const api = new BookAPI;
 
-// (getData)();
+(getData)();
 
-(async function getData() {
+async function getData() {
     const categoryList = await api.getCategoryList();
     localStorage.setItem("category-list", JSON.stringify(categoryList));
     catListMarkup();
     renderSectionBooksAll();
-})
+}
 
 function catListMarkup() {
     const array = loadFromLocalStorage();
