@@ -25,18 +25,14 @@
   line-height: 1.29;
   letter-spacing: 0.03em;
   text-transform: uppercase;
-  color: #B4AFAF;
+  color: var(--color-gray);
 }
 .books-info {
   padding-top: 14px;
   padding-bottom: 8px;
   gap: 4px;
 }
-.books-all-item {
-  max-width: 335px;
-  // display: flex;
-  position: relative;
-}
+
 .info-item {
   font-family: 'DM Sans';
   font-style: normal;
@@ -54,7 +50,7 @@
   font-size: 12px;
   line-height: 1.17;
   letter-spacing: -0.04em;
-  color: #B4AFAF;
+  color: var(--color-gray);
 }
 .see-more {
   display: flex;
@@ -62,10 +58,8 @@
   align-items: flex-start;
   padding: 14px 26px;
   gap: 10px;
-  // position: absolute;
   width: 124px;
   height: 46px;
-  
   border: 2px solid var(--color-violet);
   border-radius: 40px;
   font-family: 'DM Sans';
@@ -77,15 +71,20 @@
   text-transform: uppercase;
   color: var(--color-black);
 }
+.books-all-image {
+  width: 335px;
+  height: 485px;
+}
 @media (min-width: 768px) { 
-.books-all-item {
-  flex-basis: calc(33.33333% - 30px);
+.books-all-image {
   width: 218px;
+  height: 316px;
 }
 }
 @media (min-width: 1440px) {
-.books-all-item {
-  
+.books-all-image {
+  width: 180px;
+  height: 256px;
 }
 }
 
