@@ -1,5 +1,176 @@
-// Border можна видалити, він лише для візуалізації розмітки
 
+/******* header-mobile-menu*******/
+
+.page-header {
+  z-index: 50;
+  background: #FFFFFF; 
+  position: fixed;
+  width: 100%;
+  opacity: 0.9;
+}
 .header-content {
-  border: 2px solid black;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 0px 0px 8px 8px;
+  background: #FFFFFF;
+  border: 1.5px solid #111111; 
+}
+.logo {
+  margin: 0;
+  padding: 0;
+}
+
+.logo-bookshelf{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  align-items: center;
+}
+.form-check {
+  margin: 0;
+  padding: 0;
+  gap: 14px;
+  display: flex;
+  align-items: center;
+}
+.header-menu-open {
+  background-color: #0000;
+  border: none;
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+}
+.ui-switcher {
+  background: linear-gradient(180deg, #4F2EE8 0%, #DCDCDC 100%);
+  display: inline-block;
+  height: 20px;
+  width: 40px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  vertical-align: middle;
+  position: relative;
+  cursor: pointer;
+  transition: border-color 0.25s;
+   
+  box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.ui-switcher[aria-checked=true] {
+  background: linear-gradient(180deg, #4F2EE8 0%, #686868 100%);
+}
+.ui-switcher:after {
+  background: linear-gradient(180deg, #FFFFFF 0%, #F7F7F7 100%);
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1), 0px 2px 2px rgba(0, 0, 0, 0.1), 1px 2px 4px rgba(0, 0, 0, 0.1);
+  content: '\0020';
+  display: inline-block;
+  position: absolute;
+  top: 1px;
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  transition: left 0.25s;
+}
+.ui-switcher[aria-checked=false]:after {
+  left: 1px;
+}
+.ui-switcher[aria-checked=true]:after {
+  left: 21px;
+}
+
+@media screen and (max-width:767px){   
+  .header-nav{
+    display: none;
+  } 
+  .header-sign-btn,
+  .header-sign-open{
+    display: none;
+  }
+}
+
+
+
+ /******* header desktop min-width:768 *******/
+
+ @media screen and (min-width:768px) and (max-width:1200px){
+ .header-nav{
+  display: flex;
+  align-items: center;
+ }
+ .header-content {
+  padding: 0 32px; 
+  height: 72px;
+  justify-content: stretch;
+}
+.logo {
+  margin-right: 40px;
+}
+.header-menu-open {
+display: none;
+}
+ .header-home-btn {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 8px 16px;
+    gap: 10px;
+    border: none;
+    width: 72px;
+    height: 34px;
+    margin-right: 16px;
+    background: #EAC645;
+    border-radius: 36px;
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.29;
+    
+    
+    letter-spacing: -0.04em;
+    text-transform: uppercase;  
+    color: #111111;  
+ }
+
+.header-shopping{
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.29;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  color: #111111;
+}
+.header-nav {
+margin-right: 98px;
+}
+.header-sign-open {
+  width: 184px;
+  height: 48px;
+  left: 0px;
+  top: 0px;
+  padding: 14px;
+  background: #4F2EE8;
+  border: 1.5px solid #111111;
+  border-radius: 18px;
+
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.29;
+  letter-spacing: -0.04em;
+
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.form-check {
+  margin-right: 24px;
+}
 }
