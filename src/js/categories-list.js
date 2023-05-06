@@ -32,7 +32,7 @@ const inputEl = document.querySelector('.category-list');
 //     });
 
 async function getData() {
-    console.log('local storage');
+    // console.log('local storage');
     const categoryList = await api.getCategoryList();
     localStorage.setItem("category-list", JSON.stringify(categoryList));
     catListMarkup();
@@ -48,7 +48,7 @@ function catListMarkup() {
             <li class="category-li">${list_name}</li>
         </a>
     `}, '')
-    console.log(markup);
+    // console.log(markup);
     catListEl.insertAdjacentHTML('beforeend', markup);
 };
 
