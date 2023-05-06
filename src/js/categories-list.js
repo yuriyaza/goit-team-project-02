@@ -1,4 +1,5 @@
 import { BookAPI } from "./api";
+import { renderSectionBooksAll } from "./books-all";
 // import { ScrollSpy } from "bootstrap";
 // import PerfectScrollbar from 'perfect-scrollbar';
 
@@ -15,6 +16,7 @@ async function getData() {
     const categoryList = await api.getCategoryList();
     localStorage.setItem("category-list", JSON.stringify(categoryList));
     catListMarkup();
+    renderSectionBooksAll();
 }
 
 
@@ -41,7 +43,8 @@ function clickFunc(event) {
     if (event.target.textContent === 'All categories') {
         removeUpperCase();
         event.target.classList.add('upper-case');
-        console.log(`Люда     getTopBooks()`);
+        renderSectionBooksAll()
+        // console.log(`Люда     getTopBooks()`);
     } else {
         // if (upperCaseNow === 'All categories') {
         //     removeUpperCase();
@@ -65,8 +68,8 @@ function getCategoryFunc(data){
     const dataWords = data.split(' ');
     // console.log(dataWords);
     const opt = dataWords.join('%20');
-    
-    console.log(`Олег      https://books-backend.p.goit.global/books/category?category=${opt}`);
+    renderSectionBooksGenre(opt);
+    // console.log(`Олег      https://books-backend.p.goit.global/books/category?category=${opt}`);
     // 'https://books-backend.p.goit.global/books/category?category=Combined%20Print%20and%20E-Book%20Nonfiction'
 };
 
@@ -92,4 +95,4 @@ function removeUpperCase() {
     // console.log(rem);
     // rem[0].classList.remove('upper-case');
     rem.forEach(el => el.classList.remove('upper-case'))
-}
+};
