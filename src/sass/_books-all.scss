@@ -1,3 +1,8 @@
+.books-content {
+  padding-top: 40px;
+  padding-bottom: 80px;
+}
+
 .books-all-title {
   font-family: 'DM Sans';
   font-style: normal;
@@ -10,10 +15,9 @@
 .colortext {
   color: var(--color-violet);
 }
-.books-all {
-  
-}
 .books-all-menu {
+  padding-top: 40px;
+  padding-bottom: 18px;
   font-family: 'DM Sans';
   font-style: normal;
   font-weight: 400;
@@ -22,6 +26,11 @@
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: #B4AFAF;
+}
+.books-info {
+  padding-top: 14px;
+  padding-bottom: 8px;
+  gap: 4px;
 }
 .books-all-item {
   max-width: 335px;
@@ -68,10 +77,15 @@
   text-transform: uppercase;
   color: var(--color-black);
 }
-@media (min-width: 768px) {
-
+@media (min-width: 768px) { 
+.books-all-item {
+  flex-basis: calc(33.33333% - 30px);
+  width: 218px;
+}
 }
 @media (min-width: 1440px) {
-
+.books-all-item {
+  
+}
 }
 
