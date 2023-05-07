@@ -238,10 +238,14 @@ let booksData = [
     __v: 0,
   },
 ];
-// //  const books = JSON.parse(localStorage.getItem('booksString'));
 
-let booksArray = JSON.parse(JSON.stringify(booksData));
+// let booksArray = JSON.parse(JSON.stringify(booksData));
 
+// string for localStorage
+let booksString = JSON.stringify(booksData);
+localStorage.setItem("books", booksString);
+
+let booksArray = JSON.parse(localStorage.getItem("books"));
 appendShoppingListMarkup(booksArray);
 
 function createShoppingList(booksArray) {
@@ -253,18 +257,18 @@ function createShoppingList(booksArray) {
         <img
           class="book-img"
           src="${item.book_image}"
-          alt="${item.list_name}"
+          alt="${item.title}"
           loading="lazy"
         />
       </div>
       <div class="info">
         <div class="first-info-div">
           <div>
-            <p class="book-name">${item.list_name}</p>
-            <p class="book-category">${item.name}</p>
+            <p class="book-name">${item.title}</p>
+            <p class="book-category">${item.list_name}</p>
           </div>
           <button class="remove-book">
-            <svg class="trash-icon" ><use href="/images/trash.svg"></use></svg>
+            <svg class="trash-icon" width="16" height="16"><use href="./images/sprite.svg#trash"></use></svg>
           </button>
         </div>
         <div class="second-info-div">
@@ -278,18 +282,18 @@ function createShoppingList(booksArray) {
             ${item.author}
             </p>
           </div>
-          <div>
-            <ul class="shop-list">
+          <div class="shop-list-div">
+          <ul class="shop-list">
               <li class="shop-item">
-                <a class="shop-link" href="https://amazon.com/"><svg class="shop-icon"><use href="/images/amazon.svg"></use></svg></a>
+              <a class="shop-link" href="${item.buy_links[0].url}"><img class="shop-icon" src="./images/amazon.svg" alt="amazon" width="32" height="11"></a>
               </li>
               <li>
                 <li class="shop-item">
-                    <a class="shop-link" href="https://books.apple.com/"><svg class="shop-icon"><use href="/images/apple.svg"></use></svg></a>
+                    <a class="shop-link" href="${item.buy_links[1].url}"><img class="shop-icon" src="./images/apple.svg" alt="apple shop" width="16" height="16"></a>
                   </li>
                   <li>
                     <li class="shop-item">
-                        <a class="shop-link" href="https://bookshop.org/"><svg class="shop-icon"><use  href="/images/bookshop.svg"></use></svg></a>
+                        <a class="shop-link" href="${item.buy_links[4].url}"><img class="shop-icon" src="./images/bookshop.svg" alt="book shop" width="16" height="16"></a>
                       </li>
             </ul>
           </div>
@@ -300,28 +304,38 @@ function createShoppingList(booksArray) {
   }, "");
 }
 function appendShoppingListMarkup(data) {
-  shoppingList.insertAdjacentHTML("beforeend", createShoppingList(data));
+  if (booksArray.length !== 0) {
+    shoppingList.insertAdjacentHTML("beforeend", createShoppingList(data));
+    shoppingListisFilled();
+  } else {
+    shoppingList.innerHTML = "";
+    shoppingListIsEmpty();
+  }
+}
+
+function shoppingListIsEmpty() {
+  shoppingListEmptyEl.classList.remove("shopping-list-filled");
+}
+
+function shoppingListisFilled() {
   shoppingListEmptyEl.classList.add("shopping-list-filled");
 }
-function clearMarkup() {
-  shoppingList.innerHTML = "";
-}
-
-const removeBookBtn = document.querySelector(".remove-book");
 shoppingList.addEventListener("click", removeBook);
-
-//     console.log(removeBookBtn);
-// console.log(removeBookBtn.target);
 
 function removeBook(e) {
   e.preventDefault();
   if (e.target.nodeName == "BUTTON") {
-    let bookId = e.target.parentElement.parentElement.parentElement.id;
+    let bookId = e.target.closest(".book-card").id;
     booksArray.splice(
       booksArray.findIndex((item) => item.id === bookId),
       1
     );
-    e.target.parentElement.parentElement.parentElement.remove();
+    let card = document.getElementById(bookId);
+    card.remove();
+    localStorage.setItem("books", JSON.stringify(booksArray));
+    if (booksArray.length === 0) {
+      shoppingListIsEmpty();
+    }
     return;
   }
 }
