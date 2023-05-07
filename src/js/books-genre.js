@@ -1,15 +1,3 @@
-import { BookAPI } from './api';
-
-catBooksEl = document.querySelector('.books-genre');
-const api = new BookAPI();
-
-async function getData() {
-  console.log('local storage');
-  const category = await api.getCategory();
-  localStorage.setItem('books-genre', JSON.stringify(category));
-}
-getData();
-
 // ===== Отримання даних із сервера та створення динамічної розмітки =====
 
 import { BookAPI } from './api';
@@ -20,13 +8,15 @@ const spinner = document.querySelector('.spinner');
 
 Notify.init({ showOnlyTheLastOne: true, clickToClose: true });
 
-export async function renderSectionBooksGenre(genreName) {
+export async function renderSectionBooksGenre(genreName, categoryName) {
   document.querySelector('.books-content').innerHTML = '';
   spinner.classList.remove('visually-hidden');
 
   const backEndData = await booksGenreGetFromBackend(genreName);
+  console.log(backEndData);
+
   if (backEndData.length === 0) Notify.failure('Books not found');
-  const markup = booksGenreCreateMarkup(genreName, backEndData);
+  const markup = booksGenreCreateMarkup(categoryName, backEndData);
   document.querySelector('.books-content').innerHTML = markup;
 
   spinner.classList.add('visually-hidden');
