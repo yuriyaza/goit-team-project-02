@@ -1,19 +1,3 @@
-import { BookAPI } from './api';
-
-
-
-catBooksEl = document.querySelector('.books-genre');
-const api = new BookAPI();
-
-
-
-async function getData() {
-    console.log('local storage');
-    const category = await api.getCategory();
-    localStorage.setItem('books-genre', JSON.stringify(category));
-}
-getData();
-
 
 // ===== Отримання даних із сервера та створення динамічної розмітки =====
 
@@ -21,10 +5,10 @@ import { Notify } from 'notiflix';
 import { BookAPI } from './api';
 const bookApi = new BookAPI();
 
-export async function renderSectionBooksGenre(genreName) {
+export async function renderSectionBooksGenre(genreName, categoryName) {
   const backEndData = await booksGenreGetFromBackend(genreName);
   console.log(backEndData);
-  const markup = booksGenreCreateMarkup(genreName, backEndData);
+  const markup = booksGenreCreateMarkup(categoryName, backEndData);
   document.querySelector('.books-content').innerHTML = markup;
 }
 
