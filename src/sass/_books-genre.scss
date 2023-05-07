@@ -43,6 +43,7 @@
 .books-card-title-img {
   max-width: 335px;
   height: 485px;
+  border-radius: 8px;
 }
 
 .books-card-info {
@@ -63,6 +64,10 @@
   }
 }
 @media (min-width: 1440px) {
+  // .books-genre-card-conteiner {
+  //   display: flex;
+  //   gap: 24px;
+  // }
   .books-card-title-img {
     width: 180px;
     height: 256px;
