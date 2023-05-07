@@ -4,6 +4,8 @@
     display: flex;
 }
 .title-svg {
+  width: 20px;
+  height: 32px;
     margin-left: 12px;
 }
 
@@ -17,6 +19,9 @@
 	background-image: linear-gradient(to bottom, #4f2ee8 10%, #ffffff 120%);
 }
 .support-ukraine-btn {
+  display: flex;
+    justify-content: center;
+    align-items: center;
     position: absolute;
     bottom: 20px;
     left: 152px;
@@ -26,6 +31,10 @@
     
     border: #ffffff;
     
+}
+.svg-btn {
+  width: 8px;
+  height: 14px;
 }
 .support-ukraine-btn:hover {
     background-image: linear-gradient(
