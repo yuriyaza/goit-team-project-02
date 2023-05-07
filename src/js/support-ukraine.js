@@ -1,4 +1,4 @@
-import fonds from "./array-of-funds"
+import fonds from './array-of-funds';
 
 const supportList = document.querySelector('.support-ukraine-list');
 createMarkupForSupportUk(fonds);
@@ -29,7 +29,6 @@ function markup(params) {
 	></img></a>
 </li>`;
 }
-
 
 function pad(value) {
   return String(value).padStart(2, '0');
