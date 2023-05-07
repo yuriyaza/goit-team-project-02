@@ -80,14 +80,19 @@ function booksAllCreateOneCategory(bookCategory) {
             </div>
         </li>
         <li class="books-all-item">
+          <div class="books-all-overlay">
             <img class="books-all-image" src="${bookCategory.books[4].book_image}" alt="${bookCategory.books[4].title}" loading="lazy">
+            <p class="overlay">QUICK VIEW</p>
+          </div>  
             <div class="books-info">
               <p class="info-item">${bookCategory.books[4].title}</p>
               <p class="info-detail-item">${bookCategory.books[4].author}</p>
             </div>
           </li>
         </ul>
-        <button class="see-more" type="button">SEE MORE</button>
+        <div class="loading">
+          <button class="see-more" type="button">SEE MORE</button>
+        </div>
       </li>
     </ul>
   `;
