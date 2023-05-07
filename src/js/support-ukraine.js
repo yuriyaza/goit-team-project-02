@@ -1,8 +1,8 @@
 import fonds from "./array-of-funds"
 
 const supportList = document.querySelector('.support-ukraine-list');
-
-function aaa(fonds) {
+createMarkupForSupportUk(fonds);
+function createMarkupForSupportUk(fonds) {
   fonds.forEach(function (fond, index) {
     const { title, url, img, img2x } = fond;
     const params = {};
@@ -22,9 +22,14 @@ function markup(params) {
 	<a href="${url}" class="list-unit-link"><span class="span-list-unit">${pad(
     index + 1
   )}</span>
-	`;
+	<img class="img-list-unit" 
+		src="${img}"
+		srcset="${img} 1x, ${img2x} 2x"
+		alt="${title}"
+	></img></a>
+</li>`;
 }
-aaa(fonds);
+
 
 function pad(value) {
   return String(value).padStart(2, '0');
