@@ -22,12 +22,7 @@ function markup(params) {
 	<a href="${url}" class="list-unit-link"><span class="span-list-unit">${pad(
     index + 1
   )}</span>
-	<img class="img-list-unit" 
-		src="${img}"
-		srcset="${img} 1x, ${img2x} 2x"
-		alt="${title}"
-	></img></a>
-</li>`;
+	`;
 }
 aaa(fonds);
 
