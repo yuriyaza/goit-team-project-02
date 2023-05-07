@@ -1,5 +1,5 @@
 const refs = {
-    openModalBtn: document.querySelector('.books-card-title-img'),
+    openModalBtn: document.querySelector('.open-modal'),
     closeModalBtn: document.querySelector('.modal-btn'),
     backdrop: document.querySelector('.hi-backdrop'),
     addFromShoppingList: document.querySelector(".openmodal-btn"),
