@@ -1,7 +1,6 @@
 {
     "name": "Bookshelf",
     "short_name": "Bookshelf",
-    "start_url": "https://yuriyaza.github.io/goit-team-project-02/",
     "icons": [
         {
             "src": "./icons/android-chrome-144x144.png",
