@@ -16,6 +16,7 @@ export async function renderSectionBooksGenre(genreName, categoryName) {
   console.log(backEndData);
 
   if (backEndData.length === 0) Notify.failure('Books not found');
+
   const markup = booksGenreCreateMarkup(categoryName, backEndData);
   document.querySelector('.books-content').innerHTML = markup;
 
@@ -39,7 +40,7 @@ function booksGenreCreateMarkup(genreName, backEndBookList) {
   let markup = '';
   markup += `
     <h1 class="books-genre-title">${genreNameFirstWords}&nbsp;<span class="books-genre-title-attribute">${genreNameLastWords}</span></h1>
-    <ul class="books-genre-card-conteiner">
+    <ul class="books-genre-card-container">
   `;
   markup += backEndBookList.map(booksGenreCreateOneCard).join('');
   markup += `
