@@ -23,7 +23,8 @@
 }
 .shopping-list-empty-img {
   width: 265px;
-  height: auto;
+  display: block;
+  margin: 0 auto;
 }
 .shopping-list-empty-message {
   width: 244px;
@@ -40,13 +41,13 @@
   display: none;
 }
 .book-card:not(:last-child) {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .shopping-list-img {
   width: 100px;
-  
-  display: block;  
+
+  display: block;
   margin-right: 14px;
 }
 .book-card {
@@ -74,7 +75,7 @@
   line-height: 18px;
   letter-spacing: -0.04em;
   text-transform: uppercase;
-  color: #111111;
+  color: var(--color-black);
   margin-bottom: 4px;
 }
 .book-category {
@@ -94,13 +95,11 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  background: #4f2ee8; 
-  
+  background: #4f2ee8;
 }
 .trash-icon {
   fill: #ffffff;
-    pointer-events: none;
-   
+  pointer-events: none;
 }
 .info {
   min-width: 193px;
@@ -118,10 +117,9 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
   font-weight: 400;
-font-size: 14px;
-line-height: 18px;
-letter-spacing: -0.04em;
-
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: -0.04em;
 }
 .third-info-div {
   display: flex;
@@ -134,16 +132,16 @@ letter-spacing: -0.04em;
 }
 .book-author {
   font-style: italic;
-font-weight: 400;
-font-size: 12px;
-line-height: 14px;
-letter-spacing: -0.04em;
-color: #B4AFAF;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: -0.04em;
+  color: #b4afaf;
 }
 .shop-list-div {
   display: flex;
-   margin-left: auto;
-   justify-content: center;
+  margin-left: auto;
+  justify-content: center;
   align-items: center;
 }
 .shop-list {
@@ -156,11 +154,10 @@ color: #B4AFAF;
 .shop-icon {
   filter: grayscale(100%);
 }
-
 .shop-item {
   display: flex;
-    justify-content: center;
-    align-items: center;
+  justify-content: center;
+  align-items: center;
   width: 16px;
   height: 16px;
 }
@@ -169,6 +166,30 @@ color: #B4AFAF;
   height: 11px;
 }
 
+/* dark theme  */
+
+.dark-theme .shopping-list-title {
+  color: var(--color-white);
+}
+.dark-theme .shopping-list-container {
+  background-color: var(--color-dark);
+}
+.dark-theme .shopping-list-empty-message {
+  color: var(--color-white);
+}
+.dark-theme .book-card {
+  background: var(--color-black);
+}
+
+.dark-theme .book-name {
+  color: var(--color-white);
+}
+.dark-theme .book-description {
+  color: var(--color-white);
+}
+.dark-theme .amazon-icon {
+  filter: invert(100%) grayscale(100%);
+}
 
 @media screen and (min-width: 480px) {
 }
@@ -177,18 +198,28 @@ color: #B4AFAF;
 @media screen and (min-width: 768px) {
   .shopping-list-container {
     max-width: 768px;
+    padding: 40px 24px 40px 40px;
   }
   .shopping-list-empty {
     padding-top: 120px 55px 262px 55px;
-}
+  }
+  .shopping-list-empty-message {
+    width: 349px;
+    font-size: 18px;
+    line-height: 24px;
+    margin-bottom: 20px;
+  }
+  .shopping-list-empty-img {
+    width: 322px;
+    height: auto;
+  }
   .shopping-list-title {
     font-size: 48px;
-line-height: 52px;
-margin-left: 0;
-text-align: left;
+    line-height: 52px;
+    text-align: left;
   }
   .book-card {
-
+    margin-left: 0;
     max-width: 656px;
     padding: 24px;
   }
@@ -196,55 +227,55 @@ text-align: left;
     width: 116px;
     display: block;
     margin-right: 24px;
-}
-.book-img {
-  width: 116px;
-  height: 165px;
-
-}
-.info {
-  max-height: 165px;
-
-}
-.remove-book {
-  width: 34px;
-  height: 34px;
-}
-.trash-icon {
-width: 18px;
-height: 18px;
-   
-}
-.first-info-div {
-  margin-bottom: 14px;
-}
-.book-description {
- max-width: 508px;
-
-}
-.shop-list {
-  gap: 8px;
-
-}
-.shop-item {
-
-  width: 28px;
-  height: 27px;
-}
-.shop-item:first-child {
-  width: 48px;
-  height: 15px;
-}
-.shop-item:last-child {
-  width: 32px;
-  height: 30px;
-}
-.shopping-list-empty-message {
-  width: 349px;
-  font-size: 18px;
-  line-height: 24px;
-  margin-bottom: 20px;
-}
+  }
+  .book-img {
+    width: 116px;
+    height: 165px;
+  }
+  .info {
+    max-height: 165px;
+  }
+  .remove-book {
+    width: 34px;
+    height: 34px;
+  }
+  .trash-icon {
+    width: 18px;
+    height: 18px;
+  }
+  .first-info-div {
+    margin-bottom: 14px;
+  }
+  .book-description {
+    max-width: 508px;
+  }
+  .shop-list {
+    gap: 8px;
+  }
+  .shop-item {
+    width: 28px;
+    height: 27px;
+  }
+  .shop-item:first-child {
+    width: 48px;
+    height: 15px;
+  }
+  .shop-item:last-child {
+    width: 32px;
+    height: 30px;
+  }
 }
 @media screen and (min-width: 1440px) {
+  .shopping-list-container {
+    max-width: 1440px;
+  }
+  .book-card {
+    max-width: 948px;
+  }
+  .book-description {
+    max-width: 808px;
+  }
+  .shop-list {
+    gap: 8px;
+  }
 }
