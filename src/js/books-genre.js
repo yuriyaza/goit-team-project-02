@@ -20,6 +20,7 @@ export async function renderSectionBooksGenre(genreName, categoryName) {
   document.querySelector('.books-content').innerHTML = markup;
 
   spinner.classList.add('visually-hidden');
+  // hideInvisibleBooks();
 }
 
 async function booksGenreGetFromBackend(genreName) {
