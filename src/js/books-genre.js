@@ -50,9 +50,9 @@ function booksGenreCreateMarkup(genreName, backEndBookList) {
 function booksGenreCreateOneCard(backEndBookList) {
   return `
       <li class="books-genre-item">
-        <a href="#" class="books-genre-link" rel=" " data-id=" ">
+        <a class="books-genre-link" href="#" data-modal-open data-id=" ">
           <div class="books-card">
-            <img class="books-card-title-img" src="${backEndBookList.book_image}" alt="${backEndBookList.title}" width="" height="" loading="lazy">
+            <img class="books-card-title-img" src="${backEndBookList.book_image}" alt="${backEndBookList.title}" loading="lazy">
           </div>
           <div class="books-card-info">
             <h3 class="books-card-title">${backEndBookList.title}</h3>
@@ -64,3 +64,16 @@ function booksGenreCreateOneCard(backEndBookList) {
 }
 
 // ===== Кінець блоку отримання даних із сервера та створення динамічної розмітки =====
+
+// function hideInvisibleBooks() {
+//   let booksCountOnScreen = 1;
+//   if (window.innerWidth >= 768) booksCountOnScreen = 3;
+//   if (window.innerWidth >= 1440) booksCountOnScreen = 5;
+
+//   const booksVisible = document.querySelectorAll('.books-genre-item');
+//   booksVisible.forEach((book, index) => {
+//     if (index >= booksCountOnScreen) {
+//       book.classList.add('visually-hidden');
+//     } else book.classList.remove('visually-hidden');
+//   });
+// }
