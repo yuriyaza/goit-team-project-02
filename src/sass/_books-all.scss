@@ -1,7 +1,7 @@
-.books-content {
-  padding-top: 40px;
-  padding-bottom: 80px;
-}
+// .books-content {
+//   padding-top: 40px;
+//   padding-bottom: 80px;
+// }
 
 .books-all-title {
   font-family: 'DM Sans';
@@ -81,20 +81,19 @@
   position: relative;
   overflow: hidden;
 }
-@media (min-width: 768px) { 
-.books-all-image {
-  width: 218px;
-  height: 316px;
-}
-.books-all {
-  display: flex;
-  gap: 25px;
-}
+@media (min-width: 768px) {
+  .books-all-image {
+    width: 218px;
+    height: 316px;
+  }
+  .books-all {
+    display: flex;
+    gap: 25px;
+  }
 }
 @media (min-width: 1200px) {
-.books-all-image {
-  width: 180px;
-  height: 256px;
+  .books-all-image {
+    width: 180px;
+    height: 256px;
+  }
 }
-}
-
