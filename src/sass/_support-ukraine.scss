@@ -36,6 +36,13 @@
   width: 8px;
   height: 14px;
 }
+.img-list-unit {
+    filter: brightness(0%) invert(100%); 
+}
+.list-unit-link {
+    display: flex;
+    align-items: center;
+}
 .support-ukraine-btn:hover {
     background-image: linear-gradient(
     to top,
@@ -46,7 +53,6 @@
   );
 }
 .list-unit {
-	list-style: none;
     color: #ffffff;
 
 }
