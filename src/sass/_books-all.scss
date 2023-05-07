@@ -77,6 +77,10 @@
   width: 335px;
   height: 485px;
 }
+.books-all-overlay {
+  position: relative;
+  overflow: hidden;
+}
 @media (min-width: 768px) { 
 .books-all-image {
   width: 218px;
