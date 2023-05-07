@@ -25,6 +25,7 @@
 
 import { BookAPI } from './api';
 import { Notify } from 'notiflix';
+import { renderSectionBooksGerne } from './books-gerne';
 
 const bookApi = new BookAPI();
 const spinner = document.querySelector('.spinner');
@@ -118,7 +119,7 @@ function booksAllCreateOneCategory(bookCategory) {
 }
 
 function hideInvisibleBooks() {
-  booksCountOnScreen = 1;
+  let booksCountOnScreen = 1;
   if (window.innerWidth >= 768) booksCountOnScreen = 3;
   if (window.innerWidth >= 1440) booksCountOnScreen = 5;
 
@@ -131,3 +132,4 @@ function hideInvisibleBooks() {
 }
 
 // ===== Кінець блоку отримання даних із сервера та створення динамічної розмітки =====
+// кнопка
