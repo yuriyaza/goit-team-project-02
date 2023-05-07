@@ -1,3 +1,8 @@
+.books-content {
+  padding-top: 40px;
+  padding-bottom: 80px;
+}
+
 .books-all-title {
   font-family: 'DM Sans';
   font-style: normal;
@@ -10,10 +15,9 @@
 .colortext {
   color: var(--color-violet);
 }
-.books-all {
-  
-}
 .books-all-menu {
+  padding-top: 40px;
+  padding-bottom: 18px;
   font-family: 'DM Sans';
   font-style: normal;
   font-weight: 400;
@@ -21,13 +25,14 @@
   line-height: 1.29;
   letter-spacing: 0.03em;
   text-transform: uppercase;
-  color: #B4AFAF;
+  color: var(--color-gray);
 }
-.books-all-item {
-  max-width: 335px;
-  // display: flex;
-  position: relative;
+.books-info {
+  padding-top: 14px;
+  padding-bottom: 8px;
+  gap: 4px;
 }
+
 .info-item {
   font-family: 'DM Sans';
   font-style: normal;
@@ -45,18 +50,15 @@
   font-size: 12px;
   line-height: 1.17;
   letter-spacing: -0.04em;
-  color: #B4AFAF;
+  color: var(--color-gray);
 }
 .see-more {
-  display: flex;
   flex-direction: row;
   align-items: flex-start;
   padding: 14px 26px;
   gap: 10px;
-  // position: absolute;
   width: 124px;
   height: 46px;
-  
   border: 2px solid var(--color-violet);
   border-radius: 40px;
   font-family: 'DM Sans';
@@ -68,10 +70,27 @@
   text-transform: uppercase;
   color: var(--color-black);
 }
-@media (min-width: 768px) {
-
+.loading {
+  text-align: right;
 }
-@media (min-width: 1440px) {
-
+.books-all-image {
+  width: 335px;
+  height: 485px;
+}
+@media (min-width: 768px) { 
+.books-all-image {
+  width: 218px;
+  height: 316px;
+}
+.books-all {
+  display: flex;
+  gap: 25px;
+}
+}
+@media (min-width: 1200px) {
+.books-all-image {
+  width: 180px;
+  height: 256px;
+}
 }
 
