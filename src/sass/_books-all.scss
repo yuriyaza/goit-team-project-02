@@ -1,5 +1,100 @@
-// Border можна видалити, він лише для візуалізації розмітки
-
-.books-all {
-  border: 2px solid black;
+.books-content {
+  padding-top: 40px;
+  padding-bottom: 80px;
 }
+
+.books-all-title {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 1.19;
+  letter-spacing: -0.04em;
+  color: var(--color-black);
+}
+.colortext {
+  color: var(--color-violet);
+}
+.books-all-menu {
+  padding-top: 40px;
+  padding-bottom: 18px;
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.29;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--color-gray);
+}
+.books-info {
+  padding-top: 14px;
+  padding-bottom: 8px;
+  gap: 4px;
+}
+
+.info-item {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.12;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  color: var(--color-black);
+}
+.info-detail-item {
+  font-family: 'DM Sans';
+  font-style: italic;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: -0.04em;
+  color: var(--color-gray);
+}
+.see-more {
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 14px 26px;
+  gap: 10px;
+  width: 124px;
+  height: 46px;
+  border: 2px solid var(--color-violet);
+  border-radius: 40px;
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.29;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  color: var(--color-black);
+}
+.loading {
+  text-align: right;
+}
+.books-all-image {
+  width: 335px;
+  height: 485px;
+}
+.books-all-overlay {
+  position: relative;
+  overflow: hidden;
+}
+@media (min-width: 768px) { 
+.books-all-image {
+  width: 218px;
+  height: 316px;
+}
+.books-all {
+  display: flex;
+  gap: 25px;
+}
+}
+@media (min-width: 1200px) {
+.books-all-image {
+  width: 180px;
+  height: 256px;
+}
+}
+

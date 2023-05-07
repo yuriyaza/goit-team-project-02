@@ -1,0 +1,35 @@
+<div class="shopping-list-container">
+    <h1 class="shopping-list-title">Shopping <span class="list-title">List</span></h1>
+
+    <div class="shopping-list-empty shopping-list-filled">
+      <p class="shopping-list-empty-message">This page is empty, add some books and proceed to order.</p>
+      <picture class="shopping-list-img">
+        <source
+          srcset="
+            ./images/books-desk-min.png    1x,
+            ./images/books-desk@2x-min.png 2x
+          "
+          media="(min-width:1440px)"
+        />
+        <source
+          srcset="
+            ./images/books-tab-min.png    1x,
+            ./images/books-tab@2x-min.png 2x
+          "
+          media="(min-width:768px)"
+        />
+        <source
+          srcset="
+            ./images/books-mob-min.png    1x,
+            ./images/books-mob@2x-min.png 2x
+          "
+          media="(max-width:767px)"
+        />
+        <img
+          src="./images/books-mob-min.png"
+          alt="books"
+        />
+      </picture>
+    </div>
+    <div class="shopping-list"></div>
+  </div>

@@ -1,0 +1,64 @@
+.books-genre-title {
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 1.19;
+    letter-spacing: -0.04em;
+    color: var(--color-black);
+}
+
+.books-genre-title-attribute {
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 1.19;
+    letter-spacing: -0.04em;
+    color: var(--color-violet);
+}
+
+
+.books-genre-item {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    // flex-direction: column;
+    // align-items: flex-start;
+    // padding: 0px;
+    // gap: 8px;
+
+    // position: absolute;
+    max-width: 335px;
+    // height: 535px;
+    // left: 20px;
+    // top: 842px;
+}
+
+.books-card-title {
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.12;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+    color: var(--color-black);
+}
+
+.books-card-autor {
+    font-family: 'DM Sans';
+    font-style: italic;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: -0.04em;
+    color: #B4AFAF;
+}
+
+@media (min-width: 768px) {
+
+}
+@media (min-width: 1440px) {
+
+}

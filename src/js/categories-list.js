@@ -1,45 +1,66 @@
 import { BookAPI } from "./api";
+import { renderSectionBooksAll } from "./books-all";
+import { renderSectionBooksGenre } from "./books-genre";
 // import { ScrollSpy } from "bootstrap";
-import PerfectScrollbar from 'perfect-scrollbar';
+// import PerfectScrollbar from 'perfect-scrollbar';
 
-catListEl = document.querySelector('.category-list');
+const catListEl = document.querySelector('.category-list');
 const api = new BookAPI;
 
-new PerfectScrollbar('#scroll-container');
+// (getData)();
 
-const scrollEl = document.querySelector('#scroll-container');
-// const ps = new PerfectScrollbar(scrollEl);
-
-const ps = new PerfectScrollbar('#scroll-container', {
-wheelSpeed: 1,
-// wheelPropagation: true,
-// minScrollbarLength: 20
-});
-
-// document.querySelector('#resize').addEventListener('click', () => {
-//         // Get updated values
-//         width = document.querySelector('#width').value;
-//         height = document.querySelector('#height').value;
-
-//         // Set demo sizes
-//         demo.style.width = `${width}px`;
-//         demo.style.height = `${height}px`;
-
-//         // Update Perfect Scrollbar
-//         ps.update();
-//     });
-
-async function catListMarkup() {
+(async function getData() {
     const categoryList = await api.getCategoryList();
-    // console.log(categoryList);
-    const markup = categoryList.reduce((acc, { list_name }) => {
+    localStorage.setItem("category-list", JSON.stringify(categoryList));
+    catListMarkup();
+    renderSectionBooksAll();
+})();
+
+function catListMarkup() {
+    const array = loadFromLocalStorage();
+    const markup = array.reduce((acc, { list_name }) => {
         return acc += `
-        <li class="category-li">
-                ${list_name};
-        </li>
-    `},''
-    )
+            <li class="category-li">
+                <a class="category" href="#">${list_name}</a>
+            </li>
+    `}, '')
     catListEl.insertAdjacentHTML('beforeend', markup);
 };
 
-catListMarkup();
+catListEl.addEventListener('click', clickFunc);
+
+function clickFunc(event) {
+    if (event.target.nodeName !== 'A') {
+        return
+    }
+    if (event.target.textContent === 'All categories') {
+        removeUpperCase();
+        makeUpperCase(event.target);
+        renderSectionBooksAll()
+    } else {        
+        removeUpperCase();
+        makeUpperCase(event.target);
+        getCategoryFunc(event.target.textContent);
+    }
+}
+
+function getCategoryFunc(data) {
+    const dataWords = data.split(' ');
+    const opt = dataWords.join('%20');
+    renderSectionBooksGenre(opt,data);
+};
+
+function loadFromLocalStorage() {
+    const savedData = localStorage.getItem("category-list");
+    const parsedData = JSON.parse(savedData);
+    return parsedData;
+}
+
+function makeUpperCase(data) {
+    data.classList.add('upper-case');
+};
+
+function removeUpperCase() {
+    const rem = document.querySelectorAll('.category');
+    rem.forEach(el => el.classList.remove('upper-case'))
+};
