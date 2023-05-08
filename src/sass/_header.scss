@@ -1,4 +1,32 @@
+/*******theme-dark*******/
+
+body.theme-dark > header.page-header {
+  color: rgba(255, 255, 255, 0.6);
+  background: var(--color-dark);
+}
+body.theme-dark > header.page-header > div.header-content {
+  color: rgba(255, 255, 255, 0.6);
+  background: var(--color-dark);
+  border: 1.5px solid #ffffff;
+}
+
+body.theme-dark
+  > header.page-header
+  > div.header-content
+  .div
+  > div.logo
+  > a.logo-bookshelf
+  > div.header-logo-name {
+  fill: #f3f3f3;
+}
+
+body.theme-dark > header.page-header > div.header-nav > a.header-shopping {
+  fill: #f3f3f3;
+  color: rgba(255, 255, 255, 0.6);
+}
+
 /******* header-mobile-menu*******/
+
 .header-menu-open {
   background-color: transparent;
   border: none;
