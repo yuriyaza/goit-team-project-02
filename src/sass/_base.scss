@@ -5,6 +5,7 @@
   --color-dark: #202024;
   --color-gray: rgba(17, 17, 17, 0.6);
   --color-light-gray: #b4afaf;
+  --color-body: #f6f6f6;
   --color-violet: #4f2ee8;
   --color-orange: #eac645;
   --color-white: #ffffff;
@@ -24,7 +25,13 @@ body {
   line-height: 18px;
   letter-spacing: -0.04em;
   color: var(--color-black);
+  background-color: var(--color-body);
 }
+
+body.theme-dark {
+  color: rgba(255, 255, 255, 0.6);
+  background-color: var(--color-dark);
+} 
 
 h1,
 h2,
