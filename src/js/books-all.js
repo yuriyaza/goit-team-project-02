@@ -40,7 +40,7 @@ function booksAllCreateMarkup(backEndCategories) {
 
 function booksAllCreateOneCategory(bookCategory) {
   return `
-        <h3 class="books-all-menu">${bookCategory.list_name}</h3>
+        <h2 class="books-all-menu">${bookCategory.list_name}</h3>
         <ul class="books-all">
           <li class="books-all-item" data-book-sequence="0">
             <a class="books-all-link" href="#" data-modal-open data-id=" ">
@@ -78,11 +78,7 @@ function booksAllCreateOneCategory(bookCategory) {
           </li>
           <li class="books-all-item" data-book-sequence="4">
             <a class="books-all-link" href="#" data-modal-open data-id=" ">
-            <div class="books-all-overlay">
-              <img class="books-all-image" src="${bookCategory.books[4].book_image}" alt="${bookCategory.books[4].title}" loading="lazy">
-              // <p class="overlay">QUICK VIEW</p>
-            </div>
-          </div>  
+            <img class="books-all-image" src="${bookCategory.books[4].book_image}" alt="${bookCategory.books[4].title}" loading="lazy"> 
             <div class="books-info">
               <p class="info-item">${bookCategory.books[4].title}</p>
               <p class="info-detail-item">${bookCategory.books[4].author}</p>
@@ -117,12 +113,12 @@ function hideInvisibleBooks() {
 
 
 
-let seeMore = document.querySelector('.see-more');
-let currentItem = 1;
-seeMore.onclick = () => {
-  // let books = [...document.querySelectorAll('[data-book-sequence]')];
-  for (var i = currentItem; i < currentItem + 1; i++) {
-    booksVisible[i].style.display = 'inline-block';
-  }
-  currentItem += 1;
-}
+// let seeMore = document.querySelector('.see-more');
+// let currentItem = 1;
+// seeMore.onclick = () => {
+//   // let books = [...document.querySelectorAll('[data-book-sequence]')];
+//   for (var i = currentItem; i < currentItem + 1; i++) {
+//     booksVisible[i].style.display = 'inline-block';
+//   }
+//   currentItem += 1;
+// }
