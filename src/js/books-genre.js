@@ -19,9 +19,8 @@ export async function renderSectionBooksGenre(genreName, categoryName) {
 
   const markup = booksGenreCreateMarkup(categoryName, backEndData);
   document.querySelector('.books-content').innerHTML = markup;
-
+  // booksPerRow();
   spinner.classList.add('visually-hidden');
-  // hideInvisibleBooks();
 }
 
 async function booksGenreGetFromBackend(genreName) {
@@ -66,12 +65,10 @@ function booksGenreCreateOneCard(backEndBookList) {
 }
 
 // ===== Кінець блоку отримання даних із сервера та створення динамічної розмітки =====
-
-// function hideInvisibleBooks() {
+// function booksPerRow() {
 //   let booksCountOnScreen = 1;
 //   if (window.innerWidth >= 768) booksCountOnScreen = 3;
 //   if (window.innerWidth >= 1440) booksCountOnScreen = 5;
-
 //   const booksVisible = document.querySelectorAll('.books-genre-item');
 //   booksVisible.forEach((book, index) => {
 //     if (index >= booksCountOnScreen) {

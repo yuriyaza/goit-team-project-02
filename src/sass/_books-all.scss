@@ -70,7 +70,6 @@
   letter-spacing: -0.01em;
   text-transform: uppercase;
   color: var(--color-black);
-  
 }
 .loading {
   text-align: right;
@@ -105,35 +104,34 @@
 //   padding-top: 52px;
 //   padding-bottom: 26px;
 // }
-@media (min-width: 768px) { 
-.books-all-image {
-  width: 218px;
-  height: 316px;
-}
-.books-all {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 25px;
-}
-.books-all-item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: calc((100% / 3) - 50px);
-}
+@media (min-width: 768px) {
+  .books-all-image {
+    width: 218px;
+    height: 316px;
+  }
+  .books-all {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+  }
+  .books-all-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc((100% / 3) - 50px);
+  }
 }
 
 @media (min-width: 1440px) {
-.books-all-image {
-  width: 180px;
-  height: 256px;
+  .books-all-image {
+    width: 180px;
+    height: 256px;
+  }
+  .books-all {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+  }
 }
-.books-all {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 25px;
-}
-}
-
