@@ -36,3 +36,14 @@ function markup(params) {
 function pad(value) {
   return String(value).padStart(2, '0');
 }
+let offset = 0;
+const sliderLine = document.querySelector('.slider-liner-su');
+const sliderBtn = document.querySelector('.support-ukraine-btn');
+sliderBtn.addEventListener('click', sliderBtnHandler);
+function sliderBtnHandler(params) {
+  offset += 68;
+  if (offset > 476) {
+    offset = 0;
+  }
+  sliderLine.style.top = -offset + 'px';
+}

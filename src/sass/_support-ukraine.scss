@@ -44,6 +44,7 @@
 }
 .support-ukraine-btn:hover {
   background-image: linear-gradient(to top, #ffb800 50%, #00b9ff 50%);
+  transition: var(--transition-rule);
 }
 .list-unit {
   color: #ffffff;
@@ -71,6 +72,20 @@
   color: #ffffff;
   margin-right: 16px;
 }
+.slider-support-ukraine {
+  position: absolute;
+  width: 237px;
+  height: 204px;
+  overflow: hidden;
+}
+
+.slider-liner-su {
+  position: relative;
+
+  width: 237px;
+  height: 428px;
+  transition: var(--transition-rule);
+}
 @media screen and (min-width: 768px) {
   .support-ukraine {
     height: 472px;
@@ -80,6 +95,9 @@
     height: 38px;
     bottom: 14px;
     left: 149px;
+  }
+  .slider-support-ukraine {
+    height: 340px;
   }
 }
 @media screen and (min-width: 1440px) {
