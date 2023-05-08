@@ -34,11 +34,13 @@
   </svg>
   </button>
 </div>
+
+
 <!-- button sign up -->
 
 <div class="header-sign-btn">
   <button type="button" class="header-sign-open">
-    <a href="/src/partials/authorization.html">Sign up</a>
+    <a href="/src/partials/authorization.html" class="header-sign">Sign up</a>
     <svg class="icon-sign" width="20" height="20" aria-label="sign up">
       <use href="/src/images/sprite-header.svg#icon-arrow-narrow-right"></use>
   </svg>
@@ -49,11 +51,12 @@
 
 <div class="header-menu  js-menu-container">
   <div class="header-menu_container">
-    <button type="button" class="header-menu-closed js-close-menu"  >
+    <button type="button" class="header-menu-closed js-close-menu">
       <svg class="icon-menu-burger" width="28" height="28" aria-label="Switch-on mobile menu">
           <use href="/src/images/sprite-header.svg#icon-x-close"></use>
       </svg>
     </button>
+ 
 <!---nav menu -->
 <!--logo menu-->
 
@@ -84,15 +87,21 @@
 
 
 <!--swither and borger-menu -->
-<!-- <div class="header-sign-btn">
-  <button type="button" class="header-sign-open">Sign up
-    <svg class="icon-sign" width="20" height="20" aria-label="sign up">
-      <use href="/src/images/sprite-header.svg#icon-arrow-narrow-right"></use>
-  </svg>
-  </button>
-</div> -->
-</div>
+        <div class="header-sign-menu">
+          <button type="button" class="header-sign-open-menu">
+            <a href="/src/partials/authorization.html" class="header-sign">Sign up</a>
+            <svg class="icon-sign" width="20" height="20" aria-label="sign up">
+              <use href="/src/images/sprite-header.svg#icon-arrow-narrow-right"></use>
+          </svg>
+         
+          </button>
 
+          <picture class="img-mobile-menu">
+            <img src="/src/images/mobile-menu-books.png" alt="mobile menu books" width="375" height="443">
+          </picture>
+        </div>
+
+  </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" crossorigin="anonymous"></script>
 <script src="/src/js/header.js"></script>
