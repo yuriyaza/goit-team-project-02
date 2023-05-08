@@ -1,7 +1,6 @@
-// .books-content {
-//   padding-top: 40px;
-//   padding-bottom: 80px;
-// }
+.books-content {
+  margin-bottom: 80px;
+}
 
 .books-all-title {
   font-family: 'DM Sans';
@@ -16,8 +15,8 @@
   color: var(--color-violet);
 }
 .books-all-menu {
-  padding-top: 40px;
-  padding-bottom: 18px;
+  margin-top: 40px;
+  margin-bottom: 18px;
   font-family: 'DM Sans';
   font-style: normal;
   font-weight: 400;
@@ -28,8 +27,8 @@
   color: var(--color-gray);
 }
 .books-info {
-  padding-top: 14px;
-  padding-bottom: 8px;
+  margin-top: 14px;
+  margin-bottom: 8px;
   gap: 4px;
 }
 
@@ -42,6 +41,7 @@
   letter-spacing: -0.04em;
   text-transform: uppercase;
   color: var(--color-black);
+  list-style-position: outside;
 }
 .info-detail-item {
   font-family: 'DM Sans';
@@ -53,8 +53,9 @@
   color: var(--color-gray);
 }
 .see-more {
-  flex-direction: row;
-  align-items: flex-start;
+  margin: 0 auto;
+  align-items: center;
+  text-align: center;
   padding: 14px 26px;
   gap: 10px;
   width: 124px;
@@ -69,6 +70,7 @@
   letter-spacing: -0.01em;
   text-transform: uppercase;
   color: var(--color-black);
+  
 }
 .loading {
   text-align: right;
@@ -77,23 +79,61 @@
   width: 335px;
   height: 485px;
 }
-.books-all-overlay {
-  position: relative;
-  overflow: hidden;
+
+// .books-all-overlay {
+//   position: relative;
+//   overflow: hidden;
+// }
+// .overlay {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 70px;
+//   overflow-y: auto;
+//   font-family: 'DM Sans';
+//   font-style: normal;
+//   font-weight: 500;
+//   font-size: 14px;
+//   line-height: 1.29;
+//   letter-spacing: -0.04em;
+//   text-transform: uppercase;
+//   color: var(--color-black);
+//   background-color: var(--color-orange);
+//   padding-left: 52px;
+//   padding-right: 26px;
+//   padding-top: 52px;
+//   padding-bottom: 26px;
+// }
+@media (min-width: 768px) { 
+.books-all-image {
+  width: 218px;
+  height: 316px;
 }
-@media (min-width: 768px) {
-  .books-all-image {
-    width: 218px;
-    height: 316px;
-  }
-  .books-all {
-    display: flex;
-    gap: 25px;
-  }
+.books-all {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
 }
-@media (min-width: 1200px) {
-  .books-all-image {
-    width: 180px;
-    height: 256px;
-  }
+.books-all-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc((100% / 3) - 50px);
 }
+}
+
+@media (min-width: 1440px) {
+.books-all-image {
+  width: 180px;
+  height: 256px;
+}
+.books-all {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+}
+}
+
