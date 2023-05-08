@@ -25,7 +25,7 @@
 
 import { BookAPI } from './api';
 import { Notify } from 'notiflix';
-import { renderSectionBooksGerne } from './books-gerne';
+// import { renderSectionBooksGerne } from './books-gerne';
 
 const bookApi = new BookAPI();
 const spinner = document.querySelector('.spinner');
