@@ -25,7 +25,7 @@
   line-height: 1.29;
   letter-spacing: 0.03em;
   text-transform: uppercase;
-  color: var(--color-gray);
+  color: var(--color-light-gray);
 }
 .books-info {
   margin-top: 14px;
@@ -154,3 +154,13 @@
   }
 }
 
+/* dark theme  */
+.dark-theme .books-all-title {
+  color: var(--color-white);
+}
+.dark-theme .info-item {
+  color: var(--color-white);
+}
+.dark-theme .see-more {
+  color: var(--color-black);
+}
