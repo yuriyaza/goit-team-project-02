@@ -1,0 +1,250 @@
+.shopping-list-container {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  max-width: 375px;
+}
+.shopping-list-title {
+  font-family: "DM Sans";
+  color: var(--color-black);
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 38px;
+  text-align: center;
+  letter-spacing: -0.04em;
+  margin: 0 auto;
+  margin-bottom: 40px;
+  text-decoration: none;
+}
+.list-title {
+  color: var(--color-violet);
+}
+.shopping-list-empty {
+  padding: 80px 55px 262px 55px;
+}
+.shopping-list-empty-img {
+  width: 265px;
+  height: auto;
+}
+.shopping-list-empty-message {
+  width: 244px;
+  font-weight: 400;
+  font-size: 14px;
+  text-align: center;
+  line-height: 18px;
+  letter-spacing: -0.02em;
+  color: rgba(0, 0, 0, 0.6);
+  margin: 0 auto;
+  margin-bottom: 14px;
+}
+.shopping-list-filled {
+  display: none;
+}
+.book-card:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+.shopping-list-img {
+  width: 100px;
+  
+  display: block;  
+  margin-right: 14px;
+}
+.book-card {
+  background: #ffffff;
+  border: 2px solid rgba(79, 46, 232, 0.4);
+  border-radius: 16px;
+  margin: 0 auto;
+  max-width: 307px;
+  padding: 14px;
+  display: flex;
+}
+.first-info-div {
+  display: flex;
+  margin-bottom: 8px;
+}
+.book-img {
+  width: 100px;
+  height: 142px;
+  border-radius: 8px;
+}
+
+.book-name {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 18px;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  color: #111111;
+  margin-bottom: 4px;
+}
+.book-category {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.03em;
+  color: #b4afaf;
+}
+.remove-book {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  margin-left: auto;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background: #4f2ee8; 
+  
+}
+.trash-icon {
+  fill: #ffffff;
+    pointer-events: none;
+   
+}
+.info {
+  min-width: 193px;
+  width: 100%;
+  max-height: 142px;
+  display: flex;
+  flex-direction: column;
+}
+.second-info-div {
+  margin-bottom: auto;
+}
+.book-description {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  font-weight: 400;
+font-size: 14px;
+line-height: 18px;
+letter-spacing: -0.04em;
+
+}
+.third-info-div {
+  display: flex;
+  margin-bottom: 0;
+}
+.book-author-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.book-author {
+  font-style: italic;
+font-weight: 400;
+font-size: 12px;
+line-height: 14px;
+letter-spacing: -0.04em;
+color: #B4AFAF;
+}
+.shop-list-div {
+  display: flex;
+   margin-left: auto;
+   justify-content: center;
+  align-items: center;
+}
+.shop-list {
+  list-style: none;
+  display: flex;
+  gap: 4px;
+  justify-content: center;
+  align-items: center;
+}
+.shop-icon {
+  filter: grayscale(100%);
+}
+
+.shop-item {
+  display: flex;
+    justify-content: center;
+    align-items: center;
+  width: 16px;
+  height: 16px;
+}
+.shop-item:first-child {
+  width: 32px;
+  height: 11px;
+}
+
+
+@media screen and (min-width: 480px) {
+}
+@media screen and (max-width: 768px) {
+}
+@media screen and (min-width: 768px) {
+  .shopping-list-container {
+    max-width: 768px;
+  }
+  .shopping-list-empty {
+    padding-top: 120px 55px 262px 55px;
+}
+  .shopping-list-title {
+    font-size: 48px;
+line-height: 52px;
+margin-left: 0;
+text-align: left;
+  }
+  .book-card {
+
+    max-width: 656px;
+    padding: 24px;
+  }
+  .shopping-list-img {
+    width: 116px;
+    display: block;
+    margin-right: 24px;
+}
+.book-img {
+  width: 116px;
+  height: 165px;
+
+}
+.info {
+  max-height: 165px;
+
+}
+.remove-book {
+  width: 34px;
+  height: 34px;
+}
+.trash-icon {
+width: 18px;
+height: 18px;
+   
+}
+.first-info-div {
+  margin-bottom: 14px;
+}
+.book-description {
+ max-width: 508px;
+
+}
+.shop-list {
+  gap: 8px;
+
+}
+.shop-item {
+
+  width: 28px;
+  height: 27px;
+}
+.shop-item:first-child {
+  width: 48px;
+  height: 15px;
+}
+.shop-item:last-child {
+  width: 32px;
+  height: 30px;
+}
+.shopping-list-empty-message {
+  width: 349px;
+  font-size: 18px;
+  line-height: 24px;
+  margin-bottom: 20px;
+}
+}
+@media screen and (min-width: 1440px) {
+}

@@ -1,5 +1,25 @@
-// Border можна видалити, він лише для візуалізації розмітки
-
 .categories-list {
-  border: 2px solid black;
+  // border: 1px solid red;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 112%;
+  letter-spacing: -0.02em;
+  color: var(--color-gray);
+  overflow: scroll;
+}
+
+.category-li:not(:last-child) {
+  margin-bottom: 24px;
+}
+.upper-case{
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--color-violet);
+}
+.dark-theme .categories-list{
+  color: rgba(255, 255, 255, 0.6);
+}
+.dark-theme .upper-case{
+  color: var(--color-orange);
 }
