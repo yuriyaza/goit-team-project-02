@@ -1,12 +1,15 @@
-const openPopUp = document.querySelector('.header-sign-open');
 const closePopUp = document.querySelector('#popup-close');
 const popUp = document.querySelector('#popup');
 
-openPopUp.addEventListener('click', function (e) {
-  e.preventDefault();
+if (window.location.pathname === '/partials/authorization.html') {
   popUp.classList.add('active');
-});
+}
+// openPopUp.addEventListener('click', function (e) {
+//   e.preventDefault();
+//   popUp.classList.add('active');
+// });
 
 closePopUp.addEventListener('click', () => {
+  window.location.href = '/';
   popUp.classList.remove('active');
 });
