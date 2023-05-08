@@ -2,7 +2,6 @@ import { fonds } from './array-of-funds';
 
 const supportList = document.querySelector('.support-ukraine-list');
 
-supportList.innerHTML = '<img src="./images/24u.png" alt="ddd"/>';
 createMarkupForSupportUk(fonds);
 
 function createMarkupForSupportUk(fonds) {
