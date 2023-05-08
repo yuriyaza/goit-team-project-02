@@ -30,6 +30,7 @@ function markup(params) {
 		alt="${title}"
 	></img></a>
 </li>`;
+  return;
 }
 
 function pad(value) {
