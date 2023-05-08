@@ -1,4 +1,4 @@
-import fonds from './array-of-funds';
+import { fonds } from './array-of-funds';
 
 const supportList = document.querySelector('.support-ukraine-list');
 
