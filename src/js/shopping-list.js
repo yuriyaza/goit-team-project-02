@@ -285,15 +285,13 @@ function createShoppingList(booksArray) {
           <div class="shop-list-div">
           <ul class="shop-list">
               <li class="shop-item">
-              <a class="shop-link" href="${item.buy_links[0].url}"><img class="shop-icon" src="./images/amazon.svg" alt="amazon" width="32" height="11"></a>
+              <a class="shop-link" target="_blank" href="${item.buy_links[0].url}"><img class="shop-icon amazon-icon" src="./images/amazon.svg" alt="amazon" width="32" height="11"></a>
               </li>
-              <li>
                 <li class="shop-item">
-                    <a class="shop-link" href="${item.buy_links[1].url}"><img class="shop-icon" src="./images/apple.svg" alt="apple shop" width="16" height="16"></a>
+                    <a class="shop-link" target="_blank" href="${item.buy_links[1].url}"><img class="shop-icon" src="./images/apple.svg" alt="apple shop" width="16" height="16"></a>
                   </li>
-                  <li>
                     <li class="shop-item">
-                        <a class="shop-link" href="${item.buy_links[4].url}"><img class="shop-icon" src="./images/bookshop.svg" alt="book shop" width="16" height="16"></a>
+                        <a class="shop-link" target="_blank" href="${item.buy_links[4].url}"><img class="shop-icon" src="./images/bookshop.svg" alt="book shop" width="16" height="16"></a>
                       </li>
             </ul>
           </div>
