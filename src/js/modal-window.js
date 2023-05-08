@@ -1,28 +1,45 @@
+import { BookAPI } from './api';
+import { Notify } from 'notiflix';
+import scrollLock from 'scroll-lock';
+
+const bookApi = new BookAPI();
+Notify.init({ showOnlyTheLastOne: true, clickToClose: true });
+
 const refs = {
-    openModalBtn: document.querySelector('.books-card-title-img'),
+    openModalBtn: document.querySelector('.open-modal'), 
+    modalCartImg:document.querySelector('.books-card-title-img'),
     closeModalBtn: document.querySelector('.modal-btn'),
     backdrop: document.querySelector('.hi-backdrop'),
-    addFromShoppingList: document.querySelector(".openmodal-btn"),
+    addFromShoppingList: document.querySelector("#shoppingList"),
     informModalText: document.querySelector('.modal-text'),
-    modalCardBoock:document.querySelector(".modal-content-card"),
+    modalIconCardBoock: document.querySelector(".modal-content"),
+    buttonOpenModal: document.querySelector('.openmodal-btn'),
 }
 
 refs.openModalBtn.addEventListener('click', onOpenModal);
 refs.closeModalBtn.addEventListener('click', onCloseModal);
 refs.backdrop.addEventListener('click', onBackdropClick);
-refs.addFromShoppingList.addEventListener('click', addFromList);
+// refs.addFromShoppingList.addEventListener('click', buttonAddListSohind);
+// refs.modalCartImg.addEventListener('click', onSearchBoock);
+ 
 
 function onOpenModal() {
     window.addEventListener('keydown', onEscKeyPress);
     document.body.classList.add('show-modal');
     refs.informModalText.style.display = 'none';
-    refs.addFromShoppingList.textContent = 'Add to shopping list';
+    // refs.addFromShoppingList.textContent = 'Add to shopping list';
+    // refs.addFromShoppingList.classList.add('openmodal-btn')
     // rendermodCardBoock();
+    scrollLock.disablePageScroll(document.body);
 }
 function onCloseModal() {
      window.removeEventListener('keydown', onEscKeyPress);
     document.body.classList.remove('show-modal');
-    
+
+// При відкритті модалки блокуємо скрол, щоб сторінка під модалкою не прокручувалась.
+// При закритті вікна розблоковуємо скрол.
+
+    scrollLock.enablePageScroll(document.body);
 }
 function onBackdropClick(event){
     if (event.currentTarget === event.target) {
@@ -35,9 +52,122 @@ function onEscKeyPress(event) {
       onCloseModal();    
     }
 }
-function addFromList() {
-    // local storidg
-    this.textContent = 'remove from the shopping list';
-    refs.informModalText.style.display = 'block';
-    // refs.addFromShoppingList.removeEventListener('click', addFromList);
+
+function buttonAddListSohind() {
+    if (refs.buttonOpenModal.classList.contains('openmodal-btn')) {
+         openModalBtn()
+    } else {
+       closeModalBtn()
+    }
 }
+function closeModalBtn() {
+    refs.informModalText.style.display = 'none';
+        refs.addFromShoppingList.textContent= 'Add to shopping list';
+        refs.buttonOpenModal.classList.remove('closemodal-btn')
+        refs.buttonOpenModal.classList.add('openmodal-btn')
+        // localStorage.removeItem('cartBoock');
+        refs.addFromShoppingList.addEventListener('click', buttonAddListSohind);
+}
+
+function openModalBtn() {
+     refs.addFromShoppingList.textContent = 'remove from the shopping list';
+        refs.informModalText.style.display = 'block';
+        refs.buttonOpenModal.classList.add('closemodal-btn')
+        refs.buttonOpenModal.classList.remove('openmodal-btn')
+        // localStorage.setItem('cartBoock');
+        refs.addFromShoppingList.addEventListener('click', buttonAddListSohind);
+ }    
+// function onSearchBoock(e) {
+//     e.preventDefauit();
+//     const form = e.currentTarget;
+//     const searchQuery = form.element.query.value;
+//     fetchBockcartMod(searchQuery)
+//         .then(renderBoocksCard)
+//         .catch(error => console.log(error));
+// }
+
+function fetchBoockcardModWin(boock_Id){
+    return
+    fetch('https://books-backend.p.goit.global/books/bookId')
+.then(response => {
+        return response.json();
+})
+    .then(books => {
+        console.log(books);
+        renderBoocksCard();
+    })
+        .catch(error => {
+            console.log(error);
+    })
+}
+
+function renderBoocksCard(book){
+        const markup = modalCartBoock(book);
+        refs.modalIconCardBoock.innerHTML = markup;
+    }
+
+// В функцію яка створює розмітку передаємо ID книги, яку хочем відобразити
+// Саму розмітку не міняв - з нею все супер
+    
+function modalCartBoock(book) {
+    return  `
+            <div class="modal-content-card">
+            
+            <div class="modal-content-img">
+                <img src="${book.book_image}" alt="${book.title}" width="192" height="281" />
+            </div>
+            <div class="modal-content-text">
+                <h2 class="modal-content-titl"><b>${book.title}</b></h2>
+                <p class="modal-content-autur"><b>${book.author}</b></p>
+        <p class="modal-content-abst"><b>${book.description}</b></p>
+        <ul class="modal-link">
+              <li class="modal-link-icon">
+                <a class="modal-link" href="${book.buy_links[0].url}" target="_blank">
+                    <img src="/amazon-1.png" alt="amazon" width="62" height="19" /></a>
+              </li>
+            
+                <li class="modal-link-icon">
+                    <a class="modal-link" href="${book.buy_links[1].url}" target="_blank">
+                        <img  src="./images/boock-2.png" alt="apple shop" width="33" height="32"/></a>
+                </li>
+                 
+                <li class="modal-link-icon">
+                    <a class="modal-link" href="${book.buy_links[4].url}" target="_blank">
+                        <img  src="./images/newboock.png" alt="book shop" width="38" height="36"/></a>
+                </li>
+        </ul>
+
+             </div>
+        </div>`;
+   
+ }
+    
+// Робимо та експортуємо функцію, яка буде викликатись іншими для відкриття твоєї модалки.
+// Той хто викликає цю функцію - буде передавати ID книги, яку хоче відобразити.
+// Ця функція в свою чергу викликає твої renderBoocksCard(book), onOpenModal(),
+// щоб створити розмітку і відобразити модальне вікно.
+
+export async function openModalBookDetails(bookID) {
+    const book = await booksDetailsGetFromBackend(bookID);
+    
+    if (book.length === 0) {
+      Notify.failure('Books not found');
+      return;
+    }
+
+    renderBoocksCard(book);
+    onOpenModal();
+}
+
+// Отримуємо дані з сервера по ID книги за допомогою api.js
+
+async function booksDetailsGetFromBackend(bookID) {
+  return await bookApi.getBookById(bookID);
+}
+
+// Перевіряємо як працює на прикладі однієї з книг.
+// Перед завантаженням на GitHub не забути видалити або закоментувати,
+// а то модалка буде постійно відкрита при старті :))))
+
+// openModalBookDetails('643282b1e85766588626a07e');
+
