@@ -2,6 +2,7 @@ import fonds from './array-of-funds';
 
 const supportList = document.querySelector('.support-ukraine-list');
 
+supportList.innerHTML = '<img src="./images/24u.png" alt="ddd"/>';
 createMarkupForSupportUk(fonds);
 
 function createMarkupForSupportUk(fonds) {
@@ -20,6 +21,7 @@ function createMarkupForSupportUk(fonds) {
 
 function markup(params) {
   const { title, url, img, img2x, index } = params;
+
   return `<li class="list-unit">
 	<a href="${url}" class="list-unit-link"><span class="span-list-unit">${pad(
     index + 1
@@ -30,7 +32,6 @@ function markup(params) {
 		alt="${title}"
 	></img></a>
 </li>`;
-  return;
 }
 
 function pad(value) {
