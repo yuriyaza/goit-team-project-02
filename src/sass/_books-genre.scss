@@ -53,26 +53,16 @@
   gap: 4px;
 }
 
-// .books-genre-card-container {
-//   display: flex;
-//   flex-wrap: wrap;
-//   justify-content: center;
-//   list-style-type: none;
-//   margin: 0;
-//   padding: 0;
-// }
-
-// .books-genre-item {
-//   // flex: 1 0 0;
-//   margin: 10px;
-// }
-
 @media (min-width: 768px) {
-  // .books-genre-item {
-  //   flex-basis: calc(33.33% - 20px);
-  // }
+  .books-genre-card-container {
+    display: grid;
+    grid-gap: 25px;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 40px;
+    margin: 0 auto;
+  }
   .books-card-title-img {
-    width: 218px;
+    width: 100%;
     height: 316px;
   }
   .books-genre-title {
@@ -85,15 +75,15 @@
   }
 }
 @media (min-width: 1440px) {
-  // .books-genre-card-conteiner {
-  //   display: flex;
-  //   gap: 24px;
-  // }
-  // .books-genre-item {
-  //   flex-basis: calc(20% - 20px);
-  // }
+  .books-genre-card-container {
+    display: grid;
+    grid-gap: 24px;
+    grid-template-columns: repeat(5, 1fr);
+    row-gap: 40px;
+    margin: 0 auto;
+  }
   .books-card-title-img {
-    width: 180px;
+    width: 100%;
     height: 256px;
   }
   .books-genre-title {

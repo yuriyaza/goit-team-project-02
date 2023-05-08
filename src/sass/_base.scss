@@ -5,6 +5,7 @@
   --color-dark: #202024;
   --color-gray: rgba(17, 17, 17, 0.6);
   --color-light-gray: #b4afaf;
+  --color-body: #f6f6f6;
   --color-violet: #4f2ee8;
   --color-orange: #eac645;
   --color-white: #ffffff;
@@ -24,6 +25,12 @@ body {
   line-height: 18px;
   letter-spacing: -0.04em;
   color: var(--color-black);
+  background-color: var(--color-body);
+}
+
+body.theme-dark {
+  color: rgba(255, 255, 255, 0.6);
+  background-color: var(--color-dark);
 }
 // body.there-dark{
 
@@ -190,6 +197,47 @@ img {
   .support-ukraine {
     width: 356px;
     height: 490px;
+  }
+}
+
+.support-shopping-wrapper {
+  padding-top: 64px;
+}
+
+@media (min-width: 768px) {
+  .support-shopping-wrapper {
+    padding-top: 72px;
+  }
+}
+
+@media (min-width: 768px) {
+  .support-shopping-wrapper {
+    display: flex;
+    gap: 0 40px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .support-shopping-wrapper {
+    padding-top: 0;
+  }
+}
+
+.support-wrapper {
+  display: none;
+}
+
+@media (min-width: 1440px) {
+  .support-wrapper {
+    display: block;
+    padding-top: 112px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .shopping-wrapper {
+    padding-top: 72px;
+    width: 996px;
   }
 }
 

@@ -1,5 +1,3 @@
-// ===== Отримання даних із сервера та створення динамічної розмітки =====
-
 import { BookAPI } from './api';
 import { Notify } from 'notiflix';
 
@@ -19,9 +17,7 @@ export async function renderSectionBooksGenre(genreName, categoryName) {
 
   const markup = booksGenreCreateMarkup(categoryName, backEndData);
   document.querySelector('.books-content').innerHTML = markup;
-
   spinner.classList.add('visually-hidden');
-  // hideInvisibleBooks();
 }
 
 async function booksGenreGetFromBackend(genreName) {
@@ -65,17 +61,20 @@ function booksGenreCreateOneCard(backEndBookList) {
   `;
 }
 
-// ===== Кінець блоку отримання даних із сервера та створення динамічної розмітки =====
-
-// function hideInvisibleBooks() {
+// function showVisibleBooks() {
 //   let booksCountOnScreen = 1;
 //   if (window.innerWidth >= 768) booksCountOnScreen = 3;
 //   if (window.innerWidth >= 1440) booksCountOnScreen = 5;
 
-//   const booksVisible = document.querySelectorAll('.books-genre-item');
-//   booksVisible.forEach((book, index) => {
-//     if (index >= booksCountOnScreen) {
-//       book.classList.add('visually-hidden');
-//     } else book.classList.remove('visually-hidden');
+//   const booksAll = document.querySelectorAll('.books-genre-item');
+//   booksAll.forEach((book, index) => {
+//     const rowNumber = Math.floor(index / booksCountOnScreen); // обчислення номеру рядка
+//     const bookInRowNumber = index % booksCountOnScreen; // обчислення номеру книги в рядку
+//     if (rowNumber === 0 && bookInRowNumber >= booksCountOnScreen) {
+//       book.classList.add('visually-hidden'); // приховати книги, які перевищують максимальну кількість на рядку
+//     } else {
+//       book.classList.remove('visually-hidden'); // ппоказує книги,
+//     }
 //   });
 // }
+// showVisibleBooks();
