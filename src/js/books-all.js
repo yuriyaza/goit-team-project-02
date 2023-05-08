@@ -117,12 +117,12 @@ function hideInvisibleBooks() {
 
 
 
-let seeMore = document.querySelector('.see-more');
-let currentItem = 1;
-seeMore.onclick = () => {
-  // let books = [...document.querySelectorAll('[data-book-sequence]')];
-  for (var i = currentItem; i < currentItem + 1; i++) {
-    booksVisible[i].style.display = 'inline-block';
-  }
-  currentItem += 1;
-}
+// let seeMore = document.querySelector('.see-more');
+// let currentItem = 1;
+// seeMore.onclick = () => {
+//   // let books = [...document.querySelectorAll('[data-book-sequence]')];
+//   for (var i = currentItem; i < currentItem + 1; i++) {
+//     booksVisible[i].style.display = 'inline-block';
+//   }
+//   currentItem += 1;
+// }

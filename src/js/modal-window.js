@@ -169,5 +169,5 @@ async function booksDetailsGetFromBackend(bookID) {
 // Перед завантаженням на GitHub не забути видалити або закоментувати,
 // а то модалка буде постійно відкрита при старті :))))
 
-openModalBookDetails('643282b1e85766588626a07e');
+// openModalBookDetails('643282b1e85766588626a07e');
 
