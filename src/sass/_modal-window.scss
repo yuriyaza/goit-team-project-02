@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital@1&display=swap');
+
+body.show-modal .backdrop {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: initial;
+}
+
+body.show-modal .modal {
+    transform: scale(1);
+}
+
+.backdrop {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(46, 47, 66, 0.4);
+    opacity: 1;
+    transition: opacity var(--transition-rule);
+    z-index: 50;
+}
+
+.backdrop.hi-backdrop {
+    opacity: 1;
+    pointer-events: none;
+    visibility: hidden;
+}
+
+.backdrop.hi-backdrop .modal {
+    transform: translate(-50%, -50%) scale(0.9);
+}
+
+.modal {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    transition: transform var(--transition-rule);
+    width: 335px;
+    max-width: 100%;
+    // height: 501px;
+
+    background-color: rgba(252, 252, 252, 1);
+    box-shadow: 0px 2px rgba(0, 0, 0, 0.2),
+        0px 1px rgba(0, 0, 0, 0.12),
+        0px 1px rgba(0, 0, 0, 0.14);
+    border-radius: 18px;
+
+    padding: 40px 24px;
+}
+
+.modal-btn {
+    position: absolute;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    right: 24px;
+    top: 18px;
+    width: 12px;
+    height: 12px;
+    border: none;
+    background-color: none;
+    cursor: pointer;
+
+
+
+}
+
+.modal-btn:hover {
+    background-color: none;
+
+    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.8), 0px 1px 1px rgba(46, 47, 66, 0.16), 1px 2px 1px rgba(46, 47, 66, 0.18);
+}
+
+.modal-icon {
+    width: 14px;
+    height: 14px;
+}
+
+.openmodal-btn,
+.clocemodal-btn {
+    // width: 499px;
+    // margin-left: 40px;
+    // margin-top: 361px;
+    padding: 14px 28px;
+    border: 2px solid var(--color-violet);
+    border-radius: 40px;
+    // position: absolute;
+    cursor: pointer;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 24px;
+    text-transform: uppercase;
+    color: var(--color-black);
+}
+
+.openmodal-btn:hover,
+.clocemodal-btn:hover,
+.openmodal-btn:focus,
+.clocemodal-btn:focus {
+    background:var(--color-violet);
+    color: var(--color-white);
+}
+
+.modal-text {
+    display: none;
+    position: absolute;
+    width: 324px;
+    height: 28px;
+    left: 128px;
+    top: 433px;
+
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+
+    text-align: center;
+    letter-spacing: -0.04em;
+
+    color: var(--color-gray);
+}
+
+.modal-link {
+    display: flex;
+    // align-items: center;
+    gap: 20px;
+}
+
+.modal-link-icon {
+    filter: grayscale(100%);
+}
+
+.modal-content {
+    // display: flex;
+    // gap: 24px;
+    // margin-top: 40px;
+    // margin-left: 40px;
+}
+
+.modal-content-text {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+.modal-content-titl {
+    // width: 192px;
+    // height: 28px;
+
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+
+    letter-spacing: -0.04em;
+    color: #111111;
+}
+
+.modal-content-autur {
+    // width: 92px;
+    // height: 18px;
+
+    
+    font-style: italic;
+    font-size: 14px;
+    line-height: 18px;
+
+    letter-spacing: -0.04em;
+
+    color:var(--color-light-gray);
+    margin-bottom: 18px;
+}
+
+.modal-content-abst {
+    // width: 279px;
+    // height: 70px;
+
+
+    font-size: 14px;
+    line-height: 18px;
+
+
+    letter-spacing: -0.04em;
+
+    color: var(--color-black);
+
+    margin-bottom: 14px;
+}
+
+.modal-content-img {
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 14px;
+}
+
+@media screen and(min-width:480px) {
+    .modal {
+        width: 335px;
+        height: 806px;
+    }
+
+    .modal-content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .modal-content-img {
+        width: 287px;
+        height: 408px;
+        margin-left: 24px;
+        margin-top: 40px;
+    }
+
+    .openmodal-btn {
+        width: 279px;
+        height: 46px;
+
+    }
+
+    .modal-btn {
+        width: 12px;
+        height: 12px;
+        right: 18px;
+        top: 18px;
+    }
+}

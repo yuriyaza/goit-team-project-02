@@ -1,5 +1,165 @@
-// Border можна видалити, він лише для візуалізації розмітки
+.books-content {
+  margin-bottom: 40px;
+  max-width: 335px;
+}
 
-.books-all {
-  border: 2px solid black;
+.books-all-title {
+  margin-bottom: 40px;
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 1.19;
+  letter-spacing: -0.04em;
+  color: var(--color-black);
+}
+.colortext {
+  color: var(--color-violet);
+}
+.books-all-menu {
+  margin-bottom: 18px;
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.29;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--color-light-gray);
+}
+.books-info {
+  margin-top: 14px;
+  gap: 4px;
+}
+
+.info-item {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.12;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  color: var(--color-black);
+  max-width: 335px;
+  white-space: nowrap; 
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.info-detail-item {
+  font-family: 'DM Sans';
+  font-style: italic;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: -0.04em;
+  color: var(--color-gray);
+}
+.see-more {
+  margin-bottom: 40px;
+  padding: 14px 26px;
+  width: 124px;
+  height: 46px;
+  border: 2px solid var(--color-violet);
+  border-radius: 40px;
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.29;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  color: var(--color-black);
+  
+}
+.loading {
+  text-align: right;
+}
+.books-all-image {
+  width: 335px;
+  height: 485px;
+}
+.books-all-item {
+  margin-bottom: 8 px;
+}
+// .books-all-overlay {
+//   position: relative;
+//   overflow: hidden;
+// }
+// .overlay {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 70px;
+//   overflow-y: auto;
+//   font-family: 'DM Sans';
+//   font-style: normal;
+//   font-weight: 500;
+//   font-size: 14px;
+//   line-height: 1.29;
+//   letter-spacing: -0.04em;
+//   text-transform: uppercase;
+//   color: var(--color-black);
+//   background-color: var(--color-orange);
+//   padding-left: 52px;
+//   padding-right: 26px;
+//   padding-top: 52px;
+//   padding-bottom: 26px;
+// }
+@media (min-width: 768px) { 
+  .books-content {
+    max-width: 704px;
+  }
+
+  .books-all-image {
+    width: 218px;
+    height: 316px;
+  }
+  .books-all {
+    display: flex;
+  }
+  .books-all-item {
+   margin-right: 25px;
+   margin-bottom: 20px;
+  }
+  .info-item {
+    max-width: 218px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .books-content {
+    max-width: 996px;
+  }
+  .books-all-image {
+    width: 180px;
+    height: 256px;
+  }n
+  .books-all {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .books-all-item {
+    margin-right: 24px;
+    margin-bottom: 32px;
+   }
+  .info-item {
+    max-width: 180px;
+  }
+  .see-more {
+    margin-top: 32 px;
+  }
+}
+
+/* dark theme  */
+.dark-theme .books-all-title {
+  color: var(--color-white);
+}
+.dark-theme .info-item {
+  color: var(--color-white);
+}
+.dark-theme .see-more {
+  color: var(--color-black);
 }

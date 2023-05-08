@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/src/sass/_authorization.scss">
+</head>
+<body>
+   <div class="popup" id="popup">
+    <div class="popup-container" id="popup-container">
+      <div class="popup-body" id="popup-body">
+
+          <form class="contact-form" onsubmit="signup();return false">
+            <label class="lebel">
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="NAME"
+                class="input"
+                minlength="2"
+                title="Please, write your name and surname"
+                aria-label="name"
+                required
+              />
+            </label>
+            <label class="lebel">
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="EMAIL"
+                class="input"
+                pattern="[^@\s]+@[^@\s]+\.[^@\s]+"
+                title="Please, write your email"
+                aria-label="email"
+                required
+              />
+              <img class="svg-icon" src="/src/images/mail.authorization.svg" alt="Иконка почты">
+            </label>
+            <label class="lebel">
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="PASSWORD"
+                class="input"
+                minlength="4"
+                title="The password length must be not less thn 4"
+                required
+              />
+              <img class="svg-icon" src="/src/images/key.authorization.svg" alt="Иконка пароля">
+            </label>
+            <button type="submit" class="button-signup">SIGN UP</button><br />
+            <div class="link-wrapper">
+             <a href="#" class="link-signup current">SIGN UP</a>
+             <a href="/src/partials/login-authorization.html" class="link-signup">SIGN IN</a>
+            </div>
+          </form>
+          <div class="popup-close" id="popup-close" width="28" height="28">&#10006
+          </div>
+      </div>
+    </div>
+  </div>
+<script src="/src/js/modal-authorization.js"></script>
+<script src="/src/js/authorization.js"></script>
+
+</body>
+</html>
+<section class="authorization">
+</section>

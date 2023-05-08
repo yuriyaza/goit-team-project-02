@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/src/sass/_login-authorization.scss" />
+  </head>
+  <body class="body">
+    <div class="popup-login">
+    <div class="popup-container" id="popup-container">
+      <div class="popup-body login" id="popup-body">
+        <form class="contact-form" onsubmit="chechData();return false">
+          <label class="lebel">
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="EMAIL"
+              class="input"
+              placeholder="_"
+              pattern="[^@\s]+@[^@\s]+\.[^@\s]+"
+              title="Please, write your email"
+              aria-label="email"
+              required
+            />
+            <img
+              class="svg-icon"
+              src="/src/images/mail.authorization.svg"
+              alt="Иконка почты"
+            />
+          </label>
+          <label class="lebel">
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="PASSWORD"
+              class="input"
+              minlength="4"
+              title="The password length must be not less thn 4"
+              required
+            />
+            <img
+              class="svg-icon"
+              src="/src/images/key.authorization.svg"
+              alt="Иконка пароля"
+            />
+          </label>
+          <button type="submit" class="button-signup">SIGN IN</button><br />
+          <a class="link-signup" href="/src/partials/authorization.html">SIGN UP</a>
+        </form>
+        <div class="popup-close" id="popup-close" width="28" height="28">&#10006
+          </div>
+      </div>
+    </div>
+    </div>
+    <script src="/src/js/authorization.js"></script>
+  </body>
+</html>
