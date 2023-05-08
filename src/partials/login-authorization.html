@@ -11,7 +11,7 @@
     <div class="popup-login">
     <div class="popup-container" id="popup-container">
       <div class="popup-body login" id="popup-body">
-        <form class="contact-form">
+        <form class="contact-form" onsubmit="chechData();return false">
           <label class="lebel">
             <input
               type="email"
@@ -56,5 +56,6 @@
       </div>
     </div>
     </div>
+    <script src="/src/js/authorization.js"></script>
   </body>
 </html>

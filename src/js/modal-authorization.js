@@ -10,6 +10,7 @@ if (window.location.pathname.includes('partials/authorization.html')) {
 // });
 
 closePopUp.addEventListener('click', () => {
-  window.location.href = '/';
+  window.location.href = '/index.html';
+  // window.location.href = 'https://yuriyaza.github.io/goit-team-project-02/';
   popUp.classList.remove('active');
 });
