@@ -26,10 +26,15 @@
  .popup-body {
      margin: auto;
      width: 580px;
-
      text-align: center;
      padding: 80px 15px 50px 15px;
      position: relative;
+
+     @media screen and (max-width: 767px) {
+         width: 335px;
+         padding: 50px 20px 40px 20px;
+
+     }
  }
 
  .popup-close {
@@ -38,6 +43,13 @@
      right: 24px;
      font-size: 28px;
      cursor: pointer;
+
+     @media screen and (max-width: 767px) {
+         font-size: 20px;
+         top: 10px;
+         right: 10px;
+     }
+
  }
 
  .popup-body {
@@ -52,17 +64,30 @@
      padding: 25px;
      border: 2px solid #111111;
      border-radius: 40px;
+
+     @media screen and (max-width: 767px) {
+         width: 295px;
+         padding: 16px;
+     }
  }
 
  .button-signup {
      width: 500px;
-     padding: 25px;
+     padding: 20px;
      margin: 30px auto;
      // margin-top: 50px;
      border-radius: 40px;
      background-color: #111111;
      color: #F3F3F3;
      font-size: 22px;
+     cursor: pointer;
+
+     @media screen and (max-width: 767px) {
+         width: 320px;
+         padding: 16px;
+         font-size: 18px;
+         margin: 15px auto;
+     }
  }
 
  .svg-icon {
@@ -73,6 +98,11 @@
      fill: #111111;
      width: 28px;
      height: 28px;
+
+     @media screen and (max-width: 767px) {
+         width: 20px;
+         height: 20px;
+     }
  }
 
  .lebel {
@@ -93,12 +123,24 @@
      margin-right: 30px;
      font-size: 22px;
      font-weight: 700;
+
+     @media screen and (max-width: 767px) {
+         font-size: 18px;
+     }
  }
 
  ::placeholder {
      font-size: 20px;
      color: #111111;
      font-weight: 500;
+
+     @media screen and (max-width: 767px) {
+         font-size: 16px;
+     }
+ }
+
+ .link-signup.current {
+     color: #4F2EE8;
  }
 
 
