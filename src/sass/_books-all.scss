@@ -1,5 +1,6 @@
 .books-content {
   margin-bottom: 40px;
+  max-width: 335px;
 }
 
 .books-all-title {
@@ -107,6 +108,10 @@
 //   padding-bottom: 26px;
 // }
 @media (min-width: 768px) { 
+  .books-content {
+    max-width: 704px;
+  }
+
   .books-all-image {
     width: 218px;
     height: 316px;
@@ -125,10 +130,13 @@
 }
 
 @media (min-width: 1440px) {
+  .books-content {
+    max-width: 996px;
+  }
   .books-all-image {
     width: 180px;
     height: 256px;
-  }
+  }n
   .books-all {
     display: flex;
     justify-content: space-between;
