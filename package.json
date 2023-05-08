@@ -18,6 +18,7 @@
     "url": "https://github.com/yuriyaza/goit-team-project-02/issues"
   },
   "dependencies": {
+    "api": "^5.0.8",
     "axios": "^1.4.0",
     "bootstrap": "^5.2.3",
     "buffer": "^6.0.3",

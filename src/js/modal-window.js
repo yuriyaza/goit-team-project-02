@@ -10,7 +10,6 @@ const refs = {
     modalCartImg:document.querySelector('.books-card-title-img'),
     closeModalBtn: document.querySelector('.modal-btn'),
     backdrop: document.querySelector('.hi-backdrop'),
-    addFromShoppingList: document.querySelector("#shoppingList"),
     informModalText: document.querySelector('.modal-text'),
     modalIconCardBoock: document.querySelector(".modal-content"),
     buttonOpenModal: document.querySelector('.openmodal-btn'),
@@ -19,17 +18,15 @@ const refs = {
 refs.openModalBtn.addEventListener('click', onOpenModal);
 refs.closeModalBtn.addEventListener('click', onCloseModal);
 refs.backdrop.addEventListener('click', onBackdropClick);
-// refs.addFromShoppingList.addEventListener('click', buttonAddListSohind);
-// refs.modalCartImg.addEventListener('click', onSearchBoock);
+refs.buttonOpenModal.addEventListener('click', buttonAddListSohind);
+
  
 
 function onOpenModal() {
     window.addEventListener('keydown', onEscKeyPress);
     document.body.classList.add('show-modal');
     refs.informModalText.style.display = 'none';
-    // refs.addFromShoppingList.textContent = 'Add to shopping list';
-    // refs.addFromShoppingList.classList.add('openmodal-btn')
-    // rendermodCardBoock();
+    
     scrollLock.disablePageScroll(document.body);
 }
 function onCloseModal() {
@@ -62,29 +59,21 @@ function buttonAddListSohind() {
 }
 function closeModalBtn() {
     refs.informModalText.style.display = 'none';
-        refs.addFromShoppingList.textContent= 'Add to shopping list';
+        refs.buttonOpenModal.textContent= 'Add to shopping list';
         refs.buttonOpenModal.classList.remove('closemodal-btn')
         refs.buttonOpenModal.classList.add('openmodal-btn')
         // localStorage.removeItem('cartBoock');
-        refs.addFromShoppingList.addEventListener('click', buttonAddListSohind);
+       
 }
 
 function openModalBtn() {
-     refs.addFromShoppingList.textContent = 'remove from the shopping list';
+     refs.buttonOpenModal.textContent = 'remove from the shopping list';
         refs.informModalText.style.display = 'block';
         refs.buttonOpenModal.classList.add('closemodal-btn')
         refs.buttonOpenModal.classList.remove('openmodal-btn')
         // localStorage.setItem('cartBoock');
-        refs.addFromShoppingList.addEventListener('click', buttonAddListSohind);
+       
  }    
-// function onSearchBoock(e) {
-//     e.preventDefauit();
-//     const form = e.currentTarget;
-//     const searchQuery = form.element.query.value;
-//     fetchBockcartMod(searchQuery)
-//         .then(renderBoocksCard)
-//         .catch(error => console.log(error));
-// }
 
 function fetchBoockcardModWin(boock_Id){
     return
@@ -107,7 +96,7 @@ function renderBoocksCard(book){
     }
 
 // В функцію яка створює розмітку передаємо ID книги, яку хочем відобразити
-// Саму розмітку не міняв - з нею все супер
+
     
 function modalCartBoock(book) {
     return  `
@@ -142,9 +131,9 @@ function modalCartBoock(book) {
    
  }
     
-// Робимо та експортуємо функцію, яка буде викликатись іншими для відкриття твоєї модалки.
+// Робимо та експортуємо функцію, яка буде викликатись іншими для відкриття  модалки.
 // Той хто викликає цю функцію - буде передавати ID книги, яку хоче відобразити.
-// Ця функція в свою чергу викликає твої renderBoocksCard(book), onOpenModal(),
+// Ця функція в свою чергу викликає  renderBoocksCard(book), onOpenModal(),
 // щоб створити розмітку і відобразити модальне вікно.
 
 export async function openModalBookDetails(bookID) {
@@ -165,9 +154,6 @@ async function booksDetailsGetFromBackend(bookID) {
   return await bookApi.getBookById(bookID);
 }
 
-// Перевіряємо як працює на прикладі однієї з книг.
-// Перед завантаженням на GitHub не забути видалити або закоментувати,
-// а то модалка буде постійно відкрита при старті :))))
 
 // openModalBookDetails('643282b1e85766588626a07e');
 
