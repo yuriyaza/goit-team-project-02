@@ -1,13 +1,18 @@
 import { BookAPI } from "./api";
 import { renderSectionBooksAll } from "./books-all";
 import { renderSectionBooksGenre } from "./books-genre";
-// import { ScrollSpy } from "bootstrap";
-// import PerfectScrollbar from 'perfect-scrollbar';
+import 'overlayscrollbars/styles/overlayscrollbars.css';
+import { OverlayScrollbars } from 'overlayscrollbars';
+
+OverlayScrollbars({ 
+    target: document.querySelector('#myElement') 
+}, {
+    showNativeOverlaidScrollbars: true
+});
 
 const catListEl = document.querySelector('.category-list');
 const api = new BookAPI;
 
-// (getData)();
 
 (async function getData() {
     const categoryList = await api.getCategoryList();
@@ -30,6 +35,7 @@ function catListMarkup() {
 catListEl.addEventListener('click', clickFunc);
 
 function clickFunc(event) {
+    event.preventDefault();
     if (event.target.nodeName !== 'A') {
         return
     }
