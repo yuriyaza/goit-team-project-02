@@ -1,7 +1,7 @@
 const closePopUp = document.querySelector('#popup-close');
 const popUp = document.querySelector('#popup');
 
-if (window.location.pathname === '/partials/authorization.html') {
+if (window.location.pathname.includes('partials/authorization.html')) {
   popUp.classList.add('active');
 }
 // openPopUp.addEventListener('click', function (e) {
