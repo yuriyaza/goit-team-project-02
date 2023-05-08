@@ -31,10 +31,10 @@
   color: var(--color-violet);
   transition: all 100ms cubic-bezier(.17, .67, .83, .67);
 }
-.dark-theme .category-li a{
+.theme-dark .category-li a{
   color: rgba(255, 255, 255, 0.6);
 }
-.dark-theme .category-li .upper-case{
+.theme-dark .category-li .upper-case{
   color: var(--color-orange);
 }
 
