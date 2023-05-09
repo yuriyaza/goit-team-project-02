@@ -4,6 +4,7 @@
 
 import { BookAPI } from './api';
 import { Notify } from 'notiflix';
+import { seeMoreFunc } from './categories-list';
 import { renderSectionBooksGenre } from './books-genre';
 import { openModalBookDetails } from './modal-window';
 
@@ -158,6 +159,7 @@ function onUserClick(event) {
 
   if (event.target.classList.contains('see-more')) {
     const section = event.target.dataset.section;
+    seeMoreFunc(section);
     const url = section.split(' ').join('%20');
     renderSectionBooksGenre(url, section);
   }
