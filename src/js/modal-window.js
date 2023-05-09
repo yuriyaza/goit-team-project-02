@@ -16,18 +16,18 @@ const refs = {
     buttonOpenModal: document.querySelector('.openmodal-btn'),
 }
 
-// refs.openModalBtn.addEventListener('click', onOpenModal);
+
 refs.closeModalBtn.addEventListener('click', onCloseModal);
 refs.backdrop.addEventListener('click', onBackdropClick);
 refs. buttonOpenModal.addEventListener('click', buttonAddListSohind);
-// refs.modalCartImg.addEventListener('click', onSearchBoock);
+
  
 
 function onOpenModal() {
     window.addEventListener('keydown', onEscKeyPress);
     document.body.classList.add('show-modal');
     refs.informModalText.style.display = 'none';
-    
+    refs. buttonOpenModal.textContent= 'Add to shopping list';
     scrollLock.disablePageScroll(document.body);
 }
 function onCloseModal() {
@@ -58,24 +58,23 @@ function buttonAddListSohind() {
        closeModalBtn()
     }
 }
-function closeModalBtn() {
-    refs.informModalText.style.display = 'none';
-        refs. buttonOpenModal.textContent= 'Add to shopping list';
-        refs.buttonOpenModal.classList.remove('closemodal-btn')
-        refs.buttonOpenModal.classList.add('openmodal-btn')
-        // localStorage.removeItem('cartBoock');
-        refs. buttonOpenModal.addEventListener('click', buttonAddListSohind);
-}
 
 function openModalBtn() {
      refs. buttonOpenModal.textContent = 'remove from the shopping list';
         refs.informModalText.style.display = 'block';
         refs.buttonOpenModal.classList.add('closemodal-btn')
         refs.buttonOpenModal.classList.remove('openmodal-btn')
-        // localStorage.setItem('cartBoock');
+        localStorage.setItem('books', boockModalString);
         refs. buttonOpenModal.addEventListener('click', buttonAddListSohind);
  }    
-
+function closeModalBtn() {
+    refs.informModalText.style.display = 'none';
+        refs. buttonOpenModal.textContent= 'Add to shopping list';
+        refs.buttonOpenModal.classList.remove('closemodal-btn')
+        refs.buttonOpenModal.classList.add('openmodal-btn')
+        localStorage.removeItem('books');
+        refs. buttonOpenModal.addEventListener('click', buttonAddListSohind);
+}
 
 function fetchBoockcardModWin(boock_Id){
     return
@@ -149,7 +148,7 @@ export async function openModalBookDetails(bookID) {
     renderBoocksCard(book);
     onOpenModal();
 }
-
+let boockModalString = JSON.stringify(book);
 // Отримуємо дані з сервера по ID книги за допомогою api.js
 
 async function booksDetailsGetFromBackend(bookID) {
