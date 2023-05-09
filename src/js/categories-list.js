@@ -11,7 +11,7 @@ OverlayScrollbars({
     showNativeOverlaidScrollbars: true
 });
 
-const catListEl = document.querySelector('.category-list');
+const ulCategoryListEl = document.querySelector('.category-list');
 const api = new BookAPI;
 
 
@@ -27,17 +27,19 @@ function catListMarkup() {
     const markup = array.reduce((acc, { list_name }) => {
         return acc += `
             <li class="category-li">
-                <a class="category" href="#">${list_name}</a>
+                <a class="category" href="#">
+                    <span class="category-span">${list_name}</span>
+                </a>
             </li>
     `}, '')
-    catListEl.insertAdjacentHTML('beforeend', markup);
+    ulCategoryListEl.insertAdjacentHTML('beforeend', markup);
 };
 
-catListEl.addEventListener('click', clickFunc);
+ulCategoryListEl.addEventListener('click', clickFunc);
 
 function clickFunc(event) {
     event.preventDefault();
-    if (event.target.nodeName !== 'A') {
+    if (event.target.nodeName !== 'SPAN') {
         return
     }
     if (event.target.textContent === 'All categories') {
@@ -68,18 +70,38 @@ export function makeUpperCase(data) {
 };
 
 export function removeUpperCase() {
-    const rem = document.querySelectorAll('.category');
+    const rem = document.querySelectorAll('.category-span');
     rem.forEach(el => el.classList.remove('upper-case'))
 };
 
 export function seeMoreFunc(data) {
     removeUpperCase();
     const newDom = document.querySelectorAll('.category');
-    console.log(newDom);
+    // console.log(newDom);
     newDom.forEach(el => {
         if (el.textContent===data) el.classList.add('upper-case')
     })
 }
 
 
+ulCategoryListEl.addEventListener('mouseover', lineOnFunc);
+ulCategoryListEl.addEventListener('mouseout', lineOffFunc);
 
+function lineOnFunc(event) {
+    // console.log(event.target.nodeName);
+    if (event.target.nodeName !== 'SPAN') {
+        return;
+    }
+    // if (event.target.)
+    console.log('target', event.target);
+    console.log('currenttarget',event.currentTarget);
+    const line = event.target;
+    line.classList.add('line-active');
+    // line.style.background = 'pink';
+};
+
+function lineOffFunc(event) {
+    const line = event.target;
+    line.classList.remove('line-active');
+    // line.style.background = '';
+};
