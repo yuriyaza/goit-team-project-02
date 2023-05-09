@@ -18,7 +18,7 @@ export async function renderSectionBooksAll() {
   document.querySelector('.books-content').innerHTML = '';
   spinner.classList.remove('visually-hidden');
   
-  const backEndData = await booksAllGetFromBackend();
+  const backEndData = await bookApi.getTopBooks();
   if (backEndData.length === 0) Notify.failure('Books not found');
   const markup = booksAllCreateMarkup(backEndData);
   document.querySelector('.books-content').innerHTML = markup;
@@ -26,10 +26,6 @@ export async function renderSectionBooksAll() {
   
   spinner.classList.add('visually-hidden');
   addUserClickListener();
-}
-
-async function booksAllGetFromBackend() {
-  return await bookApi.getTopBooks();
 }
 
 function booksAllCreateMarkup(backEndCategories) {
