@@ -15,7 +15,7 @@ const refs = {
     buttonOpenModal: document.querySelector('.openmodal-btn'),
 }
 
-refs.openModalBtn.addEventListener('click', onOpenModal);
+// refs.openModalBtn.addEventListener('click', onOpenModal);
 refs.closeModalBtn.addEventListener('click', onCloseModal);
 refs.backdrop.addEventListener('click', onBackdropClick);
 refs.buttonOpenModal.addEventListener('click', buttonAddListSohind);
