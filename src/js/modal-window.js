@@ -64,7 +64,7 @@ function openModalBtn() {
         refs.informModalText.style.display = 'block';
         refs.buttonOpenModal.classList.add('closemodal-btn')
         refs.buttonOpenModal.classList.remove('openmodal-btn')
-        localStorage.setItem('books', boockModalString);
+        // localStorage.setItem('books', boockModalString);
         refs. buttonOpenModal.addEventListener('click', buttonAddListSohind);
  }    
 function closeModalBtn() {
@@ -72,7 +72,7 @@ function closeModalBtn() {
         refs. buttonOpenModal.textContent= 'Add to shopping list';
         refs.buttonOpenModal.classList.remove('closemodal-btn')
         refs.buttonOpenModal.classList.add('openmodal-btn')
-        localStorage.removeItem('books');
+        // localStorage.removeItem('books');
         refs. buttonOpenModal.addEventListener('click', buttonAddListSohind);
 }
 
@@ -148,7 +148,7 @@ export async function openModalBookDetails(bookID) {
     renderBoocksCard(book);
     onOpenModal();
 }
-let boockModalString = JSON.stringify(book);
+// let boockModalString = JSON.stringify(book);
 // Отримуємо дані з сервера по ID книги за допомогою api.js
 
 async function booksDetailsGetFromBackend(bookID) {
