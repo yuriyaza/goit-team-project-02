@@ -10,45 +10,23 @@ body.theme-dark > header.page-header > div.header-content {
   border: 1.5px solid #ffffff;
 }
 
-// .theme-dark.header-logo-name {
-//   background: url(../images/sprite-header.svg#icon-Bookshelf-1);
-
-//   background-image: url(../images/sprite-header.svg#icon-Bookshelf-1);
-// }
-
-// body.theme-dark > header.page-header > div.header-nav > a.header-shopping {
-//   fill: #f3f3f3;
-//   color: rgba(255, 255, 255, 0.6);
-//   background-color: #4f2ee8;
-// }
-
-// .header-menu .header-menu-closed .active {
-
-//   display: none;
-// }
-
-
-div.form-check > button.header-menu-open:active {
-
-  fill: #4f2ee8;
-  background-image: none;
- 
+body.theme-dark
+  > header.page-header
+  > div.header-content
+  .div
+  > div.logo
+  > a.logo-bookshelf
+  > div.header-logo-name {
+  fill: #f3f3f3;
 }
-// .header-menu-open :active {
-// 	display: none;
-// }
+
+body.theme-dark > header.page-header > div.header-nav > a.header-shopping {
+  fill: #f3f3f3;
+  color: rgba(255, 255, 255, 0.6);
+}
 
 /******* header-mobile-menu*******/
-// .header-menu_container {
-//   width: 100vw;
-//   height: 100%;
-//   flex-direction: column;
-//   margin: 0 auto;
 
-//   display: flex;
-//   position: relative;
-// }
-.header-menu-open-nav
 .header-menu-open {
   background-color: transparent;
   border: none;
@@ -56,7 +34,7 @@ div.form-check > button.header-menu-open:active {
   padding: 0;
   line-height: 0;
 }
-.header-menu-nav,
+
 .header-menu {
   z-index: -10;
   display: flex;
@@ -64,9 +42,6 @@ div.form-check > button.header-menu-open:active {
   // position: fixed;
   top: 0;
   right: 0;
- 
-    left: 0;
-    margin: auto;
   width: 374px;
   height: 812px;
   overflow-y: auto;
@@ -99,22 +74,22 @@ div.form-check > button.header-menu-open:active {
 //   //  display: none;
 //  }
 
-// .form-check > button.header-menu-open:relative {
-//   background-image: url('/src/images/sprite-header.svg#icon-align-left');
-//   display: none;
-// }
-// .form-check > button.header-menu-closed:active {
-//   display: none;
-// }
-// .form-check > button.header-menu-open:relative {
-//   background-image: url('/src/images/sprite-header.svg#icon-align-left');
-//   display: none;
-// }
+.form-check > button.header-menu-open:relative {
+  background-image: url('/src/images/sprite-header.svg#icon-align-left');
+  display: none;
+}
+.form-check > button.header-menu-closed:active {
+  display: none;
+}
+.form-check > button.header-menu-open:relative {
+  background-image: url('/src/images/sprite-header.svg#icon-align-left');
+  display: none;
+}
 
-// .icon-sign {
-//   fill: #5046e5;
-// }
-.header-menu-nav.is-open,
+.icon-sign {
+  fill: #5046e5;
+}
+
 .header-menu.is-open {
   opacity: 1;
   visibility: visible;
@@ -148,7 +123,7 @@ div.form-check > button.header-menu-open:active {
   opacity: 0.9;
 }
 .header-content {
-  // position: relative;
+  position: relative;
   max-width: 100%;
   display: flex;
   align-items: center;
@@ -175,13 +150,13 @@ div.form-check > button.header-menu-open:active {
   display: flex;
   align-items: center;
 }
-.header-menu-open {
-  background-color: #0000;
-  border: none;
-  margin: 0;
-  padding: 0;
-  line-height: 0;
-}
+// .header-menu-open {
+//   background-color: #0000;
+//   border: none;
+//   margin: 0;
+//   padding: 0;
+//   line-height: 0;
+// }
 .ui-switcher {
   background: linear-gradient(180deg, #4f2ee8 0%, #dcdcdc 100%);
   display: inline-block;
@@ -232,7 +207,7 @@ div.form-check > button.header-menu-open:active {
 
 /******* header tablet min-width:768 *******/
 
-.header-home-on {
+.header-home-btn {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -242,7 +217,7 @@ div.form-check > button.header-menu-open:active {
   width: 72px;
   height: 34px;
   margin-right: 16px;
-  background: var(--color-orange);
+  background: #eac645;
   border-radius: 36px;
   font-family: 'DM Sans';
   font-style: normal;
@@ -252,58 +227,10 @@ div.form-check > button.header-menu-open:active {
 
   letter-spacing: -0.04em;
   text-transform: uppercase;
-  color: var(--color-black);
+  color: #111111;
 }
-// .header-home-off {
-//   display: flex;
-//   flex-direction: row;
-//   align-items: flex-start;
-//   padding: 8px 0;
-//   gap: 10px;
-//   border: none;
-//   width: 40px;
-//   height: 34px;
-//   margin-right: 24px;
-//   background: none;
-//   border-radius: 36px;
-//   font-family: 'DM Sans';
-//   font-style: Medium;
- 
-//   font-size: 14px;
-//   line-height: 1.29;
- 
 
-//   letter-spacing: -0.04em;
-//   text-transform: uppercase;
-//   color: var(--color-black);
-// }
-
-
-
-// .header-shopping-on {
-//   font-family: 'DM Sans';
-//   font-style: normal;
-//   font-weight: 500;
-//   font-size: 14px;
-//   line-height: 1.29;
-//   letter-spacing: -0.04em;
-//   text-transform: uppercase;
-
-//   padding: 7px 16px;
-//   gap: 8px;
-//   border: none;
-//   width: 156px;
-//   height: 34px;
-//   background: var(--color-orange);
-//   border-radius: 36px;
-
-//   display: flex;
-//   align-items: center;
-//   color: #111111;
-// }
-
-
-.header-shopping-off {
+.header-shopping {
   font-family: 'DM Sans';
   font-style: normal;
   font-weight: 500;
@@ -311,23 +238,10 @@ div.form-check > button.header-menu-open:active {
   line-height: 1.29;
   letter-spacing: -0.04em;
   text-transform: uppercase;
-
-
-  gap: 8px;
-  border: none;
-  width: 156px;
-  height: 34px;
-  background: none;
-  border-radius: 36px;
-  padding: 0;
-
   display: flex;
   align-items: center;
   color: #111111;
 }
-// .header-sign-open-menu,
-
-
 .header-sign-open-menu,
 .header-sign-open {
   width: 184px;
@@ -352,7 +266,7 @@ div.form-check > button.header-menu-open:active {
   line-height: 1.29;
   letter-spacing: -0.04em;
   padding-top: 14px;
-  padding-right: 0;
+  padding-right: 70px;
   padding-bottom: 14px;
   padding-left: 14px;
   color: var(--color-white);
@@ -374,40 +288,7 @@ div.form-check > button.header-menu-open:active {
   position: absolute;
   display: block;
   top: 443px;
-  left: 0;
 }
-
- // <!-- mobil menu HOME & SHOPPING-->  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 @media screen and (min-width: 768px) and (max-width: 1440px) {
   .header-nav {
     display: flex;
@@ -426,7 +307,7 @@ div.form-check > button.header-menu-open:active {
   }
 
   .header-nav {
-    margin-right:auto;
+    margin-right: 98px;
   }
 
   .form-check {
@@ -475,4 +356,3 @@ div.form-check > button.header-menu-open:active {
     margin-right: 24px;
   }
 }
-
