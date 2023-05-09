@@ -1,9 +1,9 @@
-export default fonds = [
+const fonds = [
   {
     title: 'Save the Children',
     url: 'https://www.savethechildren.net/what-we-do/emergencies/ukraine-crisis',
-    img: '../images/save.png',
-    img2x: '../images/save@2x.png',
+    img: './images/save.png',
+    img2x: './images/save@2x.png',
   },
   {
     title: 'Project HOPE',
@@ -54,3 +54,5 @@ export default fonds = [
     img2x: './images/serhiy@2x.png',
   },
 ];
+
+export { fonds };

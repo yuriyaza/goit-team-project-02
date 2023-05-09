@@ -21,6 +21,7 @@ export async function renderSectionBooksAll() {
   const markup = booksAllCreateMarkup(backEndData);
   document.querySelector('.books-content').innerHTML = markup;
   hideInvisibleBooks();
+  addListener();
   
   spinner.classList.add('visually-hidden');
 }
@@ -32,9 +33,13 @@ async function booksAllGetFromBackend() {
 function booksAllCreateMarkup(backEndCategories) {
   let markup = '';
   markup += `
-  <h1 class="books-all-title">Best Sellers <span class="colortext">Books</span></h1>
+    <h1 class="books-all-title">Best Sellers <span class="colortext">Books</span></h1>
+    <ul class="books-all-category-list">
   `;
   markup += backEndCategories.map(booksAllCreateOneCategory).join('');
+  markup += `
+    </ul>
+  `;
   return markup;
 }
 
@@ -98,13 +103,13 @@ function booksAllCreateOneCategory(bookCategory) {
               <p class="info-item">${bookCategory.books[4].title}</p>
               <p class="info-detail-item">${bookCategory.books[4].author}</p>
             </div>
-          </li>
-        </ul>
-        <div class="loading">
-          <button class="see-more" type="button">SEE MORE</button>
-        </div>
-      </li>
-    </ul>
+          </a>
+        </li>
+      </ul>
+      <div class="loading">
+        <button class="see-more" type="button" data-section="${bookCategory.list_name}">SEE MORE</button>
+      </div>
+    </li>
   `;
 }
 
@@ -137,3 +142,17 @@ function hideInvisibleBooks() {
 //   }
 //   currentItem += 1;
 // }
+
+function addListener() {
+  const categoryEl = document.querySelector('.books-all-category-list');
+  categoryEl.addEventListener('click', onCategoryClick);
+}
+
+function onCategoryClick(event) { 
+  if (event.target.classList.contains('see-more')) {
+    const section = event.target.dataset.section;
+    renderSectionBooksGenre(section, section);
+  }
+}
+
+

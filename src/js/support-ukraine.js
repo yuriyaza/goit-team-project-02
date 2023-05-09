@@ -1,4 +1,4 @@
-import fonds from './array-of-funds';
+import { fonds } from './array-of-funds';
 
 const supportList = document.querySelector('.support-ukraine-list');
 
@@ -20,6 +20,7 @@ function createMarkupForSupportUk(fonds) {
 
 function markup(params) {
   const { title, url, img, img2x, index } = params;
+
   return `<li class="list-unit">
 	<a href="${url}" class="list-unit-link"><span class="span-list-unit">${pad(
     index + 1
@@ -30,9 +31,19 @@ function markup(params) {
 		alt="${title}"
 	></img></a>
 </li>`;
-  return;
 }
 
 function pad(value) {
   return String(value).padStart(2, '0');
+}
+let offset = 0;
+const sliderLine = document.querySelector('.slider-liner-su');
+const sliderBtn = document.querySelector('.support-ukraine-btn');
+sliderBtn.addEventListener('click', sliderBtnHandler);
+function sliderBtnHandler(params) {
+  offset += 68;
+  if (offset > 476) {
+    offset = 0;
+  }
+  sliderLine.style.top = -offset + 'px';
 }

@@ -1,63 +1,101 @@
 <header class="page-header">
-  <div class="container header-content">   
-<!--logo-->
-<div class="logo">
-<a href="/src/index.html" class="logo-bookshelf">
-  <svg class="header-logo" width="24" height="24" aria-label="logo bookshelf">
-    <use href="/src/images/sprite-header.svg#icon-logo"></use>
-  </svg>
-  <svg class="header-logo-name" width="77" height="14" aria-label="logo name">
-    <use href="/src/images/sprite-header.svg#icon-Bookshelf"></use>
-  </svg>
-</a>
-</div>
+  <div class="container header-content">
+    <!--logo-->
+    <div class="logo">
+      <a href="./index.html" class="logo-bookshelf">
+        <svg
+          class="header-logo"
+          width="24"
+          height="24"
+          aria-label="logo bookshelf"
+        >
+          <use href="/src/images/sprite-header.svg#icon-logo"></use>
+        </svg>
+        <svg
+          class="header-logo-name"
+          width="77"
+          height="14"
+          aria-label="logo name"
+        >
+          <use href="/src/images/sprite-header.svg#icon-Bookshelf"></use>
+        </svg>
+      </a>
+    </div>
 
-<!--nav menu -->
+    <!--nav menu -->
 
-<div class="header-nav">
-  <button type="button" class="header-home-btn">Home
-  </button>
- <a href=" " class="header-shopping">Shopping liste
-  <svg class="header-shopping-logo" width="20" height="20" margin-left="4" aria-label="shopping logo">
-    <use href="/src/images/sprite-header.svg#icon-uil_cart"></use>
-  </svg>
-  </a>
-</div>
+    <div class="header-nav">
+      <button type="button" class="header-home-btn">Home</button>
+      <a href="./shopping.html" class="header-shopping"
+        >Shopping list&nbsp;
+        <svg
+          class="header-shopping-logo"
+          width="20"
+          height="20"
+          margin-left="4"
+          aria-label="shopping logo"
+        >
+          <use href="/src/images/sprite-header.svg#icon-uil_cart"></use>
+        </svg>
+      </a>
+    </div>
 
-<!--swither and borger-menu -->
+    <!--swither and borger-menu -->
 
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-  <button type="button" class="header-menu-open js-open-menu ">
-    <svg class="icon-menu-burger" width="28" height="28" aria-label="Switch-on mobile menu">
-      <use href="/src/images/sprite-header.svg#icon-align-left"></use>
-  </svg>
-  </button>
-</div>
-<!-- button sign up -->
+    <div class="form-check">
+      <input
+        class="form-check-input"
+        type="checkbox"
+        id="inlineCheckbox1"
+        value="option1"
+      />
+      <button type="button" class="header-menu-open js-open-menu">
+        <svg
+          class="icon-menu-burger"
+          width="28"
+          height="28"
+          aria-label="Switch-on mobile menu"
+        >
+          <use href="/src/images/sprite-header.svg#icon-align-left"></use>
+        </svg>
+      </button>
+    </div>
 
-<div class="header-sign-btn">
-  <button type="button" class="header-sign-open">
-    <a href="/src/partials/authorization.html">Sign up</a>
-    <svg class="icon-sign" width="20" height="20" aria-label="sign up">
-      <use href="/src/images/sprite-header.svg#icon-arrow-narrow-right"></use>
-  </svg>
-  </button>
-</div>
+    <!-- button sign up -->
 
-<!-- button menu-close -->
+    <div class="header-sign-btn">
+      <button type="button" class="header-sign-open">
+        <a href="/src/partials/authorization.html" class="header-sign"
+          >Sign up</a
+        >
+        <svg class="icon-sign" width="20" height="20" aria-label="sign up">
+          <use
+            href="/src/images/sprite-header.svg#icon-arrow-narrow-right"
+          ></use>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <!-- button menu-close -->
 
-<div class="header-menu  js-menu-container">
-  <div class="header-menu_container">
-    <button type="button" class="header-menu-closed js-close-menu"  >
-      <svg class="icon-menu-burger" width="28" height="28" aria-label="Switch-on mobile menu">
+  <div class="header-menu js-menu-container">
+    <div class="header-menu_container">
+      <button type="button" class="header-menu-closed js-close-menu">
+        <svg
+          class="icon-menu-burger"
+          width="28"
+          height="28"
+          aria-label="Switch-on mobile menu"
+        >
+
           <use href="/src/images/sprite-header.svg#icon-x-close"></use>
-      </svg>
-    </button>
-<!---nav menu -->
-<!--logo menu-->
+        </svg>
+      </button>
 
-<!-- <a href="/src/index.html" class="logo-bookshelf">
+      <!---nav menu -->
+      <!--logo menu-->
+
+      <!-- <a href="/src/index.html" class="logo-bookshelf">
   <svg class="header-logo" width="24" height="24" aria-label="logo bookshelf">
     <use href="/src/images/sprite-header.svg#icon-logo"></use>
   </svg>
@@ -66,42 +104,55 @@
   </svg>
 </a> -->
 
-<!-- <div class="form-check">
+      <!-- <div class="form-check">
   <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
 </div> -->
 
-
-
-
-
-
-<!-- <div>
+      <!-- <div>
   <label id="switch" class="switch">
     <input type="checkbox" onchange="toggleTheme()" id="slider">
     <span class="slider round"></span>
 </label>
 </div> -->
 
+      <!--swither and borger-menu -->
+      <div class="header-sign-menu">
+        <button type="button" class="header-sign-open-menu">
+          <a href="/src/partials/authorization.html" class="header-sign"
+            >Sign up</a
+          >
+          <svg class="icon-sign" width="20" height="20" aria-label="sign up">
+            <use
+              href="/src/images/sprite-header.svg#icon-arrow-narrow-right"
+            ></use>
+          </svg>
+        </button>
 
-<!--swither and borger-menu -->
-<!-- <div class="header-sign-btn">
-  <button type="button" class="header-sign-open">Sign up
-    <svg class="icon-sign" width="20" height="20" aria-label="sign up">
-      <use href="/src/images/sprite-header.svg#icon-arrow-narrow-right"></use>
-  </svg>
-  </button>
-</div> -->
-</div>
-
-</div>
-<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" crossorigin="anonymous"></script>
-<script src="/src/js/header.js"></script>
-<script>$.switcher();</script>
-<script
-defer
-src="https://cdnjs.cloudflare.com/ajax/libs/body-scroll-lock/3.1.5/bodyScrollLock.min.js"
-integrity="sha512-HowizSDbQl7UPEAsPnvJHlQsnBmU2YMrv7KkTBulTLEGz9chfBoWYyZJL+MUO6p/yBuuMO/8jI7O29YRZ2uBlA=="
-crossorigin="anonymous"
-></script>
-<script src="/src/js/mobile-menu.js"></script>
+        <picture class="img-mobile-menu">
+          <img
+            src="/src/images/mobile-menu-books.png"
+            alt="mobile menu books"
+            width="375"
+            height="443"
+          />
+        </picture>
+      </div>
+    </div>
+  </div>
+  <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT"
+    crossorigin="anonymous"
+  ></script>
+  <script src="/src/js/header.js"></script>
+  <script>
+    $.switcher();
+  </script>
+  <script
+    defer
+    src="https://cdnjs.cloudflare.com/ajax/libs/body-scroll-lock/3.1.5/bodyScrollLock.min.js"
+    integrity="sha512-HowizSDbQl7UPEAsPnvJHlQsnBmU2YMrv7KkTBulTLEGz9chfBoWYyZJL+MUO6p/yBuuMO/8jI7O29YRZ2uBlA=="
+    crossorigin="anonymous"
+  ></script>
+  <script src="/src/js/mobile-menu.js"></script>
 </header>
