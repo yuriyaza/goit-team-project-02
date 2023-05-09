@@ -44,7 +44,10 @@ function booksAllCreateOneCategory(bookCategory) {
         <ul class="books-all">
           <li class="books-all-item" data-book-sequence="0">
             <a class="books-all-link" href="#" data-modal-open data-id=" ">
-            <img class="books-all-image" src="${bookCategory.books[0].book_image}" alt="${bookCategory.books[0].title}" loading="lazy">
+            <div class="books-all-wrapp">
+              <img class="books-all-image" src="${bookCategory.books[0].book_image}" alt="${bookCategory.books[0].title}" loading="lazy">
+              <p class="overlay">QUICK VIEW</p>
+            </div>
             <div class="books-info">
               <p class="info-item">${bookCategory.books[0].title}</p>
               <p class="info-detail-item">${bookCategory.books[0].author}</p>
@@ -53,7 +56,10 @@ function booksAllCreateOneCategory(bookCategory) {
           </li>
           <li class="books-all-item" data-book-sequence="1">
             <a class="books-all-link" href="#" data-modal-open data-id=" ">
-            <img class="books-all-image" src="${bookCategory.books[1].book_image}" alt="${bookCategory.books[1].title}" loading="lazy">
+            <div class="books-all-wrapp">
+              <img class="books-all-image" src="${bookCategory.books[1].book_image}" alt="${bookCategory.books[1].title}" loading="lazy">
+              <p class="overlay">QUICK VIEW</p>
+            </div>
             <div class="books-info">
               <p class="info-item">${bookCategory.books[1].title}</p>
               <p class="info-detail-item">${bookCategory.books[1].author}</p>
@@ -61,7 +67,10 @@ function booksAllCreateOneCategory(bookCategory) {
           </li>
           <li class="books-all-item" data-book-sequence="2">
             <a class="books-all-link" href="#" data-modal-open data-id=" ">
-            <img class="books-all-image" src="${bookCategory.books[2].book_image}" alt="${bookCategory.books[2].title}" loading="lazy">
+            <div class="books-all-wrapp"> 
+              <img class="books-all-image" src="${bookCategory.books[2].book_image}" alt="${bookCategory.books[2].title}" loading="lazy">
+              <p class="overlay">QUICK VIEW</p>
+            </div>
             <div class="books-info">
               <p class="info-item">${bookCategory.books[2].title}</p>
               <p class="info-detail-item">${bookCategory.books[2].author}</p>
@@ -69,7 +78,10 @@ function booksAllCreateOneCategory(bookCategory) {
           </li>
           <li class="books-all-item" data-book-sequence="3">
             <a class="books-all-link" href="#" data-modal-open data-id=" ">
-            <img class="books-all-image" src="${bookCategory.books[3].book_image}" alt="${bookCategory.books[3].title}" loading="lazy">
+            <div class="books-all-wrapp"> 
+              <img class="books-all-image" src="${bookCategory.books[3].book_image}" alt="${bookCategory.books[3].title}" loading="lazy">
+              <p class="overlay">QUICK VIEW</p>
+            </div>
             <div class="books-info">
               <p class="info-item">${bookCategory.books[3].title}</p>
               <p class="info-detail-item">${bookCategory.books[3].author}</p>
@@ -78,7 +90,10 @@ function booksAllCreateOneCategory(bookCategory) {
           </li>
           <li class="books-all-item" data-book-sequence="4">
             <a class="books-all-link" href="#" data-modal-open data-id=" ">
-            <img class="books-all-image" src="${bookCategory.books[4].book_image}" alt="${bookCategory.books[4].title}" loading="lazy"> 
+            <div class="books-all-wrapp"> 
+              <img class="books-all-image" src="${bookCategory.books[4].book_image}" alt="${bookCategory.books[4].title}" loading="lazy"> 
+              <p class="overlay">QUICK VIEW</p>
+            </div>
             <div class="books-info">
               <p class="info-item">${bookCategory.books[4].title}</p>
               <p class="info-detail-item">${bookCategory.books[4].author}</p>

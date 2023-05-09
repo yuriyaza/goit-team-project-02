@@ -70,7 +70,6 @@
   letter-spacing: -0.01em;
   text-transform: uppercase;
   color: var(--color-black);
-  
 }
 .loading {
   text-align: right;
@@ -82,36 +81,35 @@
 .books-all-item {
   margin-bottom: 8 px;
 }
-// .books-all-overlay {
-//   position: relative;
-//   overflow: hidden;
-// }
-// .overlay {
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   width: 100%;
-//   height: 70px;
-//   overflow-y: auto;
-//   font-family: 'DM Sans';
-//   font-style: normal;
-//   font-weight: 500;
-//   font-size: 14px;
-//   line-height: 1.29;
-//   letter-spacing: -0.04em;
-//   text-transform: uppercase;
-//   color: var(--color-black);
-//   background-color: var(--color-orange);
-//   padding-left: 52px;
-//   padding-right: 26px;
-//   padding-top: 52px;
-//   padding-bottom: 26px;
-// }
+.books-all-wrapp {
+  position: relative;
+  overflow: hidden;
+}
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  overflow-y: auto;
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.29;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  color: var(--color-black);
+  background-color: var(--color-orange);
+  padding-left: 52px;
+  padding-right: 26px;
+  padding-top: 52px;
+  padding-bottom: 26px;
+}
 @media (min-width: 768px) { 
   .books-content {
     max-width: 704px;
   }
-
   .books-all-image {
     width: 218px;
     height: 316px;
@@ -135,7 +133,7 @@
   .books-all-image {
     width: 180px;
     height: 256px;
-  }n
+  }
   .books-all {
     display: flex;
     justify-content: space-between;
@@ -148,18 +146,25 @@
   .info-item {
     max-width: 180px;
   }
-  .see-more {
-    margin-top: 32 px;
-  }
 }
 
 /* dark theme  */
-.dark-theme .books-all-title {
+.theme-dark .books-all-title {
   color: var(--color-white);
 }
-.dark-theme .info-item {
+.theme-dark .books-all-menu {
+  color: var(--color-light-gray);
+}
+.theme-dark .info-item {
   color: var(--color-white);
+  
 }
-.dark-theme .see-more {
-  color: var(--color-black);
+.theme-dark .info-detail-item {
+  color: var(--color-light-gray);
+} 
+  
+.theme-dark .see-more {
+  color: var(--color-white);
+  background-color: var(--color-dark);
 }
+
