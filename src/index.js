@@ -10,3 +10,4 @@ import './js/modal-window';
 import './js/support-ukraine';
 import './js/mobile-menu';
 import './js/array-of-funds';
+import './js/scroll-up';

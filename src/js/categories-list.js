@@ -93,8 +93,8 @@ function lineOnFunc(event) {
         return;
     }
     // if (event.target.)
-    console.log('target', event.target);
-    console.log('currenttarget',event.currentTarget);
+    // console.log('target', event.target);
+    // console.log('currenttarget',event.currentTarget);
     const line = event.target;
     line.classList.add('line-active');
     // line.style.background = 'pink';
