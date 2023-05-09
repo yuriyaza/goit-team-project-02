@@ -1,6 +1,7 @@
 import { BookAPI } from "./api";
 import { renderSectionBooksAll } from "./books-all";
 import { renderSectionBooksGenre } from "./books-genre";
+// import { onUserClick } from "./books-all";
 import 'overlayscrollbars/styles/overlayscrollbars.css';
 import { OverlayScrollbars } from 'overlayscrollbars';
 
@@ -62,15 +63,23 @@ function loadFromLocalStorage() {
     return parsedData;
 }
 
-function makeUpperCase(data) {
+export function makeUpperCase(data) {
     data.classList.add('upper-case');
 };
 
-function removeUpperCase() {
+export function removeUpperCase() {
     const rem = document.querySelectorAll('.category');
     rem.forEach(el => el.classList.remove('upper-case'))
 };
 
+export function seeMoreFunc(data) {
+    removeUpperCase();
+    const newDom = document.querySelectorAll('.category');
+    console.log(newDom);
+    newDom.forEach(el => {
+        if (el.textContent===data) el.classList.add('upper-case')
+    })
+}
 
 
 
