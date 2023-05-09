@@ -2,7 +2,7 @@
   <div class="container header-content">
     <!--logo-->
     <div class="logo">
-      <a href="./index.html" class="logo-bookshelf">
+      <a href="/src/index.html" class="logo-bookshelf">
         <svg
           class="header-logo"
           width="24"
@@ -22,122 +22,153 @@
       </a>
     </div>
 
-    <!--nav menu -->
+<!--nav menu -->
 
-    <div class="header-nav">
-      <button type="button" class="header-home-btn">Home</button>
-      <a href="./shopping.html" class="header-shopping"
-        >Shopping list&nbsp;
-        <svg
-          class="header-shopping-logo"
-          width="20"
-          height="20"
-          margin-left="4"
-          aria-label="shopping logo"
-        >
-          <use href="/src/images/sprite-header.svg#icon-uil_cart"></use>
-        </svg>
-      </a>
-    </div>
+<div class="header-nav">
+  <a href="" class="">
+  <button type="button" class="header-home-on header-home-off">Home</button>
+</a>
+  <a href="./shopping.html" class="header-shopping">
+    <button type="button" class="header-shopping-on header-shopping-off">
+    Shopping list
+    <svg
+      class="header-shopping-logo"
+      width="20"
+      height="20"
+      margin-left="4"
+      aria-label="shopping logo">
+      <use href="/src/images/sprite-header.svg#icon-uil_cart"></use>
+    </svg>
+  </button>
+  </a>
+</div>
 
-    <!--swither and borger-menu -->
+<!--swither and borger-menu -->
 
-    <div class="form-check">
-      <input
-        class="form-check-input"
-        type="checkbox"
-        id="inlineCheckbox1"
-        value="option1"
-      />
-      <button type="button" class="header-menu-open js-open-menu">
-        <svg
-          class="icon-menu-burger"
-          width="28"
-          height="28"
-          aria-label="Switch-on mobile menu"
-        >
-          <use href="/src/images/sprite-header.svg#icon-align-left"></use>
-        </svg>
-      </button>
-    </div>
+<div class="form-check">
+  <input
+    class="form-check-input"
+    type="checkbox"
+    id="inlineCheckbox1"
+    value="option1"
+  />
+  <button type="button" class="header-menu-open js-open-menu">
+    <svg
+      class="icon-menu-burger"
+      width="28"
+      height="28"
+      aria-label="Switch-on mobile menu">
+      <use href="/src/images/sprite-header.svg#icon-align-left"></use>
+    </svg>
+  </button>
+</div>
 
-    <!-- button sign up -->
+<!-- button sign up -->
 
-    <div class="header-sign-btn">
-      <button type="button" class="header-sign-open">
-        <a href="/src/partials/authorization.html" class="header-sign"
-          >Sign up</a
-        >
-        <svg class="icon-sign" width="20" height="20" aria-label="sign up">
-          <use
-            href="/src/images/sprite-header.svg#icon-arrow-narrow-right"
-          ></use>
-        </svg>
-      </button>
-    </div>
-  </div>
-  <!-- button menu-close -->
+<div class="header-sign-btn">
+    <a href="/src/partials/authorization.html" >
+      <button type="button" class="header-sign-open header-sign-menu header-sign">Sign up
+    <svg 
+    class="icon-sign" 
+    width="20" 
+    height="20" 
+    aria-label="sign up">
+      <use
+        href="/src/images/sprite-header.svg#icon-arrow-narrow-right"
+      ></use>
+    </svg>
+  </button>
+</a>
+</div>
+</div>
 
-  <div class="header-menu js-menu-container">
-    <div class="header-menu_container">
-      <button type="button" class="header-menu-closed js-close-menu">
-        <svg
-          class="icon-menu-burger"
-          width="28"
-          height="28"
-          aria-label="Switch-on mobile menu"
-        >
 
-          <use href="/src/images/sprite-header.svg#icon-x-close"></use>
-        </svg>
-      </button>
+<!-- mobil menu SING UP -->
 
-      <!---nav menu -->
-      <!--logo menu-->
+<!-- <div class="header-menu js-menu-container">
+  <button type="button" class="header-menu-closed js-close-menu">
+    <svg
+      class="icon-menu-burger"
+      width="28"
+      height="28"
+      aria-label="Switch-on mobile menu">
 
-      <!-- <a href="/src/index.html" class="logo-bookshelf">
-  <svg class="header-logo" width="24" height="24" aria-label="logo bookshelf">
-    <use href="/src/images/sprite-header.svg#icon-logo"></use>
-  </svg>
-  <svg class="header-logo-name" width="77" height="14" aria-label="logo name">
-    <use href="/src/images/sprite-header.svg#icon-Bookshelf"></use>
-  </svg>
-</a> -->
-
-      <!-- <div class="form-check">
-  <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-</div> -->
-
-      <!-- <div>
-  <label id="switch" class="switch">
-    <input type="checkbox" onchange="toggleTheme()" id="slider">
-    <span class="slider round"></span>
-</label>
-</div> -->
-
-      <!--swither and borger-menu -->
+      <use href="/src/images/sprite-header.svg#icon-x-close"></use>
+    </svg>
+  </button>
+     
       <div class="header-sign-menu">
-        <button type="button" class="header-sign-open-menu">
-          <a href="/src/partials/authorization.html" class="header-sign"
-            >Sign up</a
-          >
-          <svg class="icon-sign" width="20" height="20" aria-label="sign up">
+          <a href="/src/partials/authorization.html">
+          <button type="button" class="header-sign-open-menu header-sign">
+            Sign up
+          <svg 
+          class="icon-sign" 
+          width="20" 
+          height="20" 
+          aria-label="sign up">
             <use
               href="/src/images/sprite-header.svg#icon-arrow-narrow-right"
             ></use>
           </svg>
         </button>
-
+      </a>
         <picture class="img-mobile-menu">
           <img
-            src="/src/images/mobile-menu-books.png"
+            src="/src/images/moile-menu-books.png"
             alt="mobile menu books"
             width="375"
-            height="443"
-          />
+            height="443">
         </picture>
       </div>
-    </div>
+    </div> -->
+
+<!-- mobil menu HOME & SHOPPING-->  
+
+
+    <div class="header-menu js-menu-container">
+      <button type="button" class="header-menu-closed js-close-menu">
+        <svg
+          class="icon-menu-burger"
+          width="28"
+          height="28"
+          aria-label="Switch-on mobile menu">
+    
+          <use href="/src/images/sprite-header.svg#icon-x-close"></use>
+        </svg>
+      </button>
+      
+          <!--swither and borger-menu -->
+          <div class="header-sign-menu">
+              <a href="/src/partials/authorization.html">
+              <button type="button" class="header-sign-open-menu header-sign">
+                Sign up
+              <svg 
+              class="icon-sign" 
+              width="20" 
+              height="20" 
+              aria-label="sign up">
+                <use
+                  href="/src/images/sprite-header.svg#icon-arrow-narrow-right"
+                ></use>
+              </svg>
+            </button>
+          </a>
+            <picture class="img-mobile-menu">
+              <img
+                src="/src/images/mobile-menu-books.png"
+                alt="mobile menu books"
+                width="375"
+                height="443">
+            </picture>
+          </div>
+        </div>
+
+
+
+
+
+
+        
   </div>
   <script
     src="https://code.jquery.com/jquery-3.3.1.min.js"
