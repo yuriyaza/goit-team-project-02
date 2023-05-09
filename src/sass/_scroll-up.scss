@@ -1,0 +1,25 @@
+.scroll-up-btn {
+    position: fixed;
+    bottom: 72px;
+    right: 72px;
+    width: 1px;
+    height: 1px;
+    background: url(../images/up.png);
+    background-size: cover;
+    cursor: pointer;
+    border: none;
+    border-radius: 50%;
+    visibility: hidden;
+    opacity: 0;
+    transition: var(--transition-rule);
+    z-index: 1;
+}
+
+.scroll-up-btn.active {
+    width: 64px;
+    height: 64px;
+    bottom: 40px;
+    right: 40px;
+    visibility: visible;
+    opacity: 1;
+}

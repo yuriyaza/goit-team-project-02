@@ -1,6 +1,10 @@
-import fonds from './array-of-funds';
+import { fonds } from './array-of-funds';
 
 const supportList = document.querySelector('.support-ukraine-list');
+let offset = 0;
+const sliderLine = document.querySelector('.slider-liner-su');
+const sliderBtn = document.querySelector('.support-ukraine-btn');
+sliderBtn.addEventListener('click', sliderBtnHandler);
 
 createMarkupForSupportUk(fonds);
 
@@ -20,11 +24,12 @@ function createMarkupForSupportUk(fonds) {
 
 function markup(params) {
   const { title, url, img, img2x, index } = params;
+
   return `<li class="list-unit">
 	<a href="${url}" class="list-unit-link"><span class="span-list-unit">${pad(
     index + 1
   )}</span>
-	<img class="img-list-unit" 
+	<img class="img-list-unit"
 		src="${img}"
 		srcset="${img} 1x, ${img2x} 2x"
 		alt="${title}"
@@ -34,4 +39,12 @@ function markup(params) {
 
 function pad(value) {
   return String(value).padStart(2, '0');
+}
+
+function sliderBtnHandler() {
+  offset += 68;
+  if (offset > 476) {
+    offset = 0;
+  }
+  sliderLine.style.top = -offset + 'px';
 }

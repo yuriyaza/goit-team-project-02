@@ -1,13 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="/src/sass/_authorization.scss">
-</head>
-<body>
    <div class="popup" id="popup">
     <div class="popup-container" id="popup-container">
       <div class="popup-body" id="popup-body">
@@ -55,8 +45,9 @@
             </label>
             <button type="submit" class="button-signup">SIGN UP</button><br />
             <div class="link-wrapper">
-             <a href="#" class="link-signup">SIGN UP</a>
-             <a href="/src/partials/login-authorization.html" class="link-signup">SIGN IN</a>
+             <a href="#" class="link-signup current">SIGN UP</a>
+             <button class="open-modal-2" id="open-modal-2">SIGN IN</button>
+             <!-- <a href="/src/partials/login-authorization.html" class="link-signup">SIGN IN</a> -->
             </div>
           </form>
           <div class="popup-close" id="popup-close" width="28" height="28">&#10006
@@ -64,8 +55,5 @@
       </div>
     </div>
   </div>
-<script src="/src/js/modal-authorization.js"></script>
-</body>
-</html>
-<section class="authorization">
-</section>
+<script src="/src/js/modal-authorization.js" type="module"></script>
+<script src="/src/js/authorization.js"></script>

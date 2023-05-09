@@ -1,4 +1,52 @@
-<!DOCTYPE html>
+<div class="popup-2" id="popup-2">
+    <div class="popup-container-2" id="popup-container-2">
+      <div class="popup-body-2" id="popup-body-2">
+
+          <form class="contact-form" onsubmit="signup();return false">
+            <label class="lebel">
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="EMAIL"
+                class="input"
+                pattern="[^@\s]+@[^@\s]+\.[^@\s]+"
+                title="Please, write your email"
+                aria-label="email"
+                required
+              />
+              <img class="svg-icon" src="/src/images/mail.authorization.svg" alt="Иконка почты">
+            </label>
+            <label class="lebel">
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="PASSWORD"
+                class="input"
+                minlength="4"
+                title="The password length must be not less thn 4"
+                required
+              />
+              <img class="svg-icon" src="/src/images/key.authorization.svg" alt="Иконка пароля">
+            </label>
+            <button type="submit" class="button-signup">SIGN UP</button><br />
+            <div class="link-wrapper">
+             <a href="#" class="link-signup current">SIGN UP</a>
+            </div>
+          </form>
+          <div class="popup-close-2" id="popup-close-2" width="28" height="28">&#10006
+          </div>
+      </div>
+    </div>
+  </div>
+<script src="/src/js/modal-authorization.js" type="module"></script>
+<script src="/src/js/authorization.js"></script>
+
+
+
+
+<!-- <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -11,7 +59,7 @@
     <div class="popup-login">
     <div class="popup-container" id="popup-container">
       <div class="popup-body login" id="popup-body">
-        <form class="contact-form">
+        <form class="contact-form" onsubmit="chechData();return false">
           <label class="lebel">
             <input
               type="email"
@@ -56,5 +104,6 @@
       </div>
     </div>
     </div>
+    <script src="/src/js/authorization.js"></script>
   </body>
-</html>
+</html> -->
