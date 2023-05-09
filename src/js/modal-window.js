@@ -155,5 +155,5 @@ async function booksDetailsGetFromBackend(bookID) {
 }
 
 
-// openModalBookDetails('643282b1e85766588626a07e');
+
 
