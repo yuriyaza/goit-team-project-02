@@ -5,6 +5,7 @@
 import { BookAPI } from './api';
 import { Notify } from 'notiflix';
 import { renderSectionBooksGenre } from './books-genre';
+import { openModalBookDetails } from './modal-window';
 
 const bookApi = new BookAPI();
 const spinner = document.querySelector('.spinner');
@@ -21,9 +22,9 @@ export async function renderSectionBooksAll() {
   const markup = booksAllCreateMarkup(backEndData);
   document.querySelector('.books-content').innerHTML = markup;
   hideInvisibleBooks();
-  addListener();
   
   spinner.classList.add('visually-hidden');
+  addUserClickListener();
 }
 
 async function booksAllGetFromBackend() {
@@ -45,65 +46,58 @@ function booksAllCreateMarkup(backEndCategories) {
 
 function booksAllCreateOneCategory(bookCategory) {
   return `
-        <h2 class="books-all-menu">${bookCategory.list_name}</h3>
-        <ul class="books-all">
-          <li class="books-all-item" data-book-sequence="0">
-            <a class="books-all-link" href="#" data-modal-open data-id=" ">
-            <div class="books-all-wrapp">
-              <img class="books-all-image" src="${bookCategory.books[0].book_image}" alt="${bookCategory.books[0].title}" loading="lazy">
-              <p class="overlay">QUICK VIEW</p>
-            </div>
-            <div class="books-info">
-              <p class="info-item">${bookCategory.books[0].title}</p>
-              <p class="info-detail-item">${bookCategory.books[0].author}</p>
-            </div>
-            </a>
-          </li>
-          <li class="books-all-item" data-book-sequence="1">
-            <a class="books-all-link" href="#" data-modal-open data-id=" ">
-            <div class="books-all-wrapp">
-              <img class="books-all-image" src="${bookCategory.books[1].book_image}" alt="${bookCategory.books[1].title}" loading="lazy">
-              <p class="overlay">QUICK VIEW</p>
-            </div>
-            <div class="books-info">
-              <p class="info-item">${bookCategory.books[1].title}</p>
-              <p class="info-detail-item">${bookCategory.books[1].author}</p>
-            </div>
-          </li>
-          <li class="books-all-item" data-book-sequence="2">
-            <a class="books-all-link" href="#" data-modal-open data-id=" ">
-            <div class="books-all-wrapp"> 
-              <img class="books-all-image" src="${bookCategory.books[2].book_image}" alt="${bookCategory.books[2].title}" loading="lazy">
-              <p class="overlay">QUICK VIEW</p>
-            </div>
-            <div class="books-info">
-              <p class="info-item">${bookCategory.books[2].title}</p>
-              <p class="info-detail-item">${bookCategory.books[2].author}</p>
-            </div>
-          </li>
-          <li class="books-all-item" data-book-sequence="3">
-            <a class="books-all-link" href="#" data-modal-open data-id=" ">
-            <div class="books-all-wrapp"> 
-              <img class="books-all-image" src="${bookCategory.books[3].book_image}" alt="${bookCategory.books[3].title}" loading="lazy">
-              <p class="overlay">QUICK VIEW</p>
-            </div>
-            <div class="books-info">
-              <p class="info-item">${bookCategory.books[3].title}</p>
-              <p class="info-detail-item">${bookCategory.books[3].author}</p>
-            </div>
-            </a>
-          </li>
-          <li class="books-all-item" data-book-sequence="4">
-            <a class="books-all-link" href="#" data-modal-open data-id=" ">
-            <div class="books-all-wrapp"> 
-              <img class="books-all-image" src="${bookCategory.books[4].book_image}" alt="${bookCategory.books[4].title}" loading="lazy"> 
-              <p class="overlay">QUICK VIEW</p>
-            </div>
-            <div class="books-info">
-              <p class="info-item">${bookCategory.books[4].title}</p>
-              <p class="info-detail-item">${bookCategory.books[4].author}</p>
-            </div>
-          </a>
+    <li class="books-all-category-item">
+      <h2 class="books-all-menu">${bookCategory.list_name}</h3>
+      <ul class="books-all">
+        <li class="books-all-item" data-book-sequence="0">
+          <div class="books-all-wrapp">
+            <img class="books-all-image" src="${bookCategory.books[0].book_image}" alt="${bookCategory.books[0].title}" loading="lazy" data-id="${bookCategory.books[0]._id}">
+            <p class="overlay">QUICK VIEW</p>
+          </div>
+          <div class="books-info">
+            <p class="info-item">${bookCategory.books[0].title}</p>
+            <p class="info-detail-item">${bookCategory.books[0].author}</p>
+          </div>
+        </li>
+        <li class="books-all-item" data-book-sequence="1">
+          <div class="books-all-wrapp">
+            <img class="books-all-image" src="${bookCategory.books[1].book_image}" alt="${bookCategory.books[1].title}" loading="lazy" data-id="${bookCategory.books[1]._id}">
+            <p class="overlay">QUICK VIEW</p>
+          </div>
+          <div class="books-info">
+            <p class="info-item">${bookCategory.books[1].title}</p>
+            <p class="info-detail-item">${bookCategory.books[1].author}</p>
+          </div>
+        </li>
+        <li class="books-all-item" data-book-sequence="2">
+          <div class="books-all-wrapp"> 
+            <img class="books-all-image" src="${bookCategory.books[2].book_image}" alt="${bookCategory.books[2].title}" loading="lazy" data-id="${bookCategory.books[2]._id}">
+            <p class="overlay">QUICK VIEW</p>
+          </div>
+          <div class="books-info">
+            <p class="info-item">${bookCategory.books[2].title}</p>
+            <p class="info-detail-item">${bookCategory.books[2].author}</p>
+          </div>
+        </li>
+        <li class="books-all-item" data-book-sequence="3">
+          <div class="books-all-wrapp"> 
+            <img class="books-all-image" src="${bookCategory.books[3].book_image}" alt="${bookCategory.books[3].title}" loading="lazy" data-id="${bookCategory.books[3]._id}">
+            <p class="overlay">QUICK VIEW</p>
+          </div>
+          <div class="books-info">
+            <p class="info-item">${bookCategory.books[3].title}</p>
+            <p class="info-detail-item">${bookCategory.books[3].author}</p>
+          </div>
+        </li>
+        <li class="books-all-item" data-book-sequence="4">
+          <div class="books-all-wrapp"> 
+            <img class="books-all-image" src="${bookCategory.books[4].book_image}" alt="${bookCategory.books[4].title}" loading="lazy" data-id="${bookCategory.books[4]._id}"> 
+            <p class="overlay">QUICK VIEW</p>
+          </div>
+          <div class="books-info">
+            <p class="info-item">${bookCategory.books[4].title}</p>
+            <p class="info-detail-item">${bookCategory.books[4].author}</p>
+          </div>
         </li>
       </ul>
       <div class="loading">
@@ -143,16 +137,28 @@ function hideInvisibleBooks() {
 //   currentItem += 1;
 // }
 
-function addListener() {
+
+
+// Вішаємо загального слухача подій на секцію (слухаємо всі натискання)
+
+function addUserClickListener() {
   const categoryEl = document.querySelector('.books-all-category-list');
-  categoryEl.addEventListener('click', onCategoryClick);
+  categoryEl.addEventListener('click', onUserClick);
 }
 
-function onCategoryClick(event) { 
+function onUserClick(event) {
+  // Якщо користувач натиснув на книгу - викликаємо модальне вікно
+
+  if (event.target.classList.contains('books-all-image')) {
+    const bookID = event.target.dataset.id;
+    openModalBookDetails(bookID);
+  }
+
+  // Якщо користувач натиснув на кнопку "See More" - викликаємо функцію що рендерить секцію Олега
+
   if (event.target.classList.contains('see-more')) {
     const section = event.target.dataset.section;
-    renderSectionBooksGenre(section, section);
+    const url = section.split(' ').join('%20');
+    renderSectionBooksGenre(url, section);
   }
 }
-
-
