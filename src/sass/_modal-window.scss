@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital@1&display=swap');
-
+@media screen and (min-width: 1200px) {
 body.show-modal .backdrop {
     opacity: 1;
     visibility: visible;
@@ -182,7 +182,7 @@ background:var(--color-gray)
     margin-bottom: 14px;
     margin-left: 0;
 }
-
+}
 @media screen and(min-width:480px) {
     .modal {
         max-width: 335px;
