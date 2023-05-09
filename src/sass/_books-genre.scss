@@ -93,9 +93,11 @@
 
   cursor: pointer;
 }
+
 .overlay:hover {
   opacity: 1;
   top: 50%;
+  transform: translate(-50%, -50%);
 }
 
 @media (min-width: 768px) {
@@ -144,9 +146,12 @@
 .theme-dark .books-genre-title {
   color: var(--color-white);
 }
+.theme-dark .books-genre-title-attribute {
+  color: var(--color-violet);
+}
 .theme-dark .books-card-title {
-  color: var(--color-light-gray);
+  color: var(--color-white);
 }
 .theme-dark .books-card-autor {
-  color: var(--color-white);
+  color: var(--color-light-gray);
 }
