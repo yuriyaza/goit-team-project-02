@@ -2,7 +2,7 @@ import axios from 'axios';
 import { Notify } from 'notiflix';
 
 Notify.init({ showOnlyTheLastOne: true, clickToClose: true });
-const spinner = document.querySelector('.spinner');
+const spinner = document.querySelector('.spinner-wrapper');
 
 export class BookAPI {
 
@@ -12,7 +12,7 @@ export class BookAPI {
             return response.data;
         } catch (error) {
             Notify.failure(error.message);
-            spinner.classList.add('visually-hidden');
+            spinner.classList.add('hidden');
         }
     };
 
@@ -22,7 +22,7 @@ export class BookAPI {
             return response.data;
         } catch (error) {
             Notify.failure(error.message);
-            spinner.classList.add('visually-hidden');
+            spinner.classList.add('hidden');
         }
     };
 
@@ -33,7 +33,7 @@ export class BookAPI {
             return response.data;
         } catch (error) {
             Notify.failure(error.message);
-            spinner.classList.add('visually-hidden');
+            spinner.classList.add('hidden');
         }
     };
 
@@ -44,7 +44,7 @@ export class BookAPI {
             return response.data;
         } catch (error) {
             Notify.failure(error.message);
-            spinner.classList.add('visually-hidden');
+            spinner.classList.add('hidden');
         }
     };
     
