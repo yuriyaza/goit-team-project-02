@@ -1,2 +1,2 @@
 function signup(){var e={name:document.getElementById("name").value,email:document.getElementById("email").value,password:document.getElementById("password").value};console.log(e),localStorage.setItem(e.email,JSON.stringify(e)),console.log("Регистрация прошла успешно")}function chechData(){var e={email:document.getElementById("email").value,password:document.getElementById("password").value},a=JSON.parse(localStorage.getItem(e.email));a.email===e.email&&a.password===e.password?window.location.href="index.html":alert("Invalid Datails")}
-//# sourceMappingURL=login-authorization.3d04614b.js.map
+//# sourceMappingURL=authorization.c2f63756.js.map
