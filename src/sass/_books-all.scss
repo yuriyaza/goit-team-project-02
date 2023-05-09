@@ -1,5 +1,4 @@
 .books-content {
-  margin-bottom: 40px;
   max-width: 335px;
 }
 
@@ -125,6 +124,9 @@
 @media (min-width: 768px) { 
   .books-content {
     max-width: 704px;
+  }
+  .books-all-title {
+    font-size: 48px;
   }
   .books-all-image {
     width: 218px;
