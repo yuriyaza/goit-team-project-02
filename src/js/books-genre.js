@@ -3,27 +3,25 @@ import { Notify } from 'notiflix';
 import { openModalBookDetails } from './modal-window';
 
 const bookApi = new BookAPI();
-const spinner = document.querySelector('.spinner');
+const spinner = document.querySelector('.spinner-wrapper');
 
 Notify.init({ showOnlyTheLastOne: true, clickToClose: true });
 
 export async function renderSectionBooksGenre(genreName, categoryName) {
   document.querySelector('.books-content').innerHTML = '';
-  spinner.classList.remove('visually-hidden');
+  spinner.classList.remove('hidden');
 
-  const backEndData = await booksGenreGetFromBackend(genreName);
+  const backEndData = await bookApi.getCategory(genreName);
   console.log(backEndData);
 
   if (backEndData.length === 0) Notify.failure('Books not found');
 
   const markup = booksGenreCreateMarkup(categoryName, backEndData);
   document.querySelector('.books-content').innerHTML = markup;
-  spinner.classList.add('visually-hidden');
-  addUserClickListener();
-}
+  window.scrollTo(0, 0);
 
-async function booksGenreGetFromBackend(genreName) {
-  return await bookApi.getCategory(genreName);
+  spinner.classList.add('hidden');
+  addUserClickListener();
 }
 
 function booksGenreCreateMarkup(genreName, backEndBookList) {
@@ -50,29 +48,26 @@ function booksGenreCreateMarkup(genreName, backEndBookList) {
 function booksGenreCreateOneCard(backEndBookList) {
   return `
       <li class="books-genre-item">
-        <a class="books-genre-link" href="#" data-modal-open>
           <div class="books-card">
-            <img class="books-card-title-img" src="${backEndBookList.book_image}" alt="${backEndBookList.title}" loading="lazy">                   
-            <a href="#" class="overlay">QUICK VIEW</a>
-            </div>
+            <img class="books-card-title-img" src="${backEndBookList.book_image}" alt="${backEndBookList.title}" loading="lazy" data-id="${backEndBookList._id}">                   
+            <div class="overlay">QUICK VIEW</div>
+          </div>
           <div class="books-card-info">
             <h3 class="books-card-title">${backEndBookList.title}</h3>
             <p class="books-card-autor">${backEndBookList.author}</p>
           </div>
-        </a> 
       </li>
   `;
 }
 function addUserClickListener() {
-  const categoryEls = document.querySelectorAll('.books-genre-item');
+  const categoryEls = document.querySelectorAll('.books-genre-card-container');
   categoryEls.forEach(categoryEl => {
     categoryEl.addEventListener('click', onUserClick);
   });
 }
 
 function onUserClick(event) {
-  event.preventDefault();
-  if (event.target.classList.contains('books-genre-link')) {
+  if (event.target.classList.contains('books-card-title-img')) {
     const bookID = event.target.dataset.id;
     openModalBookDetails(bookID);
   }
