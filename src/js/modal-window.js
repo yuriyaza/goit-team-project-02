@@ -58,24 +58,23 @@ function buttonAddListSohind() {
        closeModalBtn()
     }
 }
-function closeModalBtn() {
-    refs.informModalText.style.display = 'none';
-        refs. buttonOpenModal.textContent= 'Add to shopping list';
-        refs.buttonOpenModal.classList.remove('closemodal-btn')
-        refs.buttonOpenModal.classList.add('openmodal-btn')
-        // localStorage.removeItem('cartBoock');
-        refs. buttonOpenModal.addEventListener('click', buttonAddListSohind);
-}
-
+// let boockModalString = JSON.stringify(booksData);
 function openModalBtn() {
      refs. buttonOpenModal.textContent = 'remove from the shopping list';
         refs.informModalText.style.display = 'block';
         refs.buttonOpenModal.classList.add('closemodal-btn')
         refs.buttonOpenModal.classList.remove('openmodal-btn')
-        // localStorage.setItem('cartBoock');
+        // localStorage.setItem('books', boockModalString);
         refs. buttonOpenModal.addEventListener('click', buttonAddListSohind);
  }    
-
+function closeModalBtn() {
+    refs.informModalText.style.display = 'none';
+        refs. buttonOpenModal.textContent= 'Add to shopping list';
+        refs.buttonOpenModal.classList.remove('closemodal-btn')
+        refs.buttonOpenModal.classList.add('openmodal-btn')
+        // localStorage.removeItem('books');
+        refs. buttonOpenModal.addEventListener('click', buttonAddListSohind);
+}
 
 function fetchBoockcardModWin(boock_Id){
     return
