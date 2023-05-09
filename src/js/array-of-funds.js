@@ -2,8 +2,8 @@ const fonds = [
   {
     title: 'Save the Children',
     url: 'https://www.savethechildren.net/what-we-do/emergencies/ukraine-crisis',
-    img: './images/image3.png',
-    img2x: './images/image3@2x.png',
+    img: './images/save.png',
+    img2x: './images/save@2x.png',
   },
   {
     title: 'Project HOPE',
