@@ -1,5 +1,6 @@
 import { BookAPI } from './api';
 import { Notify } from 'notiflix';
+import { openModalBookDetails } from './modal-window';
 
 const bookApi = new BookAPI();
 const spinner = document.querySelector('.spinner');
@@ -18,6 +19,7 @@ export async function renderSectionBooksGenre(genreName, categoryName) {
   const markup = booksGenreCreateMarkup(categoryName, backEndData);
   document.querySelector('.books-content').innerHTML = markup;
   spinner.classList.add('visually-hidden');
+  addUserClickListener();
 }
 
 async function booksGenreGetFromBackend(genreName) {
@@ -48,10 +50,11 @@ function booksGenreCreateMarkup(genreName, backEndBookList) {
 function booksGenreCreateOneCard(backEndBookList) {
   return `
       <li class="books-genre-item">
-        <a class="books-genre-link" href="#" data-modal-open data-id=" ">
+        <a class="books-genre-link" href="#" data-modal-open>
           <div class="books-card">
-            <img class="books-card-title-img" src="${backEndBookList.book_image}" alt="${backEndBookList.title}" loading="lazy">          
-          </div>
+            <img class="books-card-title-img" src="${backEndBookList.book_image}" alt="${backEndBookList.title}" loading="lazy">                   
+            <a href="#" class="overlay">QUICK VIEW</a>
+            </div>
           <div class="books-card-info">
             <h3 class="books-card-title">${backEndBookList.title}</h3>
             <p class="books-card-autor">${backEndBookList.author}</p>
@@ -59,4 +62,18 @@ function booksGenreCreateOneCard(backEndBookList) {
         </a> 
       </li>
   `;
+}
+function addUserClickListener() {
+  const categoryEls = document.querySelectorAll('.books-genre-item');
+  categoryEls.forEach(categoryEl => {
+    categoryEl.addEventListener('click', onUserClick);
+  });
+}
+
+function onUserClick(event) {
+  event.preventDefault();
+  if (event.target.classList.contains('books-genre-link')) {
+    const bookID = event.target.dataset.id;
+    openModalBookDetails(bookID);
+  }
 }
