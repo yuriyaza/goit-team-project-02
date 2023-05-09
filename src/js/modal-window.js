@@ -10,6 +10,7 @@ const refs = {
     modalCartImg:document.querySelector('.books-card-title-img'),
     closeModalBtn: document.querySelector('.modal-btn'),
     backdrop: document.querySelector('.hi-backdrop'),
+    
     informModalText: document.querySelector('.modal-text'),
     modalIconCardBoock: document.querySelector(".modal-content"),
     buttonOpenModal: document.querySelector('.openmodal-btn'),
@@ -18,8 +19,8 @@ const refs = {
 // refs.openModalBtn.addEventListener('click', onOpenModal);
 refs.closeModalBtn.addEventListener('click', onCloseModal);
 refs.backdrop.addEventListener('click', onBackdropClick);
-refs.buttonOpenModal.addEventListener('click', buttonAddListSohind);
-
+refs. buttonOpenModal.addEventListener('click', buttonAddListSohind);
+// refs.modalCartImg.addEventListener('click', onSearchBoock);
  
 
 function onOpenModal() {
@@ -59,21 +60,22 @@ function buttonAddListSohind() {
 }
 function closeModalBtn() {
     refs.informModalText.style.display = 'none';
-        refs.buttonOpenModal.textContent= 'Add to shopping list';
+        refs. buttonOpenModal.textContent= 'Add to shopping list';
         refs.buttonOpenModal.classList.remove('closemodal-btn')
         refs.buttonOpenModal.classList.add('openmodal-btn')
         // localStorage.removeItem('cartBoock');
-       
+        refs. buttonOpenModal.addEventListener('click', buttonAddListSohind);
 }
 
 function openModalBtn() {
-     refs.buttonOpenModal.textContent = 'remove from the shopping list';
+     refs. buttonOpenModal.textContent = 'remove from the shopping list';
         refs.informModalText.style.display = 'block';
         refs.buttonOpenModal.classList.add('closemodal-btn')
         refs.buttonOpenModal.classList.remove('openmodal-btn')
         // localStorage.setItem('cartBoock');
-       
+        refs. buttonOpenModal.addEventListener('click', buttonAddListSohind);
  }    
+
 
 function fetchBoockcardModWin(boock_Id){
     return
@@ -96,7 +98,7 @@ function renderBoocksCard(book){
     }
 
 // В функцію яка створює розмітку передаємо ID книги, яку хочем відобразити
-
+// Саму розмітку не міняв - з нею все супер
     
 function modalCartBoock(book) {
     return  `
@@ -131,9 +133,10 @@ function modalCartBoock(book) {
    
  }
     
-// Робимо та експортуємо функцію, яка буде викликатись іншими для відкриття  модалки.
+// Робимо та експортуємо функцію, яка буде викликатись іншими для відкриття твоєї модалки.
 // Той хто викликає цю функцію - буде передавати ID книги, яку хоче відобразити.
-
+// Ця функція в свою чергу викликає твої renderBoocksCard(book), onOpenModal(),
+// щоб створити розмітку і відобразити модальне вікно.
 
 export async function openModalBookDetails(bookID) {
     const book = await booksDetailsGetFromBackend(bookID);
@@ -153,6 +156,7 @@ async function booksDetailsGetFromBackend(bookID) {
   return await bookApi.getBookById(bookID);
 }
 
+// Перевіряємо як працює на прикладі однієї з книг.
 
-
+ openModalBookDetails('643282b1e85766588626a07e');
 
