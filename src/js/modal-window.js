@@ -158,5 +158,5 @@ async function booksDetailsGetFromBackend(bookID) {
 
 // Перевіряємо як працює на прикладі однієї з книг.
 
- openModalBookDetails('643282b1e85766588626a07e');
+//  openModalBookDetails('643282b1e85766588626a07e');
 
