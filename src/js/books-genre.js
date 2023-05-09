@@ -50,7 +50,7 @@ function booksGenreCreateOneCard(backEndBookList) {
       <li class="books-genre-item">
         <a class="books-genre-link" href="#" data-modal-open data-id=" ">
           <div class="books-card">
-            <img class="books-card-title-img" src="${backEndBookList.book_image}" alt="${backEndBookList.title}" loading="lazy">
+            <img class="books-card-title-img" src="${backEndBookList.book_image}" alt="${backEndBookList.title}" loading="lazy">          
           </div>
           <div class="books-card-info">
             <h3 class="books-card-title">${backEndBookList.title}</h3>
@@ -60,21 +60,3 @@ function booksGenreCreateOneCard(backEndBookList) {
       </li>
   `;
 }
-
-// function showVisibleBooks() {
-//   let booksCountOnScreen = 1;
-//   if (window.innerWidth >= 768) booksCountOnScreen = 3;
-//   if (window.innerWidth >= 1440) booksCountOnScreen = 5;
-
-//   const booksAll = document.querySelectorAll('.books-genre-item');
-//   booksAll.forEach((book, index) => {
-//     const rowNumber = Math.floor(index / booksCountOnScreen); // обчислення номеру рядка
-//     const bookInRowNumber = index % booksCountOnScreen; // обчислення номеру книги в рядку
-//     if (rowNumber === 0 && bookInRowNumber >= booksCountOnScreen) {
-//       book.classList.add('visually-hidden'); // приховати книги, які перевищують максимальну кількість на рядку
-//     } else {
-//       book.classList.remove('visually-hidden'); // ппоказує книги,
-//     }
-//   });
-// }
-// showVisibleBooks();
