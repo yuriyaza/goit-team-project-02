@@ -2,6 +2,13 @@ import { BookAPI } from './api';
 import { Notify } from 'notiflix';
 import scrollLock from 'scroll-lock';
 
+import amazon from '../images/amazon.png';
+import amazon2 from '../images/amazon_1@2.png';
+import appleshop from '../images/appleshop.png';
+import appleshop2 from '../images/appleshop_1@2.png';
+import appleshop2 from '../images/appleshop_1@2.png';
+import boockshop from '../images/boockshop.png';
+import boockshop2 from '../images/boockshop_1@2.png';
 
 const bookApi = new BookAPI();
 Notify.init({ showOnlyTheLastOne: true, clickToClose: true });
