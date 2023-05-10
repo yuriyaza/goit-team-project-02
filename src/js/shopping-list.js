@@ -2,10 +2,10 @@ const shoppingList = document.querySelector(".shopping-list");
 const shoppingListEmptyEl = document.querySelector(".shopping-list-empty");
 
 
-import Amazon from '../images/amazon.svg';
-import Apple from '../images/apple.svg';
-import Bookshop from '../images/bookshop.svg';
-import Trash from '../images/sprite.svg';
+import Amazon from './images/amazon.svg';
+import Apple from './images/apple.svg';
+import Bookshop from './images/bookshop.svg';
+import Trash from './images/sprite.svg';
 
 
 
@@ -732,25 +732,7 @@ localStorage.setItem('books', booksString);
 let booksArray = JSON.parse(localStorage.getItem('books'));
 
 
-function removeBook(event, bookId) {
-  event.preventDefault();
-  console.log(bookId);
-  console.log(booksArray);
-  booksArray.splice(
-    booksArray.findIndex(item => item._id === bookId),
-    1
-  );
-  console.log(booksArray);
 
-  let card = document.getElementById(bookId);
-  console.log(card);
-  card.remove();
-  localStorage.setItem('books', JSON.stringify(booksArray));
-  if (booksArray.length === 0) {
-    shoppingListIsEmpty();
-  }
-  appendShoppingListMarkup();
-}
 
 function createShoppingList(booksArray) {
   return booksArray.reduce((acc, item) => {
@@ -844,3 +826,22 @@ function shoppingListisFilled() {
 
 appendShoppingListMarkup();
 
+function removeBook(event, bookId) {
+  event.preventDefault();
+  console.log(bookId);
+  console.log(booksArray);
+  booksArray.splice(
+    booksArray.findIndex(item => item._id === bookId),
+    1
+  );
+  console.log(booksArray);
+
+  let card = document.getElementById(bookId);
+  console.log(card);
+  card.remove();
+  localStorage.setItem('books', JSON.stringify(booksArray));
+  if (booksArray.length === 0) {
+    shoppingListIsEmpty();
+  }
+  appendShoppingListMarkup();
+}
