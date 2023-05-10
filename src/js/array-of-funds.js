@@ -16,7 +16,6 @@ const vision = require('../images/vision.png');
 const vision2 = require('../images/vision@2x.png');
 const prytula = require('../images/prytula.png');
 const prytula2 = require('../images/prytula@2x.png');
-
 const fonds = [
   {
     title: 'Save the Children',

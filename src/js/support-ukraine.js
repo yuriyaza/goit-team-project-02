@@ -1,3 +1,4 @@
+import { func } from 'joi';
 import { fonds } from './array-of-funds';
 
 const supportList = document.querySelector('.support-ukraine-list');
@@ -42,7 +43,7 @@ function pad(value) {
 }
 
 function sliderBtnHandler() {
-  offset += 68;
+  offset += 157;
   if (offset > 476) {
     offset = 0;
   }
