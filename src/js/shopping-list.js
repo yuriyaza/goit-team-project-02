@@ -1,13 +1,10 @@
-const shoppingList = document.querySelector(".shopping-list");
-const shoppingListEmptyEl = document.querySelector(".shopping-list-empty");
-
+const shoppingList = document.querySelector('.shopping-list');
+const shoppingListEmptyEl = document.querySelector('.shopping-list-empty');
 
 import Amazon from '../images/amazon.png';
 import Apple from '../images/appleshop.png';
 import Bookshop from '../images/boockshop.png';
 import Trash from '../images/sprite.svg';
-
-
 
 //Pagination
 const easyPagination = ({
@@ -19,8 +16,8 @@ const easyPagination = ({
   buttonClass = 'page-link',
   nextClass = 'page-link',
   prevClass = 'page-link',
-  nextText = 'next >',
-  prevText = '< prev',
+  nextText = '>',
+  prevText = '<',
   firstClass = 'page-link',
   firstText = '<<',
   lastClass = 'page-link',
@@ -53,7 +50,7 @@ const easyPagination = ({
       button.setAttribute('type', 'button');
       button.classList.add(buttonClass);
 
-      if (currentPage == page) button.classList.add(activeClass);
+      if (currentPage === page) button.classList.add(activeClass);
 
       button.innerHTML = page;
 
@@ -74,22 +71,26 @@ const easyPagination = ({
     let prevNextBtns = () => {
       let prevBtn = document.createElement('button');
       prevBtn.setAttribute('type', 'button');
-      prevBtn.classList.add(prevClass);
+      prevBtn.classList.add('prevClass');
+      prevBtn.classList.add('page-link');
       prevBtn.innerHTML = prevText;
 
       let nextBtn = document.createElement('button');
       nextBtn.setAttribute('type', 'button');
-      nextBtn.classList.add(nextClass);
+      nextBtn.classList.add('nextClass');
+      nextBtn.classList.add('page-link');
       nextBtn.innerHTML = nextText;
 
       let firstBtn = document.createElement('button');
       firstBtn.setAttribute('type', 'button');
-      firstBtn.classList.add(firstClass);
+      firstBtn.classList.add('firstClass');
+      firstBtn.classList.add('page-link');
       firstBtn.innerHTML = firstText;
 
       let lastBtn = document.createElement('button');
       lastBtn.setAttribute('type', 'button');
-      lastBtn.classList.add(lastClass);
+      lastBtn.classList.add('lastClass');
+      lastBtn.classList.add('page-link');
       lastBtn.innerHTML = lastText;
 
       prevBtn.addEventListener('click', () => {
@@ -731,7 +732,6 @@ localStorage.setItem('books', booksString);
 
 let booksArray = JSON.parse(localStorage.getItem('books'));
 
-
 appendShoppingListMarkup();
 
 function createShoppingList(booksArray) {
@@ -771,13 +771,13 @@ function createShoppingList(booksArray) {
           <div class="shop-list-div">
           <ul class="shop-list">
                <li class="shop-item">
-              <a class="shop-link" target="_blank" href="${item.buy_links[0].url}"><img class="shop-icon amazon-icon" src="${Amazon}" alt="amazon" width="32" height="11"></a>
+              <a class="shop-link" href="${item.buy_links[0].url}" target="_blank"><img class="shop-icon amazon-icon" src="${Amazon}" alt="amazon" width="32" height="11"></a>
               </li>
                 <li class="shop-item">
-                    <a class="shop-link" target="_blank" href="${item.buy_links[1].url}"><img class="shop-icon" src="${Apple}" alt="apple shop" width="16" height="16"></a>
+                    <a class="shop-link" href="${item.buy_links[1].url}" target="_blank"><img class="shop-icon" src="${Apple}" alt="apple shop" width="16" height="16"></a>
                   </li>
                     <li class="shop-item">
-                        <a class="shop-link" target="_blank" href="${item.buy_links[4].url}"><img class="shop-icon" src="${Bookshop}" alt="book shop" width="16" height="16"></a>
+                        <a class="shop-link" href="${item.buy_links[4].url}" target="_blank" ><img class="shop-icon book-shop-icon" src="${Bookshop}" alt="book shop" width="16" height="16"></a>
                       </li>
             </ul>
           </div>
@@ -830,16 +830,16 @@ function removeBook(e) {
   if (e.target.nodeName === 'BUTTON') {
     let _bookId = e.target.closest('.book-card').id;
 
-    console.log(_bookId);
-    console.log(booksArray);
+    // console.log(_bookId);
+    // console.log(booksArray);
     booksArray.splice(
       booksArray.findIndex(item => item._id === _bookId),
       1
     );
-    console.log(booksArray);
+    // console.log(booksArray);
 
     let card = document.getElementById(_bookId);
-    console.log(card);
+    // console.log(card);
     card.remove();
     localStorage.setItem('books', JSON.stringify(booksArray));
     if (booksArray.length === 0) {

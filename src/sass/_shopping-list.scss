@@ -51,7 +51,9 @@
 .book-card:not(:last-child) {
   margin-bottom: 20px;
 }
-
+.shopping-list {
+  margin-bottom: 20px;
+}
 
 .book-card {
   background: #ffffff;
@@ -197,6 +199,44 @@
 .theme-dark .amazon-icon {
   filter: invert(100%) grayscale(100%);
 }
+.pagination {
+  display: flex;
+    gap: 5px;
+    justify-content: center;
+}
+.page-link, .prevClass, .firstClass, .nextClass, .lastClass {
+  width: 38px;
+  height: 38px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    border: 1px solid #111111;
+}
+.firstClass, .prevClass {
+  background: var(--color-black);
+  color: #B4AFAF;;
+}
+.nextClass, .lastClass {
+  background: #EAC645;
+}
+.page-link:hover, .remove-book:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  border-color: var(--color-violet);
+  color: var(--color-violet);
+}
+
+.page-link:active, .remove-book:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  border-color: var(--color-violet);
+  color: var(--color-violet);
+}
 
 @media screen and (min-width: 480px) {
 }
@@ -259,15 +299,15 @@
   .shop-list {
     gap: 8px;
   }
-  .shop-item {
+  .shop-icon {
     width: 28px;
     height: 27px;
   }
-  .shop-item:first-child {
+  .amazon-icon {
     width: 48px;
     height: 15px;
   }
-  .shop-item:last-child {
+  .book-shop-icon {
     width: 32px;
     height: 30px;
   }
