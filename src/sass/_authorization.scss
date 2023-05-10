@@ -1,5 +1,4 @@
  .popup {
-     // display: none;
      width: 100%;
      height: 100%;
      position: fixed;
@@ -11,8 +10,19 @@
      transition: .4s ease-in-out;
  }
 
+.popup-body {
+    background-color: #F3F3F3;
+    border: 2px solid #111111;
+    border-radius: 18px;
+
+    @media screen and (max-width: 767px) {
+        width: 335px;
+        padding: 50px 20px 40px 20px;
+
+    }
+}
+
  .popup.active {
-     // display: block;
      background-color: #4F2EE8;
      transform: translateY(0%) scale(100%);
  }
@@ -52,12 +62,6 @@
 
  }
 
- .popup-body {
-     background-color: #F3F3F3;
-     border: 2px solid #111111;
-     border-radius: 18px;
- }
-
  .input {
      margin: 0 auto 30px auto;
      width: 500px;
@@ -71,24 +75,25 @@
      }
  }
 
- .button-signup {
-     width: 500px;
-     padding: 20px;
-     margin: 30px auto;
-     // margin-top: 50px;
-     border-radius: 40px;
-     background-color: #111111;
-     color: #F3F3F3;
-     font-size: 22px;
-     cursor: pointer;
+.button-signup {
+    width: 500px;
+    padding: 20px;
+    margin: 20px auto;
+    margin-bottom: 30px;
+    border-radius: 40px;
+    background-color: #111111;
+    color: #F3F3F3;
+    font-size: 22px;
+    cursor: pointer;
 
-     @media screen and (max-width: 767px) {
-         width: 320px;
-         padding: 16px;
-         font-size: 18px;
-         margin: 15px auto;
-     }
- }
+    @media screen and (max-width: 767px) {
+        width: 295px;
+        padding: 16px;
+        font-size: 18px;
+        margin: 5px auto;
+        margin-bottom: 15px;
+    }
+}
 
  .svg-icon {
      position: absolute;
@@ -97,7 +102,7 @@
      transform: translateY(-50%);
      fill: #111111;
      width: 28px;
-     height: 28px;
+     height: 26px;
 
      @media screen and (max-width: 767px) {
          width: 20px;
@@ -139,8 +144,14 @@
      }
  }
 
+ .link-signup:hover,
+ .link-signup:focus {
+     color: #4F2EE8;
+ }
+    
  .link-signup.current {
      color: #4F2EE8;
+     text-decoration: underline;
  }
 
 

@@ -2,6 +2,16 @@ import { BookAPI } from './api';
 import { Notify } from 'notiflix';
 import scrollLock from 'scroll-lock';
 
+import icon from '../images/amazon.png';
+console.log(icon);
+// import amazon from '../images/amazon@2.png';
+
+import appleshop from '../images/appleshop.png';
+// import appleshop2 from '../images/appleshop@2.png';
+
+import boockshop from '../images/boockshop.png';
+// import boockshop2 from '../images/boockshop@2.png';
+
 const bookApi = new BookAPI();
 Notify.init({ showOnlyTheLastOne: true, clickToClose: true });
 
@@ -64,7 +74,7 @@ function openModalBtn() {
         refs.informModalText.style.display = 'block';
         refs.buttonOpenModal.classList.add('closemodal-btn')
         refs.buttonOpenModal.classList.remove('openmodal-btn')
-        // localStorage.setItem('books', boockModalString);
+        boockListModal();
         refs. buttonOpenModal.addEventListener('click', buttonAddListSohind);
  }    
 function closeModalBtn() {
@@ -111,19 +121,30 @@ function modalCartBoock(book) {
                 <p class="modal-content-autur"><b>${book.author}</b></p>
         <p class="modal-content-abst"><b>${book.description}</b></p>
         <ul class="modal-link">
-              <li class="modal-link-icon">
+              <li>
                 <a class="modal-link" href="${book.buy_links[0].url}" target="_blank">
-                    <img src="/amazon-1.png" alt="amazon" width="62" height="19" /></a>
+                    <img class="modal-link-icon"
+                            src="${icon}"
+                            srcset="${icon}1x"
+                            alt="amazon" width="62" height="19"></img></a>
               </li>
             
-                <li class="modal-link-icon">
+                <li>
                     <a class="modal-link" href="${book.buy_links[1].url}" target="_blank">
-                        <img  src="./images/boock-2.png" alt="apple shop" width="33" height="32"/></a>
+                         <img class="modal-link-icon"
+                            src="${appleshop}}"
+                            srcset="${appleshop}1x"
+                            alt="apple shop" width="33" height="32
+                            ></img></a>
                 </li>
                  
-                <li class="modal-link-icon">
+                <li>
                     <a class="modal-link" href="${book.buy_links[4].url}" target="_blank">
-                        <img  src="./images/newboock.png" alt="book shop" width="38" height="36"/></a>
+                        <img class="modal-link-icon"
+                            src="${boockshop}"
+                            srcset="${boockshop}1x"
+                            alt="book shop" width="38" height="36"
+                            ></img></a>
                 </li>
         </ul>
 
@@ -148,13 +169,23 @@ export async function openModalBookDetails(bookID) {
     renderBoocksCard(book);
     onOpenModal();
 }
-// let boockModalString = JSON.stringify(book);
+
 // Отримуємо дані з сервера по ID книги за допомогою api.js
 
 async function booksDetailsGetFromBackend(bookID) {
   return await bookApi.getBookById(bookID);
 }
-
+function boockListModal(book) {
+    if (window.localStorage) {
+        if (localStorage.getItem('books') == null) {
+            localStorage.setItem('books', Date());
+        }
+    let bookObj = { book };
+    listAddSohing = JSON.stringify(bookObj);
+ 
+    localStorage.setItem("books", listAddSohing);
+    }
+}
 // Перевіряємо як працює на прикладі однієї з книг.
 
 //  openModalBookDetails('643282b1e85766588626a07e');

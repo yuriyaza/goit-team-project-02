@@ -17,8 +17,8 @@ window.addEventListener('resize', hideInvisibleBooks);
 export async function renderSectionBooksAll() {
   document.querySelector('.books-content').innerHTML = '';
   spinner.classList.remove('hidden');
-  
-  const backEndData = await bookApi.getTopBooks();
+  const backEndData = loadFromLocalStorage();
+  // const backEndData = await bookApi.getTopBooks();
   if (backEndData.length === 0) Notify.failure('Books not found');
   const markup = booksAllCreateMarkup(backEndData);
   document.querySelector('.books-content').innerHTML = markup;
@@ -28,7 +28,11 @@ export async function renderSectionBooksAll() {
   spinner.classList.add('hidden');
   addUserClickListener();
 }
-
+function loadFromLocalStorage() {
+    const savedData = localStorage.getItem("top-books");
+    const parsedData = JSON.parse(savedData);
+    return parsedData;
+}
 function booksAllCreateMarkup(backEndCategories) {
   let markup = '';
   markup += `
@@ -48,9 +52,9 @@ function booksAllCreateOneCategory(bookCategory) {
       <h2 class="books-all-menu">${bookCategory.list_name}</h3>
       <ul class="books-all">
         <li class="books-all-item" data-book-sequence="0">
-          <div class="books-all-wrapp">
-            <img class="books-all-image" src="${bookCategory.books[0].book_image}" alt="${bookCategory.books[0].title}" loading="lazy" data-id="${bookCategory.books[0]._id}">
-            <a href="#" class="overlay">QUICK VIEW</a>
+          <div class="books-all-wrapp" data-action="quick-view" data-id="${bookCategory.books[0]._id}">
+            <img class="books-all-image" src="${bookCategory.books[0].book_image}" alt="${bookCategory.books[0].title}" loading="lazy">
+            <div class="quick-view">QUICK VIEW</div>
           </div>
           <div class="books-info">
             <p class="info-item">${bookCategory.books[0].title}</p>
@@ -58,9 +62,9 @@ function booksAllCreateOneCategory(bookCategory) {
           </div>
         </li>
         <li class="books-all-item" data-book-sequence="1">
-          <div class="books-all-wrapp">
-            <img class="books-all-image" src="${bookCategory.books[1].book_image}" alt="${bookCategory.books[1].title}" loading="lazy" data-id="${bookCategory.books[1]._id}">
-            <a href="#" class="overlay">QUICK VIEW</a>
+          <div class="books-all-wrapp" data-action="quick-view" data-id="${bookCategory.books[1]._id}">
+            <img class="books-all-image" src="${bookCategory.books[1].book_image}" alt="${bookCategory.books[1].title}" loading="lazy">
+            <div class="quick-view">QUICK VIEW</div>
           </div>
           <div class="books-info">
             <p class="info-item">${bookCategory.books[1].title}</p>
@@ -68,9 +72,9 @@ function booksAllCreateOneCategory(bookCategory) {
           </div>
         </li>
         <li class="books-all-item" data-book-sequence="2">
-          <div class="books-all-wrapp"> 
-            <img class="books-all-image" src="${bookCategory.books[2].book_image}" alt="${bookCategory.books[2].title}" loading="lazy" data-id="${bookCategory.books[2]._id}">
-            <a href="#" class="overlay">QUICK VIEW</a>
+          <div class="books-all-wrapp" data-action="quick-view" data-id="${bookCategory.books[2]._id}"> 
+            <img class="books-all-image" src="${bookCategory.books[2].book_image}" alt="${bookCategory.books[2].title}" loading="lazy">
+            <div class="quick-view">QUICK VIEW</div>
           </div>
           <div class="books-info">
             <p class="info-item">${bookCategory.books[2].title}</p>
@@ -78,9 +82,9 @@ function booksAllCreateOneCategory(bookCategory) {
           </div>
         </li>
         <li class="books-all-item" data-book-sequence="3">
-          <div class="books-all-wrapp"> 
-            <img class="books-all-image" src="${bookCategory.books[3].book_image}" alt="${bookCategory.books[3].title}" loading="lazy" data-id="${bookCategory.books[3]._id}">
-            <a href="#" class="overlay">QUICK VIEW</a>
+          <div class="books-all-wrapp" data-action="quick-view" data-id="${bookCategory.books[3]._id}"> 
+            <img class="books-all-image" src="${bookCategory.books[3].book_image}" alt="${bookCategory.books[3].title}" loading="lazy">
+            <div class="quick-view">QUICK VIEW</div>
           </div>
           <div class="books-info">
             <p class="info-item">${bookCategory.books[3].title}</p>
@@ -88,9 +92,9 @@ function booksAllCreateOneCategory(bookCategory) {
           </div>
         </li>
         <li class="books-all-item" data-book-sequence="4">
-          <div class="books-all-wrapp"> 
-            <img class="books-all-image" src="${bookCategory.books[4].book_image}" alt="${bookCategory.books[4].title}" loading="lazy" data-id="${bookCategory.books[4]._id}"> 
-            <a href="#" class="overlay">QUICK VIEW</a>
+          <div class="books-all-wrapp" data-action="quick-view" data-id="${bookCategory.books[4]._id}"> 
+            <img class="books-all-image" src="${bookCategory.books[4].book_image}" alt="${bookCategory.books[4].title}" loading="lazy"> 
+            <div class="quick-view">QUICK VIEW</div>
           </div>
           <div class="books-info">
             <p class="info-item">${bookCategory.books[4].title}</p>
@@ -129,8 +133,8 @@ function addUserClickListener() {
 function onUserClick(event) {
   // Якщо користувач натиснув на книгу - викликаємо модальне вікно
 
-  if (event.target.classList.contains('books-all-image')) {
-    const bookID = event.target.dataset.id;
+  if (event.target.parentNode.dataset.action === 'quick-view') {
+    const bookID = event.target.parentNode.dataset.id;
     openModalBookDetails(bookID);
   }
 
