@@ -166,8 +166,9 @@ body.show-modal .modal {
         // width: 128px;
         height: 18px;
         font-size: 16px;
-        margin-top: 14px;
+        // margin-top: 14px;
         text-transform: uppercase;
+        
     }
 
     .modal-content-autur {
@@ -266,7 +267,7 @@ body.show-modal .modal {
  .modal-content-text {
      display: flex;
      flex-direction: column;
-     justify-content: center;
+    //  justify-content: center;
      
 
  }
@@ -350,7 +351,7 @@ body.show-modal .modal {
 
     .modal-content-titl {
         width: 192px;
-        // height: 28px;
+        height: auto;
         font-weight: 700;
         font-size: 24px;
 

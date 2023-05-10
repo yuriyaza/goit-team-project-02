@@ -124,7 +124,7 @@ function modalCartBoock(book) {
                 <a class="modal-link" href="${book.buy_links[0].url}" target="_blank">
                     <img class="modal-link-icon"
                             src="${icon}"
-                            srcset="${icon}1x"
+                            srcset="${icon}"
                             alt="amazon" width="62" height="19"></img></a>
               </li>
             
@@ -132,7 +132,7 @@ function modalCartBoock(book) {
                     <a class="modal-link" href="${book.buy_links[1].url}" target="_blank">
                          <img class="modal-link-icon"
                             src="${appleshop}}"
-                            srcset="${appleshop}1x"
+                            srcset="${appleshop}"
                             alt="apple shop" width="33" height="32
                             ></img></a>
                 </li>
@@ -141,7 +141,7 @@ function modalCartBoock(book) {
                     <a class="modal-link" href="${book.buy_links[4].url}" target="_blank">
                         <img class="modal-link-icon"
                             src="${boockshop}"
-                            srcset="${boockshop}1x"
+                            srcset="${boockshop}"
                             alt="book shop" width="38" height="36"
                             ></img></a>
                 </li>
