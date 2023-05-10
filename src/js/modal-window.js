@@ -2,13 +2,15 @@ import { BookAPI } from './api';
 import { Notify } from 'notiflix';
 import scrollLock from 'scroll-lock';
 
-import amazon from '../images/amazon.png';
-import amazon2 from '../images/amazon_1@2.png';
+import icon from '../images/amazon.png';
+console.log(icon);
+// import amazon from '../images/amazon@2.png';
+
 import appleshop from '../images/appleshop.png';
-import appleshop2 from '../images/appleshop_1@2.png';
-import appleshop2 from '../images/appleshop_1@2.png';
+// import appleshop2 from '../images/appleshop@2.png';
+
 import boockshop from '../images/boockshop.png';
-import boockshop2 from '../images/boockshop_1@2.png';
+// import boockshop2 from '../images/boockshop@2.png';
 
 const bookApi = new BookAPI();
 Notify.init({ showOnlyTheLastOne: true, clickToClose: true });
@@ -119,19 +121,30 @@ function modalCartBoock(book) {
                 <p class="modal-content-autur"><b>${book.author}</b></p>
         <p class="modal-content-abst"><b>${book.description}</b></p>
         <ul class="modal-link">
-              <li class="modal-link-icon">
+              <li>
                 <a class="modal-link" href="${book.buy_links[0].url}" target="_blank">
-                    <img src="/amazon-1.png" alt="amazon" width="62" height="19" /></a>
+                    <img class="modal-link-icon"
+                            src="${icon}"
+                            srcset="${icon}1x"
+                            alt="amazon" width="62" height="19"></img></a>
               </li>
             
-                <li class="modal-link-icon">
+                <li>
                     <a class="modal-link" href="${book.buy_links[1].url}" target="_blank">
-                        <img  src="./images/boock-2.png" alt="apple shop" width="33" height="32"/></a>
+                         <img class="modal-link-icon"
+                            src="${appleshop}}"
+                            srcset="${appleshop}1x"
+                            alt="apple shop" width="33" height="32
+                            ></img></a>
                 </li>
                  
-                <li class="modal-link-icon">
+                <li>
                     <a class="modal-link" href="${book.buy_links[4].url}" target="_blank">
-                        <img  src="./images/newboock.png" alt="book shop" width="38" height="36"/></a>
+                        <img class="modal-link-icon"
+                            src="${boockshop}"
+                            srcset="${boockshop}1x"
+                            alt="book shop" width="38" height="36"
+                            ></img></a>
                 </li>
         </ul>
 
