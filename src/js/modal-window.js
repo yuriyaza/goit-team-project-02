@@ -4,13 +4,13 @@ import scrollLock from 'scroll-lock';
 
 import icon from '../images/amazon.png';
 console.log(icon);
-// import amazon from '../images/amazon@2.png';
+import amazon from '../images/amazon@2.png';
 
 import appleshop from '../images/appleshop.png';
-// import appleshop2 from '../images/appleshop@2.png';
+
 
 import boockshop from '../images/boockshop.png';
-// import boockshop2 from '../images/boockshop@2.png';
+
 
 const bookApi = new BookAPI();
 Notify.init({ showOnlyTheLastOne: true, clickToClose: true });
@@ -114,7 +114,7 @@ function modalCartBoock(book) {
             <div class="modal-content-card">
             
             <div class="modal-content-img">
-                <img src="${book.book_image}" alt="${book.title}" width="192" height="281" />
+                <img src="${book.book_image}" alt="${book.title}"  />
             </div>
             <div class="modal-content-text">
                 <h2 class="modal-content-titl"><b>${book.title}</b></h2>
@@ -125,7 +125,7 @@ function modalCartBoock(book) {
                 <a class="modal-link" href="${book.buy_links[0].url}" target="_blank">
                     <img class="modal-link-icon"
                             src="${icon}"
-                            srcset="${icon}1x"
+                            srcset="${icon}1x,${amazon}2x"
                             alt="amazon" width="62" height="19"></img></a>
               </li>
             
