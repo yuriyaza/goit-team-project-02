@@ -2,6 +2,7 @@ import { BookAPI } from './api';
 import { Notify } from 'notiflix';
 import scrollLock from 'scroll-lock';
 
+
 const bookApi = new BookAPI();
 Notify.init({ showOnlyTheLastOne: true, clickToClose: true });
 
