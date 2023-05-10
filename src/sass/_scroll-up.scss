@@ -22,4 +22,28 @@
     right: 40px;
     visibility: visible;
     opacity: 1;
+    animation: pulse 2s infinite;
+}
+// 79,46,232
+@keyframes pulse {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(79, 46, 232, 0.7);
+    }
+
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 10px rgba(79, 46, 232, 0);
+    }
+
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(79, 46, 232, 0);
+    }
+}
+
+@media screen and (min-device-pixel-ratio: 2){
+    .scroll-up-btn {
+        background: url(../images/up@2x.png);
+    }
 }

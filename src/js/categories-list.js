@@ -1,7 +1,6 @@
 import { BookAPI } from "./api";
 import { renderSectionBooksAll } from "./books-all";
 import { renderSectionBooksGenre } from "./books-genre";
-// import { onUserClick } from "./books-all";
 import 'overlayscrollbars/styles/overlayscrollbars.css';
 import { OverlayScrollbars } from 'overlayscrollbars';
 
@@ -16,8 +15,9 @@ const api = new BookAPI;
 
 
 (async function getData() {
-    const categoryList = await api.getCategoryList();
-    localStorage.setItem("category-list", JSON.stringify(categoryList));
+    // const categoryList = await api.getCategoryList();
+    const topBooks = await api.getTopBooks();
+    localStorage.setItem("top-books", JSON.stringify(topBooks));
     catListMarkup();
     renderSectionBooksAll();
 })();
@@ -60,7 +60,7 @@ function getCategoryFunc(data) {
 };
 
 function loadFromLocalStorage() {
-    const savedData = localStorage.getItem("category-list");
+    const savedData = localStorage.getItem("top-books");
     const parsedData = JSON.parse(savedData);
     return parsedData;
 }
@@ -77,7 +77,6 @@ export function removeUpperCase() {
 export function seeMoreFunc(data) {
     removeUpperCase();
     const newDom = document.querySelectorAll('.category');
-    // console.log(newDom);
     newDom.forEach(el => {
         if (el.textContent===data) el.classList.add('upper-case')
     })
@@ -88,20 +87,14 @@ ulCategoryListEl.addEventListener('mouseover', lineOnFunc);
 ulCategoryListEl.addEventListener('mouseout', lineOffFunc);
 
 function lineOnFunc(event) {
-    // console.log(event.target.nodeName);
     if (event.target.nodeName !== 'SPAN') {
         return;
     }
-    // if (event.target.)
-    // console.log('target', event.target);
-    // console.log('currenttarget',event.currentTarget);
     const line = event.target;
     line.classList.add('line-active');
-    // line.style.background = 'pink';
 };
 
 function lineOffFunc(event) {
     const line = event.target;
     line.classList.remove('line-active');
-    // line.style.background = '';
 };

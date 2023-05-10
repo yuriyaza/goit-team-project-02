@@ -2,6 +2,7 @@ import { BookAPI } from './api';
 import { Notify } from 'notiflix';
 import scrollLock from 'scroll-lock';
 
+
 const bookApi = new BookAPI();
 Notify.init({ showOnlyTheLastOne: true, clickToClose: true });
 
@@ -64,7 +65,7 @@ function openModalBtn() {
         refs.informModalText.style.display = 'block';
         refs.buttonOpenModal.classList.add('closemodal-btn')
         refs.buttonOpenModal.classList.remove('openmodal-btn')
-        // localStorage.setItem('books', boockModalString);
+        boockListModal();
         refs. buttonOpenModal.addEventListener('click', buttonAddListSohind);
  }    
 function closeModalBtn() {
@@ -148,13 +149,23 @@ export async function openModalBookDetails(bookID) {
     renderBoocksCard(book);
     onOpenModal();
 }
-// let boockModalString = JSON.stringify(book);
+
 // Отримуємо дані з сервера по ID книги за допомогою api.js
 
 async function booksDetailsGetFromBackend(bookID) {
   return await bookApi.getBookById(bookID);
 }
-
+function boockListModal(book) {
+    if (window.localStorage) {
+        if (localStorage.getItem('books') == null) {
+            localStorage.setItem('books', Date());
+        }
+    let bookObj = { book };
+    listAddSohing = JSON.stringify(bookObj);
+ 
+    localStorage.setItem("books", listAddSohing);
+    }
+}
 // Перевіряємо як працює на прикладі однієї з книг.
 
 //  openModalBookDetails('643282b1e85766588626a07e');

@@ -1,12 +1,12 @@
-<div class="popup-2" id="popup-2">
-    <div class="popup-container-2" id="popup-container-2">
-      <div class="popup-body-2" id="popup-body-2">
+<div class="popup" id="popup-2">
+    <div class="popup-container" id="popup-container-2">
+      <div class="popup-body" id="popup-body-2">
 
           <form class="contact-form" onsubmit="signup();return false">
             <label class="lebel">
               <input
                 type="email"
-                id="email"
+                id="email-2"
                 name="email"
                 placeholder="EMAIL"
                 class="input"
@@ -20,7 +20,7 @@
             <label class="lebel">
               <input
                 type="password"
-                id="password"
+                id="password-2"
                 name="password"
                 placeholder="PASSWORD"
                 class="input"
@@ -30,21 +30,20 @@
               />
               <img class="svg-icon" src="/src/images/key.authorization.svg" alt="Иконка пароля">
             </label>
-            <button type="submit" class="button-signup">SIGN UP</button><br />
+            <button type="submit" class="button-signup">SIGN IN</button><br />
             <div class="link-wrapper">
-             <a href="#" class="link-signup current">SIGN UP</a>
+             <a href="#" class="link-signup" id="switch-button-2">SIGN UP</a>
+             <a href="#" class="link-signup current">SIGN IN</a>
             </div>
           </form>
-          <div class="popup-close-2" id="popup-close-2" width="28" height="28">&#10006
+
+          <div class="popup-close" id="popup-close-2" width="28" height="28">&#10006
           </div>
       </div>
     </div>
   </div>
-<script src="/src/js/modal-authorization.js" type="module"></script>
+<script src="/src/js/auth-forms.js" type="module"></script>
 <script src="/src/js/authorization.js"></script>
-
-
-
 
 <!-- <!DOCTYPE html>
 <html lang="en">
