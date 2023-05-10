@@ -1,13 +1,10 @@
-const shoppingList = document.querySelector(".shopping-list");
-const shoppingListEmptyEl = document.querySelector(".shopping-list-empty");
-
+const shoppingList = document.querySelector('.shopping-list');
+const shoppingListEmptyEl = document.querySelector('.shopping-list-empty');
 
 import Amazon from '../images/amazon.png';
 import Apple from '../images/appleshop.png';
 import Bookshop from '../images/boockshop.png';
 import Trash from '../images/sprite.svg';
-
-
 
 //Pagination
 const easyPagination = ({
@@ -735,7 +732,6 @@ localStorage.setItem('books', booksString);
 
 let booksArray = JSON.parse(localStorage.getItem('books'));
 
-
 appendShoppingListMarkup();
 
 function createShoppingList(booksArray) {
@@ -834,16 +830,16 @@ function removeBook(e) {
   if (e.target.nodeName === 'BUTTON') {
     let _bookId = e.target.closest('.book-card').id;
 
-    console.log(_bookId);
-    console.log(booksArray);
+    // console.log(_bookId);
+    // console.log(booksArray);
     booksArray.splice(
       booksArray.findIndex(item => item._id === _bookId),
       1
     );
-    console.log(booksArray);
+    // console.log(booksArray);
 
     let card = document.getElementById(_bookId);
-    console.log(card);
+    // console.log(card);
     card.remove();
     localStorage.setItem('books', JSON.stringify(booksArray));
     if (booksArray.length === 0) {
