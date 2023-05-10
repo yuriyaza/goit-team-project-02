@@ -1,3 +1,6 @@
+// import Notiflix from 'notiflix';
+// import { Notify } from 'notiflix';
+
 function signup() {
   const name = document.getElementById('name-1');
   const email = document.getElementById('email-1');
@@ -12,9 +15,13 @@ function signup() {
 
   localStorage.setItem(user.email, JSON.stringify(user));
   alert('Registration was successful, now you can sign in');
-  name.value = '';
-  email.value = '';
-  password.value = '';
+  // Notiflix.Notify.success('Registration was successful, now you can sign in');
+  // Очищенние импутов после введения данных
+  // name.value = '';
+  // email.value = '';
+  // password.value = '';
+  const openPopUp1 = document.querySelector('.header-sign-btn');
+  openPopUp1.hide();
 }
 
 function chechData() {
@@ -33,6 +40,7 @@ function chechData() {
 
   if (getUser === null) {
     alert('User Not Found');
+    // Notiflix.Notify.failure('User Not Found');
   } else if (
     getUser.email === user.email &&
     getUser.password === user.password
@@ -41,5 +49,6 @@ function chechData() {
     // window.location.href = '/goit-team-project-02/';
   } else {
     alert('Invalid datails');
+    // Notiflix.Notify.failure('Invalid datails');
   }
 }
