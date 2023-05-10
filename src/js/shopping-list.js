@@ -2,10 +2,10 @@ const shoppingList = document.querySelector(".shopping-list");
 const shoppingListEmptyEl = document.querySelector(".shopping-list-empty");
 
 
-import Amazon from './images/amazon.svg';
-import Apple from './images/apple.svg';
-import Bookshop from './images/bookshop.svg';
-import Trash from './images/sprite.svg';
+import Amazon from '../images/amazon.png';
+import Apple from '../images/appleshop.png';
+import Bookshop from '../images/boockshop.png';
+import Trash from '../images/sprite.svg';
 
 
 
@@ -732,7 +732,7 @@ localStorage.setItem('books', booksString);
 let booksArray = JSON.parse(localStorage.getItem('books'));
 
 
-
+appendShoppingListMarkup();
 
 function createShoppingList(booksArray) {
   return booksArray.reduce((acc, item) => {
@@ -822,26 +822,29 @@ function shoppingListIsEmpty() {
 function shoppingListisFilled() {
   shoppingListEmptyEl.classList.add('shopping-list-filled');
 }
-// shoppingList.addEventListener('click', removeBook);
+shoppingList.addEventListener('click', removeBook);
 
-appendShoppingListMarkup();
+function removeBook(e) {
+  e.preventDefault();
 
-function removeBook(event, bookId) {
-  event.preventDefault();
-  console.log(bookId);
-  console.log(booksArray);
-  booksArray.splice(
-    booksArray.findIndex(item => item._id === bookId),
-    1
-  );
-  console.log(booksArray);
+  if (e.target.nodeName === 'BUTTON') {
+    let _bookId = e.target.closest('.book-card').id;
 
-  let card = document.getElementById(bookId);
-  console.log(card);
-  card.remove();
-  localStorage.setItem('books', JSON.stringify(booksArray));
-  if (booksArray.length === 0) {
-    shoppingListIsEmpty();
+    console.log(_bookId);
+    console.log(booksArray);
+    booksArray.splice(
+      booksArray.findIndex(item => item._id === _bookId),
+      1
+    );
+    console.log(booksArray);
+
+    let card = document.getElementById(_bookId);
+    console.log(card);
+    card.remove();
+    localStorage.setItem('books', JSON.stringify(booksArray));
+    if (booksArray.length === 0) {
+      shoppingListIsEmpty();
+    }
+    appendShoppingListMarkup();
   }
-  appendShoppingListMarkup();
 }
