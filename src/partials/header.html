@@ -17,7 +17,7 @@
           height="14"
           aria-label="logo name"
         >
-          <use href="/src/images/sprite-header.svg#icon-Bookshelf"></use>
+          <use href="/src/images/sprite-header.svg#icon-Bookshelf-1"></use>
         </svg>
       </a>
     </div>
@@ -25,10 +25,12 @@
     <!--nav menu -->
 
     <div class="header-nav">
-      <a href="" class="header-home-on header-home-off">Home</a>
-      <a
-        href="./shopping.html"
-        class="header-shopping header-shopping-on header-shopping-off"
+
+      <button onclick="document.location='/src/partials/modal-window.html'" class="header-home-off btn active">Home</button>
+      <!-- <a href="/src/index.html" class=" header-home-off btn active">Home</a> -->
+      <!-- <a href="/src/index.html" class="header-home-on btn">Home</a> -->
+      <button onclick="document.location='/src/partials/shopping-list.html'"
+        class="header-shopping header-shopping-on btn"
       >
         Shopping list
         <svg
@@ -39,7 +41,21 @@
         >
           <use href="/src/images/sprite-header.svg#icon-uil_cart"></use>
         </svg>
-      </a>
+      </button>
+      <!-- <a
+      href="./shopping.html"
+      class="header-shopping header-shopping-off btn"
+    >
+      Shopping list
+      <svg
+        class="header-shopping-logo"
+        width="20"
+        height="20"
+        aria-label="shopping logo"
+      >
+        <use href="/src/images/sprite-header.svg#icon-uil_cart"></use>
+      </svg>
+    </a> -->
     </div>
 
     <!--swither and borger-menu -->
@@ -50,7 +66,7 @@
         type="checkbox"
         id="inlineCheckbox1"
         value="option1"
-      />
+      >
       <button type="button" class="header-menu-open">
         <svg
           class="icon-menu-burger"
