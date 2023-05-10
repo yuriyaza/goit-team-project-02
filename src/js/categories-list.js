@@ -1,7 +1,6 @@
 import { BookAPI } from "./api";
 import { renderSectionBooksAll } from "./books-all";
 import { renderSectionBooksGenre } from "./books-genre";
-// import { onUserClick } from "./books-all";
 import 'overlayscrollbars/styles/overlayscrollbars.css';
 import { OverlayScrollbars } from 'overlayscrollbars';
 
@@ -14,24 +13,14 @@ OverlayScrollbars({
 const ulCategoryListEl = document.querySelector('.category-list');
 const api = new BookAPI;
 
-// (async function GetDataFromApi() {
-//     const loadData = await api.getTopBooks();
-//     console.log(loadData);
-//     localStorage.setItem('top-books',JSON.stringify(loadData));
-// })();
 
 (async function getData() {
-    const categoryList = await api.getCategoryList();
+    // const categoryList = await api.getCategoryList();
     const topBooks = await api.getTopBooks();
     localStorage.setItem("top-books", JSON.stringify(topBooks));
     catListMarkup();
     renderSectionBooksAll();
 })();
-
-function firstBuild() {
-    catListMarkup();
-    renderSectionBooksAll()
-};
 
 function catListMarkup() {
     const array = loadFromLocalStorage();
@@ -88,7 +77,6 @@ export function removeUpperCase() {
 export function seeMoreFunc(data) {
     removeUpperCase();
     const newDom = document.querySelectorAll('.category');
-    // console.log(newDom);
     newDom.forEach(el => {
         if (el.textContent===data) el.classList.add('upper-case')
     })
@@ -99,20 +87,14 @@ ulCategoryListEl.addEventListener('mouseover', lineOnFunc);
 ulCategoryListEl.addEventListener('mouseout', lineOffFunc);
 
 function lineOnFunc(event) {
-    // console.log(event.target.nodeName);
     if (event.target.nodeName !== 'SPAN') {
         return;
     }
-    // if (event.target.)
-    // console.log('target', event.target);
-    // console.log('currenttarget',event.currentTarget);
     const line = event.target;
     line.classList.add('line-active');
-    // line.style.background = 'pink';
 };
 
 function lineOffFunc(event) {
     const line = event.target;
     line.classList.remove('line-active');
-    // line.style.background = '';
 };
