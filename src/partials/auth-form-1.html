@@ -1,12 +1,12 @@
-   <div class="popup" id="popup">
-    <div class="popup-container" id="popup-container">
-      <div class="popup-body" id="popup-body">
+   <div class="popup" id="popup-1">
+    <div class="popup-container" id="popup-container-1">
+      <div class="popup-body" id="popup-body-1">
 
           <form class="contact-form" onsubmit="signup();return false">
             <label class="lebel">
               <input
                 type="text"
-                id="name"
+                id="name-1"
                 name="name"
                 placeholder="NAME"
                 class="input"
@@ -19,7 +19,7 @@
             <label class="lebel">
               <input
                 type="email"
-                id="email"
+                id="email-1"
                 name="email"
                 placeholder="EMAIL"
                 class="input"
@@ -33,7 +33,7 @@
             <label class="lebel">
               <input
                 type="password"
-                id="password"
+                id="password-1"
                 name="password"
                 placeholder="PASSWORD"
                 class="input"
@@ -46,14 +46,18 @@
             <button type="submit" class="button-signup">SIGN UP</button><br />
             <div class="link-wrapper">
              <a href="#" class="link-signup current">SIGN UP</a>
-             <button class="open-modal-2" id="open-modal-2">SIGN IN</button>
+             <a href="#" class="link-signup" id="switch-button-1">SIGN IN</a>
+
+             <!-- <button class="open-modal-2" id="open-modal-2">SIGN IN</button> -->
              <!-- <a href="/src/partials/login-authorization.html" class="link-signup">SIGN IN</a> -->
+
             </div>
           </form>
-          <div class="popup-close" id="popup-close" width="28" height="28">&#10006
+
+          <div class="popup-close" id="popup-close-1" width="28" height="28">&#10006
           </div>
       </div>
     </div>
   </div>
-<script src="/src/js/modal-authorization.js" type="module"></script>
+<script src="/src/js/auth-forms.js" type="module"></script>
 <script src="/src/js/authorization.js"></script>

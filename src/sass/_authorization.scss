@@ -139,8 +139,14 @@
      }
  }
 
+ .link-signup:hover,
+ .link-signup:focus {
+     color: #4F2EE8;
+ }
+    
  .link-signup.current {
      color: #4F2EE8;
+     text-decoration: underline;
  }
 
 

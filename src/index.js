@@ -1,6 +1,6 @@
 import './js/api';
 import './js/authorization';
-import './js/modal-authorization';
+import './js/auth-forms';
 import './js/books-all';
 import './js/books-genre';
 import './js/categories-list';
