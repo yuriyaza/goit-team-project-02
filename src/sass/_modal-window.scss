@@ -118,7 +118,7 @@ body.show-modal .modal {
         top: 676px;
         bottom: 62px;
         // margin-top: 42px;
-
+    white-space: nowrap;
         position: absolute;
 
 
@@ -267,7 +267,7 @@ body.show-modal .modal {
      display: flex;
      flex-direction: column;
      justify-content: center;
-     align-items: center;
+     
 
  }
     .modal-btn {
