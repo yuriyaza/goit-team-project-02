@@ -3,8 +3,7 @@ import { Notify } from 'notiflix';
 import scrollLock from 'scroll-lock';
 
 import icon from '../images/amazon.png';
-console.log(icon);
-import amazon from '../images/amazon@2.png';
+
 
 import appleshop from '../images/appleshop.png';
 
@@ -74,7 +73,7 @@ function openModalBtn() {
         refs.informModalText.style.display = 'block';
         refs.buttonOpenModal.classList.add('closemodal-btn')
         refs.buttonOpenModal.classList.remove('openmodal-btn')
-        boockListModal();
+        // boockListModal();
         refs. buttonOpenModal.addEventListener('click', buttonAddListSohind);
  }    
 function closeModalBtn() {
@@ -125,7 +124,7 @@ function modalCartBoock(book) {
                 <a class="modal-link" href="${book.buy_links[0].url}" target="_blank">
                     <img class="modal-link-icon"
                             src="${icon}"
-                            srcset="${icon}1x,${amazon}2x"
+                            srcset="${icon}1x"
                             alt="amazon" width="62" height="19"></img></a>
               </li>
             
@@ -175,17 +174,17 @@ export async function openModalBookDetails(bookID) {
 async function booksDetailsGetFromBackend(bookID) {
   return await bookApi.getBookById(bookID);
 }
-function boockListModal(book) {
-    if (window.localStorage) {
-        if (localStorage.getItem('books') == null) {
-            localStorage.setItem('books', Date());
-        }
-    let bookObj = { book };
-    listAddSohing = JSON.stringify(bookObj);
+// function boockListModal(book) {
+//     if (window.localStorage) {
+//         if (localStorage.getItem('books') == null) {
+//             localStorage.setItem('books', Date());
+//         }
+//     let bookObj = { book };
+//     listAddSohing = JSON.stringify(bookObj);
  
-    localStorage.setItem("books", listAddSohing);
-    }
-}
+//     localStorage.setItem("books", listAddSohing);
+//     }
+// }
 // Перевіряємо як працює на прикладі однієї з книг.
 
 //  openModalBookDetails('643282b1e85766588626a07e');
