@@ -12,8 +12,6 @@ export async function renderSectionBooksGenre(genreName, categoryName) {
   spinner.classList.remove('hidden');
 
   const backEndData = await bookApi.getCategory(genreName);
-  console.log(backEndData);
-
   if (backEndData.length === 0) Notify.failure('Books not found');
 
   const markup = booksGenreCreateMarkup(categoryName, backEndData);
@@ -48,9 +46,9 @@ function booksGenreCreateMarkup(genreName, backEndBookList) {
 function booksGenreCreateOneCard(backEndBookList) {
   return `
       <li class="books-genre-item">
-          <div class="books-card">
-            <img class="books-card-title-img" src="${backEndBookList.book_image}" alt="${backEndBookList.title}" loading="lazy" data-id="${backEndBookList._id}">                   
-            <div class="overlay">QUICK VIEW</div>
+          <div class="books-card" data-action="quick-view" data-id="${backEndBookList._id}">
+            <img class="books-card-title-img" src="${backEndBookList.book_image}" alt="${backEndBookList.title}" loading="lazy">                   
+            <div class="quick-view">QUICK VIEW</div>
           </div>
           <div class="books-card-info">
             <h3 class="books-card-title">${backEndBookList.title}</h3>
@@ -67,8 +65,8 @@ function addUserClickListener() {
 }
 
 function onUserClick(event) {
-  if (event.target.classList.contains('books-card-title-img')) {
-    const bookID = event.target.dataset.id;
+  if (event.target.parentNode.dataset.action === 'quick-view') {
+    const bookID = event.target.parentNode.dataset.id;
     openModalBookDetails(bookID);
   }
 }
