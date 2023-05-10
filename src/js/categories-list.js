@@ -14,13 +14,24 @@ OverlayScrollbars({
 const ulCategoryListEl = document.querySelector('.category-list');
 const api = new BookAPI;
 
+// (async function GetDataFromApi() {
+//     const loadData = await api.getTopBooks();
+//     console.log(loadData);
+//     localStorage.setItem('top-books',JSON.stringify(loadData));
+// })();
 
 (async function getData() {
     const categoryList = await api.getCategoryList();
-    localStorage.setItem("category-list", JSON.stringify(categoryList));
+    const topBooks = await api.getTopBooks();
+    localStorage.setItem("top-books", JSON.stringify(topBooks));
     catListMarkup();
     renderSectionBooksAll();
 })();
+
+function firstBuild() {
+    catListMarkup();
+    renderSectionBooksAll()
+};
 
 function catListMarkup() {
     const array = loadFromLocalStorage();
@@ -60,7 +71,7 @@ function getCategoryFunc(data) {
 };
 
 function loadFromLocalStorage() {
-    const savedData = localStorage.getItem("category-list");
+    const savedData = localStorage.getItem("top-books");
     const parsedData = JSON.parse(savedData);
     return parsedData;
 }

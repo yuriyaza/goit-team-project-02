@@ -17,8 +17,8 @@ window.addEventListener('resize', hideInvisibleBooks);
 export async function renderSectionBooksAll() {
   document.querySelector('.books-content').innerHTML = '';
   spinner.classList.remove('hidden');
-  
-  const backEndData = await bookApi.getTopBooks();
+  const backEndData = loadFromLocalStorage();
+  // const backEndData = await bookApi.getTopBooks();
   if (backEndData.length === 0) Notify.failure('Books not found');
   const markup = booksAllCreateMarkup(backEndData);
   document.querySelector('.books-content').innerHTML = markup;
@@ -28,7 +28,11 @@ export async function renderSectionBooksAll() {
   spinner.classList.add('hidden');
   addUserClickListener();
 }
-
+function loadFromLocalStorage() {
+    const savedData = localStorage.getItem("top-books");
+    const parsedData = JSON.parse(savedData);
+    return parsedData;
+}
 function booksAllCreateMarkup(backEndCategories) {
   let markup = '';
   markup += `
