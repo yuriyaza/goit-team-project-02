@@ -3,13 +3,13 @@ import { Notify } from 'notiflix';
 import scrollLock from 'scroll-lock';
 
 import icon from '../images/amazon.png';
-// import amazon from '../images/amazon@2.png';
+// import amzicon from '../images/amazon2x.png';
 
 import appleshop from '../images/appleshop.png';
-// import appleshop2 from '../images/appleshop@2.png';
+// import iconappleshop from '../images/appleshop2x.png';
 
 import boockshop from '../images/boockshop.png';
-// import boockshop2 from '../images/boockshop@2.png';
+// import iconboockshop from '../images/boockshop2x.png';
 
 const bookApi = new BookAPI();
 Notify.init({ showOnlyTheLastOne: true, clickToClose: true });

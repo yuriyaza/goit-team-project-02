@@ -1,33 +1,24 @@
-// (() => {
-//   const mobileMenu = document.querySelector('.js-menu-container');
-//   const openMenuBtn = document.querySelector('.js-open-menu');
-//   const closeMenuBtn = document.querySelector('.js-close-menu');
+// const menu = document.querySelector('.js-container');
+// const menuItems = document.querySelectorAll('.menuItem');
 
-//   const toggleMenu = () => {
-//     const isMenuOpen =
-//       openMenuBtn.getAttribute('aria-expanded') === 'true' || false;
-//     openMenuBtn.setAttribute('aria-expanded', !isMenuOpen);
-//     mobileMenu.classList.toggle('is-open');
+// const closeIcon = document.querySelector('.header-menu-open ');
+// const menuIcon = document.querySelector('.header-menu-closed');
 
-//     const scrollLockMethod = !isMenuOpen
-//       ? 'disableBodyScroll'
-//       : 'enableBodyScroll';
-//     bodyScrollLock[scrollLockMethod](document.body);
-//   };
+// function toggleMenu() {
+//   if (menu.classList.contains('showMenu')) {
+//     menu.classList.remove('showMenu');
+//     closeIcon.style.display = 'block';
+//     menuIcon.style.display = 'none';
+//   } else {
+//     menu.classList.add('showMenu');
+//     closeIcon.style.display = 'none';
+//     menuIcon.style.display = 'block';
+//   }
+// }
 
-//   openMenuBtn.addEventListener('click', toggleMenu);
-//   closeMenuBtn.addEventListener('click', toggleMenu);
+// closeIcon.addEventListener('click', toggleMenu);
+// menuIcon.addEventListener('click', toggleMenu);
 
-//   // Close the mobile menu on wider screens if the device orientation changes
-//   window.matchMedia('(min-width: 768px)').addEventListener('change', e => {
-//     if (!e.matches) return;
-//     mobileMenu.classList.remove('is-open');
-//     openMenuBtn.setAttribute('aria-expanded', false);
-//     bodyScrollLock.enableBodyScroll(document.body);
-//   });
-// })();
-// let headerMenuOpen = document.querySelector(".header-menu-open");
-// let headerMenu = document.querySelector(".header-menu");
-// headerMenuOpen.onclick = function () {
-//   headerMenu.classList.toggle("active");
-// };
+// menuItems.forEach(function (menuItem) {
+//   menuItem.addEventListener('click', toggleMenu);
+// });
