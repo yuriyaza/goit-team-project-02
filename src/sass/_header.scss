@@ -23,24 +23,26 @@ body.theme-dark .header-shopping-logo {
 }
 
 body.theme-dark .icon-menu-burger {
-  fill: var(--color-white);
-}
-body.theme-dark .icon-x-close {
-  fill: var(--color-white);
-}
-
-.icon-x-close {
-  fill: var(--color-white);
-  color: #111111;
+  stroke: var(--color1, #ffffff);
 }
 .icon-menu-burger {
-  fill: var(--color-black);
-  color: #111111;
+  stroke: var(--color1, #111111);
 }
 
 .header-menu-open {
   fill: var(--color-black);
 }
+/*******hover:focus*******/
+
+body.theme-dark .icon-menu-burger:hover {
+  stroke: var(--color1, #4f2ee8);
+}
+
+.icon-menu-burger:hover {
+  stroke: var(--color1, #4f2ee8);
+}
+
+/*******hover:focus*******/
 
 .header-menu-closed {
   display: none;
@@ -69,10 +71,11 @@ body.theme-dark .icon-x-close {
 .user-menu {
   display: flex;
   align-items: flex-start;
-  margin-top: 247px;
+  margin-top: 183px;
   margin-left: 128px;
 }
 
+.showMenuUser,
 .showMenu {
   transform: translateY(0);
 }
@@ -92,11 +95,15 @@ body.theme-dark .icon-x-close {
   align-items: center;
   justify-content: space-between;
 }
+.header-user-btn {
+  display: none;
+}
 
 .user-name {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  border: none;
 
   width: 184px;
   height: 45px;
@@ -243,32 +250,32 @@ body.theme-dark .icon-x-close {
   text-transform: uppercase;
   color: var(--color-black);
 }
-.header-home-off {
-  z-index: 10;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-}
+// .header-home-off {
+//   z-index: 10;
+//   display: flex;
+//   flex-direction: row;
+//   align-items: flex-start;
+// }
 
-.header-home-off {
-  padding: 8px 0;
-  gap: 10px;
-  border: none;
-  width: 40px;
-  height: 34px;
-  margin-right: 24px;
-  background: none;
-  border-radius: 36px;
-  font-family: 'DM Sans';
-  font-style: Medium;
+// .header-home-off {
+//   padding: 8px 0;
+//   gap: 10px;
+//   border: none;
+//   width: 40px;
+//   height: 34px;
+//   margin-right: 24px;
+//   background: none;
+//   border-radius: 36px;
+//   font-family: 'DM Sans';
+//   font-style: Medium;
 
-  font-size: 14px;
-  line-height: 1.29;
+//   font-size: 14px;
+//   line-height: 1.29;
 
-  letter-spacing: -0.04em;
-  text-transform: uppercase;
-  color: var(--color-black);
-}
+//   letter-spacing: -0.04em;
+//   text-transform: uppercase;
+//   color: var(--color-black);
+// }
 .user-menu {
   z-index: 15;
   display: flex;
@@ -323,8 +330,9 @@ body.theme-dark .icon-x-close {
 .header-shopping-off {
   display: flex;
   align-items: center;
+  color: #111111;
 }
-
+.header-user-shopping,
 .header-shopping-off {
   font-family: 'DM Sans';
   font-style: normal;
@@ -343,33 +351,42 @@ body.theme-dark .icon-x-close {
   padding: 0;
 
   color: var(--color-black);
-}
-
-.header-user-shopping {
-  font-family: 'DM Sans';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 1.29;
-  letter-spacing: -0.04em;
-  text-transform: uppercase;
-
-  padding: 7px 16px;
-  gap: 8px;
-  border: none;
-  width: 156px;
-  height: 34px;
-  background: var(--color-orange);
-  border-radius: 36px;
 
   display: flex;
   align-items: center;
-  color: #111111;
 }
 
+//  {
+//   font-family: 'DM Sans';
+//   font-style: normal;
+//   font-weight: 500;
+//   font-size: 14px;
+//   line-height: 1.29;
+//   letter-spacing: -0.04em;
+//   text-transform: uppercase;
+
+//   padding: 7px 16px;
+//   gap: 8px;
+//   border: none;
+//   width: 156px;
+//   height: 34px;
+//   background: var(--color-orange);
+//   border-radius: 36px;
+
+//   display: flex;
+//   align-items: center;
+//   color: #111111;
+// }
+
 .header-sign-user {
+  font-family: DM Sans, medium;
+  font-size: 14px;
+  height: 18px;
+  height: 1.8;
+  color: var(--color-black);
+
   display: flex;
-  margin-top: auto;
+  margin-top: 427px;
   z-index: 100;
 
   margin-left: 20px;
@@ -386,10 +403,6 @@ body.theme-dark .icon-x-close {
   border-radius: 18px;
 }
 
-.header-user-sing {
-  display: flex;
-  margin-top: 20px;
-}
 .btn.active {
   z-index: 15;
   display: flex;
@@ -467,6 +480,34 @@ body.theme-dark .icon-x-close {
   display: block;
   top: 443px;
   left: 0;
+  z-index: -5;
+}
+.header-log-user {
+  font-family: DM Sans, medium;
+  font-size: 14px;
+  height: 18px;
+  height: 99%;
+  color: var(--color-black);
+
+  display: flex;
+  margin-top: 420px;
+  z-index: 100;
+
+  margin-left: 20px;
+  margin-bottom: 20px;
+
+  width: 118px;
+  height: 48px;
+  left: 0px;
+  top: 0px;
+  padding-top: 0;
+  padding-right: 0px;
+  padding-left: 24px;
+
+  align-items: center;
+  background: #ffffff;
+  border: 1.5px solid #111111;
+  border-radius: 18px;
 }
 
 // <!-- mobil menu HOME & SHOPPING-->
