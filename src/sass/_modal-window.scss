@@ -224,7 +224,7 @@ body.show-modal .modal {
 
     
     .openmodal-btn:hover,
-    .openmodal-btn:focus {
+    .openmodal-btn:focus-visible {
         background: var(--color-violet);
         color: var(--color-white);
     }
