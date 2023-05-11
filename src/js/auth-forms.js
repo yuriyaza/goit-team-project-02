@@ -141,3 +141,6 @@ function onKeyPress(event) {
 // window.location.href = 'https://yuriyaza.github.io/goit-team-project-02/';
 // popUp.classList.remove('active');
 // });
+
+const openPopUpMenu = document.querySelector('.header-sign-open-menu');
+openPopUpMenu.addEventListener('click', openAuthPopUp1);

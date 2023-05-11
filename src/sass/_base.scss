@@ -74,6 +74,10 @@ img {
   overflow: hidden;
 }
 
+.hidden {
+  display: none !important;
+}
+
 /* =============== Базові розміри контейнерів (загальні для всіх) =============== */
 
 .container {
