@@ -113,7 +113,7 @@ function modalCartBoock(book) {
             <div class="modal-content-card">
             
             <div class="modal-content-img">
-                <img src="${book.book_image}" alt="${book.title}"  />
+                <img class='modal-content-pict' src="${book.book_image}" alt="${book.title}"  />
             </div>
             <div class="modal-content-text">
                 <h2 class="modal-content-titl"><b>${book.title}</b></h2>
