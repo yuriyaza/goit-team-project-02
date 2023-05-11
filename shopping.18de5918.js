@@ -1,2 +1,2 @@
 !function(e){e.switcher=function(t){var c=e("input[type=checkbox]");void 0!==t&&t.length&&(c=c.filter(t)),c.each((function(){var t=e(this).hide(),c=e(document.createElement("div")).addClass("ui-switcher").attr("aria-checked",t.is(":checked"));toggleSwitch=function(e){void 0===e.target.type&&t.trigger(e.type),document.body.classList.toggle("theme-dark"),c.attr("aria-checked",t.is(":checked"))},c.on("click",toggleSwitch),c.insertBefore(t)}))}}(jQuery);
-//# sourceMappingURL=index.1f45a3c2.js.map
+//# sourceMappingURL=shopping.18de5918.js.map
