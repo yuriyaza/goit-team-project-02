@@ -148,11 +148,9 @@ function modalCartBoock(book) {
     
 // Робимо та експортуємо функцію, яка буде викликатись іншими для відкриття твоєї модалки.
 // Той хто викликає цю функцію - буде передавати ID книги, яку хоче відобразити.
-// Ця функція в свою чергу викликає твої render BoocksCard(book), onOpenModal(),
-// щоб створити розмітку і відобразити модальне вікно.
+
 
 export async function openModalBookDetails(bookID) {
-// Отримуємо дані з сервера по ID книги за допомогою api.js
     const book = await bookApi.getBookById(bookID);
     shoppingBook = book;    
     renderBoocksCard(book);
