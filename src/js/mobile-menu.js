@@ -1,24 +1,24 @@
-// const menu = document.querySelector('.js-container');
-// const menuItems = document.querySelectorAll('.menuItem');
+// const menuUser = document.querySelector('.header-menu-user');
+// // const menuItemsUser = document.querySelectorAll('.menu-item-user');
 
-// const closeIcon = document.querySelector('.header-menu-open ');
-// const menuIcon = document.querySelector('.header-menu-closed');
+// const closeIconUser = document.querySelector('.header-menu-open-user');
+// const menuIconUser = document.querySelector('.header-menu-closed-user');
 
 // function toggleMenu() {
-//   if (menu.classList.contains('showMenu')) {
-//     menu.classList.remove('showMenu');
-//     closeIcon.style.display = 'block';
-//     menuIcon.style.display = 'none';
+//   if (menuUser.classList.contains('showMenuUser')) {
+//     menuUser.classList.remove('showMenuUser');
+//     closeIconUser.style.display = 'block';
+//     menuIconUser.style.display = 'none';
 //   } else {
-//     menu.classList.add('showMenu');
-//     closeIcon.style.display = 'none';
-//     menuIcon.style.display = 'block';
+//     menuUser.classList.add('showMenuUser');
+//     closeIconUser.style.display = 'none';
+//     menuIconUser.style.display = 'block';
 //   }
 // }
 
-// closeIcon.addEventListener('click', toggleMenu);
-// menuIcon.addEventListener('click', toggleMenu);
+// closeIconUser.addEventListener('click', toggleMenu);
+// menuIconUser.addEventListener('click', toggleMenu);
 
-// menuItems.forEach(function (menuItem) {
-//   menuItem.addEventListener('click', toggleMenu);
+// menuItemsUser.forEach(function (menuItemUser) {
+//   menuItemUser.addEventListener('click', toggleMenu);
 // });
