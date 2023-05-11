@@ -75,6 +75,12 @@
   align-items: center;
   justify-content: center;
 }
+.see-more:hover,
+.see-more:focus {
+  background: var(--color-violet);
+  color: var(--color-white);
+  transition: var(--transition-rule);
+ }
 .loading {
   text-align: right;
 }
@@ -178,4 +184,9 @@
   color: var(--color-white);
   background-color: var(--color-dark);
 }
-
+.theme-dark .see-more:hover,
+.theme-dark .see-more:focus {
+  background: var(--color-violet);
+  color: var(--color-white);
+  transition: var(--transition-rule);
+ }
