@@ -21,10 +21,7 @@ shoppingList = JSON.parse(localStorage.getItem('shopping-trash'))
 if (shoppingList === null) {
         shoppingList = []
     }
-// console.log('shoppingList 21r', shoppingList);
 const refs = {
-    // openModalBtn: document.querySelector('.open-modal'), 
-    // modalCartImg:document.querySelector('.books-card-title-img'),
     closeModalBtn: document.querySelector('.modal-btn'),
     backdrop: document.querySelector('.hi-backdrop'),
     
@@ -44,7 +41,6 @@ function onOpenModal() {
     refs.informModalText.style.display = 'none';
     refs.addToShopBtn.textContent= 'Add to shopping list';
     scrollLock.disablePageScroll(document.body);
-    // console.log('45r', refs.addToShopBtn.textContent)
     isBookExist();
 }
 function onCloseModal() {
@@ -55,7 +51,6 @@ function onCloseModal() {
 // При закритті вікна розблоковуємо скрол.
 
     scrollLock.enablePageScroll(document.body);
-//    console.log('55r', refs.addToShopBtn.textContent)
 }
 function onBackdropClick(event){
     if (event.currentTarget === event.target) {
@@ -65,34 +60,26 @@ function onBackdropClick(event){
 function onEscKeyPress(event) {
     const ESC_KEY_CODE = 'Escape';
     if (event.code === ESC_KEY_CODE) {
-      onCloseModal();    
+    onCloseModal();    
     }
 }
 
 function buttonAddListSohind() {
     if (refs.addToShopBtn.classList.contains('openmodal-btn')) {
-//        console.log('71r', refs.addToShopBtn.textContent);
         openModalBtn()
-        // isBookExist();
         saveShoppingTrash();
     } else {
-//        console.log('74r', refs.addToShopBtn.textContent);
         closeModalBtn();
-        // isBookExist();
         removeShoppingTrash();
     }
 }
 
 function openModalBtn() {
-    // console.log('onopenmodal 80r');
     onOpenFunc();
-    // boockListModal();//+++++++++++++
     refs.addToShopBtn.addEventListener('click', buttonAddListSohind);
  }    
 function closeModalBtn() {
-    // console.log('onclosemodal 89r')
     onCloseFunc();
-    // localStorage.removeItem('books');
     refs.addToShopBtn.addEventListener('click', buttonAddListSohind);
 }
 function onOpenFunc() {
@@ -110,7 +97,6 @@ function onCloseFunc() {
 
 function renderBoocksCard(book){
     const markup = modalCartBoock(book);
-    // console.log(book); //+++++++++++++
         refs.modalIconCardBoock.innerHTML = markup;
     }
 
@@ -168,36 +154,33 @@ function modalCartBoock(book) {
 export async function openModalBookDetails(bookID) {
 // Отримуємо дані з сервера по ID книги за допомогою api.js
     const book = await bookApi.getBookById(bookID);
-    // console.log('openmodal',book);
-    shoppingBook = book;
-    // console.log('openModalBookDetails',bookID);
-    // if (book.length === 0) {
-    //   Notify.failure('Books not found');
-    //   return;
-    // }
+    shoppingBook = book;    
     renderBoocksCard(book);
     onOpenModal();
-    // isBookOnStorage()
 };
 
 function saveShoppingTrash() {
-    // console.log(event.target.textContent);
-    // console.log('book 206r', shoppingBook);
-    console.log('205r    saveFunc', shoppingList);
+    console.log('186r    saveFunc', shoppingList);
+    console.log('187r book', shoppingBook);
     shoppingList.push(shoppingBook);
-    localStorage.setItem('shopping-trash', JSON.stringify(shoppingList))
+    localStorage.setItem('shopping-trash', JSON.stringify(shoppingList));
+    console.log('190r  shopTrash',shoppingList)
     onOpenFunc();
 };
-// isBookExist();
+
 function isBookExist() {
-    // console.log(shoppingBook._id);
-    // console.log('232r', shoppingList);
-    index = shoppingList.indexOf(shoppingBook);
-    console.log('241r', index);
+    const index = shoppingList.find(item => item._id === shoppingBook._id);
+    console.log('197r', index);
+    if (index) {
+        onOpenFunc();
+    } else {
+        onCloseFunc();
+    }
 };
+
 function removeShoppingTrash() {
     shoppingList = shoppingList.filter((item) => item._id !== shoppingBook._id);
     localStorage.setItem('shopping-trash', JSON.stringify(shoppingList))
-    console.log('245r    removeFunc', shoppingList);
+    console.log('201r    removeFunc', shoppingList);
     onCloseFunc();
-}
+};
