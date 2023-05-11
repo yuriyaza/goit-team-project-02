@@ -7,7 +7,9 @@ const backdrop1 = document.querySelector('#popup-container-1');
 const openPopUp1 = document.querySelector('.header-sign-btn');
 const closePopUp1 = document.querySelector('#popup-close-1');
 const switchPupUp1 = document.querySelector('#switch-button-1');
+const openPopUpMenu = document.querySelector('.header-sign-open-menu');
 
+openPopUpMenu.addEventListener('click', openAuthPopUp1);
 openPopUp1.addEventListener('click', openAuthPopUp1);
 closePopUp1.addEventListener('click', closeAuthPopUp);
 switchPupUp1.addEventListener('click', switchAuthPopUp1);
@@ -75,7 +77,6 @@ function onKeyPress(event) {
   }
 }
 
-
 // Вариант новый
 
 // import scrollLock from 'scroll-lock';
@@ -141,6 +142,3 @@ function onKeyPress(event) {
 // window.location.href = 'https://yuriyaza.github.io/goit-team-project-02/';
 // popUp.classList.remove('active');
 // });
-
-const openPopUpMenu = document.querySelector('.header-sign-open-menu');
-openPopUpMenu.addEventListener('click', openAuthPopUp1);

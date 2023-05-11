@@ -65,10 +65,11 @@
  .input {
      margin: 0 auto 30px auto;
      width: 500px;
-     padding: 25px;
+     padding: 20px;
      border: 2px solid #111111;
      border-radius: 40px;
-
+     font-size: 20px;
+    
      @media screen and (max-width: 767px) {
          width: 295px;
          padding: 16px;
@@ -92,7 +93,13 @@
         font-size: 18px;
         margin: 5px auto;
         margin-bottom: 15px;
-    }
+    }     
+}
+
+.button-signup:hover,
+.button-signup:focus {
+background-color: #111111;
+color: #F3F3F3;
 }
 
  .svg-icon {
