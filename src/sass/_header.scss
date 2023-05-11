@@ -23,24 +23,28 @@ body.theme-dark .header-shopping-logo {
 }
 
 body.theme-dark .icon-menu-burger {
-  fill: var(--color-white);
-}
-body.theme-dark .icon-x-close {
-  fill: var(--color-white);
-}
-
-.icon-x-close {
-  fill: var(--color-white);
-  color: #111111;
+  stroke: var(--color1, #ffffff);
 }
 .icon-menu-burger {
-  fill: var(--color-black);
-  color: #111111;
+  stroke: var(--color1, #111111);
 }
 
 .header-menu-open {
   fill: var(--color-black);
 }
+/*******hover:focus*******/
+
+body.theme-dark .icon-menu-burger:hover,
+body.theme-dark .icon-menu-burger:focus {
+  stroke: var(--color1, #4f2ee8);
+}
+
+.icon-menu-burger:hover,
+.icon-menu-burger:focus {
+  stroke: var(--color1, #4f2ee8);
+}
+
+/*******hover:focus*******/
 
 .header-menu-closed {
   display: none;
@@ -69,10 +73,11 @@ body.theme-dark .icon-x-close {
 .user-menu {
   display: flex;
   align-items: flex-start;
-  margin-top: 247px;
+  margin-top: 183px;
   margin-left: 128px;
 }
 
+.showMenuUser,
 .showMenu {
   transform: translateY(0);
 }
@@ -231,32 +236,32 @@ body.theme-dark .icon-x-close {
   text-transform: uppercase;
   color: var(--color-black);
 }
-.header-home-off {
-  z-index: 10;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-}
+// .header-home-off {
+//   z-index: 10;
+//   display: flex;
+//   flex-direction: row;
+//   align-items: flex-start;
+// }
 
-.header-home-off {
-  padding: 8px 0;
-  gap: 10px;
-  border: none;
-  width: 40px;
-  height: 34px;
-  margin-right: 24px;
-  background: none;
-  border-radius: 36px;
-  font-family: 'DM Sans';
-  font-style: Medium;
+// .header-home-off {
+//   padding: 8px 0;
+//   gap: 10px;
+//   border: none;
+//   width: 40px;
+//   height: 34px;
+//   margin-right: 24px;
+//   background: none;
+//   border-radius: 36px;
+//   font-family: 'DM Sans';
+//   font-style: Medium;
 
-  font-size: 14px;
-  line-height: 1.29;
+//   font-size: 14px;
+//   line-height: 1.29;
 
-  letter-spacing: -0.04em;
-  text-transform: uppercase;
-  color: var(--color-black);
-}
+//   letter-spacing: -0.04em;
+//   text-transform: uppercase;
+//   color: var(--color-black);
+// }
 .user-menu {
   z-index: 15;
   display: flex;
@@ -356,8 +361,14 @@ body.theme-dark .icon-x-close {
 }
 
 .header-sign-user {
+  font-family: DM Sans, medium;
+  font-size: 14px;
+  height: 18px;
+  height: 99%;
+  color: var(--color-black);
+
   display: flex;
-  margin-top: auto;
+  margin-top: 427px;
   z-index: 100;
 
   margin-left: 20px;
@@ -455,6 +466,7 @@ body.theme-dark .icon-x-close {
   display: block;
   top: 443px;
   left: 0;
+  z-index: -5;
 }
 
 // <!-- mobil menu HOME & SHOPPING-->

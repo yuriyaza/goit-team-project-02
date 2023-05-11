@@ -25,9 +25,12 @@
     <!--nav menu -->
 
     <div class="header-nav">
-      <a href="./index.html" class="header-home-off btn active">Home</a>
+      <a href="./index.html" class="header-home-off header-home-on btn">Home</a>
 
-      <a href="./shopping.html" class="header-shopping header-shopping-off btn">
+      <a
+        href="./shopping.html"
+        class="header-shopping header-shopping-off header-shopping-on btn"
+      >
         Shopping list
         <svg
           class="header-shopping-logo"
@@ -38,20 +41,6 @@
           <use href="/src/images/sprite-header.svg#icon-uil_cart"></use>
         </svg>
       </a>
-      <!-- <a
-      href="./shopping.html"
-      class="header-shopping header-shopping-off btn"
-    >
-      Shopping list
-      <svg
-        class="header-shopping-logo"
-        width="20"
-        height="20"
-        aria-label="shopping logo"
-      >
-        <use href="/src/images/sprite-header.svg#icon-uil_cart"></use>
-      </svg>
-    </a> -->
     </div>
 
     <!--swither and borger-menu -->
@@ -63,7 +52,7 @@
         id="inlineCheckbox1"
         value="option1"
       />
-      <button type="button" class="header-menu-open">
+      <button type="button" class="header-menu-open header-menu-open-user">
         <svg
           class="icon-menu-burger"
           width="28"
@@ -73,7 +62,8 @@
           <use href="/src/images/sprite-header.svg#icon-align-left"></use>
         </svg>
       </button>
-      <button type="button" class="header-menu-closed">
+
+      <button type="button" class="header-menu-closed header-menu-closed-user">
         <svg
           class="icon-menu-burger"
           width="28"
@@ -101,7 +91,7 @@
       </a>
     </div>
 
-    <!-- <div class="header-user-btn">
+    <div class="header-user-btn">
       <button
         onclick="document.location='/src/partials/shopping-list.html'"
         class="user-name"
@@ -119,7 +109,7 @@
           <use href="/src/images/sprite-header.svg#icon-fi-ss-caret-down"></use>
         </svg>
       </button>
-    </div> -->
+    </div>
   </div>
 
   <!-- mobil menu SING UP -->
@@ -150,14 +140,16 @@
 
   <!-- mobil menu HOME & SHOPPING-->
 
-  <!-- <div class="header-menu-user js-container">
+  <div class="header-menu-user js-container">
     <div class="user-menu">
       <ul>
         <li class="user-home">
-          <a href="./index.html" class="header-user-home">Home</a>
+          <a href="./index.html" class="header-user-home menu-item-user"
+            >Home</a
+          >
         </li>
         <li>
-          <a href="./shopping.html" class="header-user-shopping">
+          <a href="./shopping.html" class="header-user-shopping menu-item-user">
             Shopping list
             <svg
               class="header-shopping-logo"
@@ -165,14 +157,14 @@
               height="20"
               aria-label="shopping logo"
             >
-              <use href="/src/images/sprite-header.svg#icon-uil_cart"></use>
+              <use href="/src/images/sprite-header.svg#icon-uil_cart-1"></use>
             </svg>
           </a>
         </li>
       </ul>
     </div>
-    <div header-user-sing>
-      <button type="button" class="header-sign-user">
+    <div class="header-user-sing">
+      <button type="button" class="header-sign-user menu-item-user">
         Sign up
         <svg class="icon-sign" width="20" height="20" aria-label="sign up">
           <use
@@ -189,7 +181,8 @@
         height="443"
       />
     </picture>
-  </div> -->
+  </div>
+  <!-- mobil menu HOME & SHOPPING-->
 
   <script
     src="https://code.jquery.com/jquery-3.3.1.min.js"
