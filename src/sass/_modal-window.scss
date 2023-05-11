@@ -147,7 +147,7 @@ body.show-modal .modal {
 
     .modal-text {
         width: 242px;
-        // height: 36px;
+        
         left: 47px;
         top: 730px;
         margin-top: 8px;
@@ -159,7 +159,7 @@ body.show-modal .modal {
     }
 
     .modal-content-titl {
-        // width: 128px;
+        
         height: 18px;
         font-size: 16px;
         text-transform: uppercase;
@@ -187,11 +187,11 @@ body.show-modal .modal {
         gap: 20px;
         height: 36px;
         margin-top: 16px;
-        // left: 24px;
+        
     }
 
     .openmodal-btn {
-        // position: absolute;
+       
         width: 211px;
         left: 62px;
         padding: 14px 28px;
@@ -199,7 +199,7 @@ body.show-modal .modal {
     }
 
     .closemodal-btn {
-        // position: absolute;
+        
         width: 279px;
         left: 28px;
         padding: 14px 23px;
@@ -222,14 +222,17 @@ body.show-modal .modal {
         color: var(--color-black);
     }
 
-    .closemodal-btn:hover,
+    
     .openmodal-btn:hover,
-    .closemodal-btn:focus,
-    .openmodal-btn:focus {
+    .openmodal-btn:focus-visible {
         background: var(--color-violet);
         color: var(--color-white);
     }
-
+.closemodal-btn:focus-visible,
+.closemodal-btn:hover{
+        background: var(--color-violet);
+        color: var(--color-white);
+    }
     .modal-link-icon {
         filter: grayscale(100%);
     }
@@ -251,6 +254,7 @@ body.show-modal .modal {
             0px 1px rgba(0, 0, 0, 0.12),
             0px 1px rgba(0, 0, 0, 0.14);
         border-radius: 18px;
+        
     }
  .modal-content-card {
      display: flex;
@@ -262,7 +266,7 @@ body.show-modal .modal {
  .modal-content-text {
      display: flex;
      flex-direction: column;
-    //  justify-content: center;
+    
      
 
  }
@@ -291,16 +295,13 @@ body.show-modal .modal {
         height: 14px;
     }
 
-   
-
-    
-         .modal-content-pict {
-             width: 192px;
-             height: 281px;
-             border-radius: 8px;
+   .modal-content-pict {
+     width: 192px;
+     height: 281px;
+     border-radius: 8px;
          }
  .openmodal-btn {
-     // position: absolute;
+     
      width:499px;
      left: 40px;
     
@@ -308,7 +309,7 @@ body.show-modal .modal {
  }
 
  .closemodal-btn {
-     // position: absolute;
+    
     width: 499px;
     left: 40px;
    
@@ -317,8 +318,7 @@ body.show-modal .modal {
     .closemodal-btn {
        
         height: 64px;
-        // margin-left: 40px;
-        // margin-bottom: 40px;
+       
         top: 361px;
         // padding: 20px 173px;
         border: 2px solid var(--color-violet);
@@ -334,21 +334,27 @@ body.show-modal .modal {
         color: var(--color-black);
     }
 
-    .closemodal-btn:hover,
-    .openmodal-btn:hover,
-    .closemodal-btn:focus,
-    .openmodal-btn:focus {
+    
+    .openmodal-btn:focus-visible,
+    .openmodal-btn:hover
+       
+    {
         background: var(--color-violet);
         color: var(--color-white);
     }
-
+.closemodal-btn:focus-visible,
+.closemodal-btn:hover
+ {
+    background: var(--color-violet);
+    color: var(--color-white);
+   
+}
     .modal-content-titl {
         width: 192px;
         height: auto;
         font-weight: 700;
         font-size: 24px;
 
-        // margin-top: 40px;
         line-height: 1.12;
         letter-spacing: -0.04em;
         color: var(--color-black);
@@ -367,8 +373,7 @@ body.show-modal .modal {
 
     .modal-content-abst {
         width: 279px;
-        // height: 70px;
-
+        
         letter-spacing: -0.04em;
         color: var(--color-black);
         margin-top: 20px;
@@ -376,7 +381,6 @@ body.show-modal .modal {
 
 
     .modal-text {
-        // display: none;
         position: absolute;
         width: 324px;
         height: 28px;
