@@ -3,13 +3,13 @@ import { Notify } from 'notiflix';
 import scrollLock from 'scroll-lock';
 
 import icon from '../images/amazon.png';
-
+import amzicon from '../images/amazon2x.png';
 
 import appleshop from '../images/appleshop.png';
-
+import iconappleshop from '../images/appleshop2x.png';
 
 import boockshop from '../images/boockshop.png';
-
+import iconboockshop from '../images/boockshop2x.png';
 
 const bookApi = new BookAPI();
 Notify.init({ showOnlyTheLastOne: true, clickToClose: true });
@@ -124,7 +124,7 @@ function modalCartBoock(book) {
                 <a class="modal-link" href="${book.buy_links[0].url}" target="_blank">
                     <img class="modal-link-icon"
                             src="${icon}"
-                            srcset="${icon}"
+                            srcset="${icon}1x, ${amzicon}2x"
                             alt="amazon" width="62" height="19"></img></a>
               </li>
             
@@ -132,7 +132,7 @@ function modalCartBoock(book) {
                     <a class="modal-link" href="${book.buy_links[1].url}" target="_blank">
                          <img class="modal-link-icon"
                             src="${appleshop}}"
-                            srcset="${appleshop}"
+                            srcset="${appleshop}1x, ${iconappleshop}2x"
                             alt="apple shop" width="33" height="32
                             ></img></a>
                 </li>
@@ -141,7 +141,7 @@ function modalCartBoock(book) {
                     <a class="modal-link" href="${book.buy_links[4].url}" target="_blank">
                         <img class="modal-link-icon"
                             src="${boockshop}"
-                            srcset="${boockshop}"
+                            srcset="${boockshop}1x,${iconboockshop}2x "
                             alt="book shop" width="38" height="36"
                             ></img></a>
                 </li>
