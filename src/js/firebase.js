@@ -2,6 +2,9 @@ import { initializeApp } from 'firebase/app';
 import { getAnalytics } from 'firebase/analytics';
 import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
 
+const authform1 = document.querySelector('#auth-form-1');
+authform1.addEventListener('submit', signup);
+
 const firebaseConfig = {
   apiKey: 'AIzaSyC-eMd5m0dMO7LKnERBDzjQI041CFFQPLc',
   authDomain: 'goit-team-project-02-27328.firebaseapp.com',
@@ -13,18 +16,18 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+// const analytics = getAnalytics(app);
 const auth = getAuth();
 // Зарегистрируйте новых пользователей
 
-function signup(e) {
+var name = document.getElementById('name-1');
+var email = document.getElementById('email-1');
+var password = document.getElementById('password-1');
+
+function signup() {
   e.preventDefault();
 
-  const name = document.getElementById('name-1');
-  const email = document.getElementById('email-1');
-  const password = document.getElementById('password-1');
-
-  const user = {
+  var user = {
     name: name.value,
     email: email.value,
     password: password.value,
@@ -39,6 +42,7 @@ function signup(e) {
     });
   console.log(user);
 }
+
 
 // Войти существующих пользователей
 

@@ -114,12 +114,21 @@ color: #F3F3F3;
      @media screen and (max-width: 767px) {
          width: 20px;
          height: 20px;
+         right: 25px;
+         top: 35%;
+         transform: translateY(-50%);
      }
  }
 
  .lebel {
      position: relative;
      margin-top: 4px;
+     align-items: center;
+     justify-content: center;
+    
+     @media screen and (max-width: 767px) {
+         display: flex;
+        }
  }
 
  .contact-form {

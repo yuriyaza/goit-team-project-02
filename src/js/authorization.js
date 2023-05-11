@@ -5,8 +5,6 @@ import { Users } from './users';
 // Та коли користувач успіно зараєструвався/увійшов - викликай функцію
 // user.setActiveUser('Ivan Ivanov', 'i.ivanov@gmail.com');
 
-
-
 const authForm1 = document.querySelector('#auth-form-1');
 authForm1.addEventListener('submit', signup);
 
@@ -39,7 +37,9 @@ function signup() {
 function chechData() {
   const email = document.getElementById('email-2');
   const password = document.getElementById('password-2');
+
   const user = new Users();
+
   const userInfo = {
     email: email.value,
     password: password.value,
@@ -57,7 +57,7 @@ function chechData() {
     getUser.email === user.email &&
     getUser.password === user.password
   ) {
-    // user.setActiveUser('Ivan Ivanov', 'i.ivanov@gmail.com');
+    user.setActiveUser('Ivan Ivanov', 'i.ivanov@gmail.com');
     // window.location.href = '/src/index.html';
     window.location.href = '/goit-team-project-02/';
   } else {
