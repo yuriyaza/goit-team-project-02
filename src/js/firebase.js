@@ -3,13 +3,13 @@ import { getAnalytics } from 'firebase/analytics';
 import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyDbgY6AeKCUeYDdnDa3RwqGJag6FgL4yRs',
-  authDomain: 'goit-team-project02.firebaseapp.com',
-  projectId: 'goit-team-project02',
-  storageBucket: 'goit-team-project02.appspot.com',
-  messagingSenderId: '543957732549',
-  appId: '1:543957732549:web:f69c70aa0bc06b1883f4ac',
-  measurementId: 'G-56V4Q6BEEK',
+  apiKey: 'AIzaSyC-eMd5m0dMO7LKnERBDzjQI041CFFQPLc',
+  authDomain: 'goit-team-project-02-27328.firebaseapp.com',
+  projectId: 'goit-team-project-02-27328',
+  storageBucket: 'goit-team-project-02-27328.appspot.com',
+  messagingSenderId: '343120497607',
+  appId: '1:343120497607:web:18d2f5c8a6382ac09f27e2',
+  measurementId: 'G-BJL1GBZW1W',
 };
 
 const app = initializeApp(firebaseConfig);
