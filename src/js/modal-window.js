@@ -160,17 +160,13 @@ export async function openModalBookDetails(bookID) {
 };
 
 function saveShoppingTrash() {
-    console.log('186r    saveFunc', shoppingList);
-    console.log('187r book', shoppingBook);
     shoppingList.push(shoppingBook);
     localStorage.setItem('shopping-trash', JSON.stringify(shoppingList));
-    console.log('190r  shopTrash',shoppingList)
     onOpenFunc();
 };
 
 function isBookExist() {
     const index = shoppingList.find(item => item._id === shoppingBook._id);
-    console.log('197r', index);
     if (index) {
         onOpenFunc();
     } else {
@@ -181,6 +177,5 @@ function isBookExist() {
 function removeShoppingTrash() {
     shoppingList = shoppingList.filter((item) => item._id !== shoppingBook._id);
     localStorage.setItem('shopping-trash', JSON.stringify(shoppingList))
-    console.log('201r    removeFunc', shoppingList);
     onCloseFunc();
 };
