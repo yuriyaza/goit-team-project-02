@@ -53,9 +53,6 @@
   display: flex;
   flex-direction: column;
   row-gap: 20px;
-  padding-left: 0px;
-  margin-top: 40px;
-  margin-bottom: 0px;
 }
 .support-ukraine-title {
   font-size: 28px;
@@ -75,8 +72,9 @@
 .slider-support-ukraine {
   position: absolute;
   width: 237px;
-  height: 230px;
+  height: 190px;
   overflow: hidden;
+  margin-top: 40px;
 }
 
 .slider-liner-su {
@@ -97,7 +95,7 @@
     left: 149px;
   }
   .slider-support-ukraine {
-    height: 355px;
+    height: 315px;
   }
 }
 @media screen and (min-width: 1440px) {

@@ -76,18 +76,27 @@
     </div>
 
     <!-- button sign up -->
+    
+    <div class="header-sign-btn-wrapper">
+      <div class="header-sign-btn" data-sign-base>
+        <a href="#" class="header-sign-open header-sign-menu header-sign" > Sign up
+          <svg class="icon-sign" width="20" height="20" aria-label="sign up">
+            <use href="/src/images/sprite-header.svg#icon-arrow-narrow-right" ></use>
+          </svg>
+        </a>
+      </div>
 
-    <div class="header-sign-btn">
-      <a
-        href="/src/partials/authorization.html"
-        class="header-sign-open header-sign-menu header-sign"
-      >
-        Sign up
-        <svg class="icon-sign" width="20" height="20" aria-label="sign up">
-          <use
-            href="/src/images/sprite-header.svg#icon-arrow-narrow-right"
-          ></use>
-        </svg>
+      <a href="#" class="header-sign-btn-signup hidden" data-sign-up>
+        <div class="header-sign-btn-signup-user">
+          <img class="header-sign-btn-signup-avatar" src="./images/avatar.svg" alt="User avatar">
+          <div class="header-sign-btn-signup-username" data-sign-name>User</div>
+        </div>
+        <img class="header-sign-btn-advanced-openup" src="./images/open-up.svg" alt="Open up arrow">
+      </a>
+
+      <a href="#" class="header-sign-btn-logout hidden" data-sign-logout>
+        <div class="header-sign-btn-logout-descr">Log out</div>
+        <img class="header-sign-btn-logout-nextarrow" src="./images/next-arrow.svg" alt="Next arrow">
       </a>
     </div>
 
@@ -114,26 +123,38 @@
 
   <!-- mobil menu SING UP -->
 
+
+
   <div class="header-menu">
     <div class="header-sign-menu">
-      <a
-        href="/src/partials/authorization.html"
-        class="header-sign-open-menu header-sign menuItem"
-      >
-        Sign up
+      
+    <div class="header-sign-menu-wrapper">
+
+      <a href="#" class="header-sign-open-menu header-sign menuItem" data-sign-base> Sign up
         <svg class="icon-sign" width="20" height="20" aria-label="sign up">
-          <use
-            href="/src/images/sprite-header.svg#icon-arrow-narrow-right"
-          ></use>
+          <use href="/src/images/sprite-header.svg#icon-arrow-narrow-right"></use>
         </svg>
       </a>
+
+       <a href="#" class="header-sign-menu-signup hidden" data-sign-up>
+        <div class="header-sign-menu-signup-user">
+          <img class="header-sign-menu-signup-avatar" src="./images/avatar.svg" alt="User avatar">
+          <div class="header-sign-menu-signup-username" data-sign-name>User</div>
+        </div>
+        <img class="header-sign-menu-advanced-openup" src="./images/open-up.svg" alt="Open up arrow">
+      </a>
+
+      <a href="#" class="header-sign-menu-logout hidden" data-sign-logout>
+        <div class="header-sign-menu-logout-descr">Log out</div>
+        <img class="header-sign-menu-logout-nextarrow" src="./images/next-arrow.svg" alt="Next arrow">
+      </a>
+</div>
+
+
+
+
       <picture class="img-mobile-menu menuItem">
-        <img
-          src="/src/images/mobile-menu-books.png"
-          alt="mobile menu books"
-          width="375"
-          height="443"
-        />
+        <img src="/src/images/mobile-menu-books.png" alt="mobile menu books" width="375" height="443" />
       </picture>
     </div>
   </div>

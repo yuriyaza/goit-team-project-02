@@ -1,14 +1,14 @@
-// import { func } from 'joi';
 import { fonds } from './array-of-funds';
+
+const supportListModal = document.querySelector('.support-ukraine-list');
 let offset = 0;
-const supportList = document.querySelector('.support-ukraine-list');
-const sliderLine = document.querySelector('.slider-liner-su');
-const sliderBtn = document.querySelector('.support-ukraine-btn');
-sliderBtn.addEventListener('click', sliderBtnHandler);
+const sliderLineModal = document.querySelector('.slider-liner-su');
+const sliderBtnModal = document.querySelector('.support-ukraine-btn');
+sliderBtnModal.addEventListener('click', sliderBtnHandlerModal);
 
-createMarkupForSupportUk(fonds);
+createMarkupForSupportUkModal(fonds);
 
-function createMarkupForSupportUk(fonds) {
+function createMarkupForSupportUkModal(fonds) {
   fonds.forEach(function (fond, index) {
     const { title, url, img, img2x } = fond;
     const params = {};
@@ -18,11 +18,11 @@ function createMarkupForSupportUk(fonds) {
     params.img2x = img2x;
     params.index = index;
 
-    supportList.insertAdjacentHTML('beforeend', markup(params));
+    supportListModal.insertAdjacentHTML('beforeend', markupModal(params));
   });
 }
 
-function markup(params) {
+function markupModal(params) {
   const { title, url, img, img2x, index } = params;
 
   return `<li class="list-unit">
@@ -41,10 +41,10 @@ function pad(value) {
   return String(value).padStart(2, '0');
 }
 
-function sliderBtnHandler() {
+function sliderBtnHandlerModal() {
   offset += 157;
   if (offset > 500) {
     offset = 0;
   }
-  sliderLine.style.top = -offset + 'px';
+  sliderLineModal.style.top = -offset + 'px';
 }
