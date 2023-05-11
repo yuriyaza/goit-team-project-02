@@ -90,6 +90,7 @@
   height: auto;
   border-radius: 8px;
   overflow: hidden;
+  transition: var(--transition-rule);
 }
 .books-all-wrapp > img{
   display: block;
@@ -114,6 +115,13 @@
   transform: translateY(100%);
   transition: transform var(--transition-rule);
 }
+.books-all-wrapp:hover{
+  -webkit-box-shadow: 0px -10px 24px -8px rgba(5, 17, 250, 0.75);
+    -moz-box-shadow: 0px -10px 24px -8px rgba(5, 17, 250, 0.75);
+    box-shadow: 0px -10px 24px -8px rgba(5, 17, 250, 0.75);
+    transition: var(--transition-rule);
+}
+
 .books-all-wrapp:hover .quick-view {
   transform: translateY(0);
 }
