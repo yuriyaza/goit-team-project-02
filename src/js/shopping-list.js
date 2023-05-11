@@ -71,26 +71,26 @@ const easyPagination = ({
     let prevNextBtns = () => {
       let prevBtn = document.createElement('button');
       prevBtn.setAttribute('type', 'button');
-      prevBtn.classList.add('prevClass');
       prevBtn.classList.add('page-link');
+      prevBtn.classList.add('prevClass');
       prevBtn.innerHTML = prevText;
 
       let nextBtn = document.createElement('button');
       nextBtn.setAttribute('type', 'button');
-      nextBtn.classList.add('nextClass');
       nextBtn.classList.add('page-link');
+      nextBtn.classList.add('nextClass');
       nextBtn.innerHTML = nextText;
 
       let firstBtn = document.createElement('button');
       firstBtn.setAttribute('type', 'button');
-      firstBtn.classList.add('firstClass');
       firstBtn.classList.add('page-link');
+      firstBtn.classList.add('firstClass');
       firstBtn.innerHTML = firstText;
 
       let lastBtn = document.createElement('button');
       lastBtn.setAttribute('type', 'button');
-      lastBtn.classList.add('lastClass');
       lastBtn.classList.add('page-link');
+      lastBtn.classList.add('lastClass');
       lastBtn.innerHTML = lastText;
 
       prevBtn.addEventListener('click', () => {
@@ -168,8 +168,10 @@ const easyPagination = ({
 
       if (hasButtons) {
         let current_btn = getActiveBtn();
-        current_btn.classList.remove('active');
-        current_btn.nextElementSibling.classList.add('active');
+        if (currentPage != 0) {
+          current_btn.classList.remove('active');
+          current_btn.nextElementSibling.classList.add('active');
+        }
       }
 
       if (handlePaginatedItems) {
@@ -177,7 +179,7 @@ const easyPagination = ({
       } else return paginatedItems;
     },
     last: () => {
-      if (currentPage === pageCount - 1) return;
+      if (currentPage === pageCount) return;
       currentPage = pageCount - 1;
       let page = currentPage;
       let start = rows * page;
@@ -186,6 +188,7 @@ const easyPagination = ({
 
       if (hasButtons) {
         let current_btn = getActiveBtn();
+
         current_btn.classList.remove('active');
         current_btn.nextElementSibling.classList.add('active');
       }
@@ -730,7 +733,7 @@ let booksData = [
 let booksString = JSON.stringify(booksData);
 localStorage.setItem('books', booksString);
 
-let booksArray = JSON.parse(localStorage.getItem('books'));
+let booksArray = JSON.parse(localStorage.getItem('shopping-trash'));
 
 appendShoppingListMarkup();
 
@@ -825,7 +828,6 @@ function shoppingListisFilled() {
 shoppingList.addEventListener('click', removeBook);
 
 function removeBook(e) {
-  e.preventDefault();
 
   if (e.target.nodeName === 'BUTTON') {
     let _bookId = e.target.closest('.book-card').id;
@@ -841,7 +843,7 @@ function removeBook(e) {
     let card = document.getElementById(_bookId);
     // console.log(card);
     card.remove();
-    localStorage.setItem('books', JSON.stringify(booksArray));
+    localStorage.setItem('shopping-trash', JSON.stringify(booksArray));
     if (booksArray.length === 0) {
       shoppingListIsEmpty();
     }
