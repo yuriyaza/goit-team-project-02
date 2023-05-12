@@ -71,6 +71,9 @@
 //     }
 // })();
 
+
+// Підсвічування активної сторінки в меню
+
 (function setActiveMenuItem() {
   const activePage = document.body.dataset.activePage;
   const homeMenuItem = document.querySelector('[data-home-btn]');
@@ -85,15 +88,7 @@
   }
 })();
 
-// const themeCheckBox = document.querySelector('.form-check-input');
-// themeCheckBox.addEventListener('change', onThemeCheckBoxChange);
-// function onThemeCheckBoxChange(event) {
-//   console.log(event.target.checked);
-// }
-// console.log(themeCheckBox.checked);
-// themeCheckBox.checked = true;
-
-// ==================
+// Зберігання та відображення темної/світлої теми
 
 const localStorageName = 'theme';
 let themeName = 'theme-light';

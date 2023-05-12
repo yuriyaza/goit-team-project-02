@@ -238,28 +238,14 @@ img {
 }
 
 .spinner-wrapper {
-  width: 335px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 99;
+  transform: translate(-50%, -50%);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 30px;
-  padding-bottom: 30px;
-}
-
-@media (min-width: 768px) {
-  .spinner-wrapper {
-    width: 704px;
-    padding-top: 0px;
-    padding-bottom: 0px;
-  }
-}
-
-@media (min-width: 1440px) {
-  .spinner-wrapper {
-    width: 996px;
-    padding-top: 60px;
-    padding-bottom: 60px;
-  }
 }
 
 .spinner-wrapper.hidden {

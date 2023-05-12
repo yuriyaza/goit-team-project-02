@@ -8,7 +8,9 @@ export class BookAPI {
 
     async getCategoryList(){
         try {
+            spinner.classList.remove('hidden');
             const response = await axios.get('https://books-backend.p.goit.global/books/category-list');
+            spinner.classList.add('hidden');
             return response.data;
         } catch (error) {
             Notify.failure(error.message);
@@ -18,7 +20,9 @@ export class BookAPI {
 
     async getTopBooks() {
         try {
+            spinner.classList.remove('hidden');
             const response = await axios.get('https://books-backend.p.goit.global/books/top-books');
+            spinner.classList.add('hidden');
             return response.data;
         } catch (error) {
             Notify.failure(error.message);
@@ -29,7 +33,9 @@ export class BookAPI {
     async getCategory(data) {
         const category = data;
         try {
+            spinner.classList.remove('hidden');
             const response = await axios.get(`https://books-backend.p.goit.global/books/category?category=${category}`);
+            spinner.classList.add('hidden');
             return response.data;
         } catch (error) {
             Notify.failure(error.message);
@@ -40,7 +46,9 @@ export class BookAPI {
     async getBookById(data) {
         const id = data;
         try {            
+            spinner.classList.remove('hidden');
             const response = await axios.get(`https://books-backend.p.goit.global/books/${id}`);
+            spinner.classList.add('hidden');
             return response.data;
         } catch (error) {
             Notify.failure(error.message);
