@@ -72,9 +72,6 @@ export class Users {
   }
 }
 
-const user = new Users();
-user.checkSignInStatus();
-
 const signUpButton = document.querySelectorAll('[data-sign-up]');
 for (const element of signUpButton) {
   element.onclick = () => {
@@ -88,3 +85,6 @@ const logOutButton = document.querySelectorAll('[data-sign-logout]');
 for (const element of logOutButton) {
   element.onclick = () => user.onUserSignOut();
 }
+
+const user = new Users();
+user.checkSignInStatus();
