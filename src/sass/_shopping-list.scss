@@ -101,6 +101,7 @@
   align-items: center;
   cursor: pointer;
   background: #4f2ee8;
+  transition: all var(--transition-rule)
 }
 .trash-icon {
   fill: #ffffff;
@@ -225,6 +226,7 @@
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   border-color: var(--color-violet);
   color: var(--color-violet);
+  transition: all var(--transition-rule)
 }
 
 .page-link:active, .remove-book:active {
@@ -232,11 +234,13 @@
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   border-color: var(--color-violet);
   color: var(--color-violet);
+  transition: all var(--transition-rule)
 }
 
 .page-link.active{
   background-color: var(--color-black);
   color: var(--color-white);
+  transition: all var(--transition-rule)
 }
 
 @media screen and (min-width: 480px) {
