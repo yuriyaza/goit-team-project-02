@@ -234,8 +234,8 @@
   color: var(--color-violet);
 }
 
-.page-link .active{
-  background-color: var(--color-violet);
+.page-link.active{
+  background-color: var(--color-black);
   color: var(--color-white);
 }
 
