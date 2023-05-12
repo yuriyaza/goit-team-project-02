@@ -234,6 +234,11 @@
   color: var(--color-violet);
 }
 
+.page-link .active{
+  background-color: var(--color-violet);
+  color: var(--color-white);
+}
+
 @media screen and (min-width: 480px) {
 }
 @media screen and (max-width: 768px) {
