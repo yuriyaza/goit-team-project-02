@@ -1,40 +1,30 @@
-;(function ($) {
+(function ($) {
+  $.switcher = function (filter) {
+    var $haul = $('input[type=checkbox]');
 
-    $.switcher = function (filter) {
+    if (filter !== undefined && filter.length) {
+      $haul = $haul.filter(filter);
+    }
 
-        var $haul = $('input[type=checkbox]');
+    $haul.each(function () {
+      var $checkbox = $(this).hide(),
+        $switcher = $(document.createElement('div'))
+          .addClass('ui-switcher')
+          .attr('aria-checked', $checkbox.is(':checked'));
 
-        if (filter !== undefined && filter.length) {
-            $haul = $haul.filter(filter);
-           
+      toggleSwitch = function (e) {
+        if (e.target.type === undefined) {
+          $checkbox.trigger(e.type);
         }
+        document.body.classList.toggle('theme-dark');
+        $switcher.attr('aria-checked', $checkbox.is(':checked'));
+      };
 
-        $haul.each(function () {
-            
-            var $checkbox = $(this).hide(),
-                $switcher = $(document.createElement('div'))
-                    .addClass('ui-switcher')
-                    .attr('aria-checked', $checkbox.is(':checked'));
-                    
-         
-            toggleSwitch = function (e) {
-                if (e.target.type === undefined) {
-                    $checkbox.trigger(e.type);
-                    
-                }
-                document.body.classList.toggle('theme-dark');
-                $switcher.attr('aria-checked', $checkbox.is(':checked'));
-                        
-            };
-              
-            $switcher.on('click', toggleSwitch);
-            
-            $switcher.insertBefore($checkbox);
-         
-        });
-       
-    };
+      $switcher.on('click', toggleSwitch);
 
+      $switcher.insertBefore($checkbox);
+    });
+  };
 })(jQuery);
 
 // document.body.classList.toggle('theme-light');
@@ -54,9 +44,6 @@
 //     });
 //     // document.querySelector(`[data-theme="${themeName}"]`).style.display = 'none'; // Но скрываем кнопку для активной темы
 // }
-
-
-
 
 //  // функція для встановлення певної теми/колірної схеми
 //  function setTheme(themeName) {
@@ -83,3 +70,17 @@
 //       document.getElementById('slider').checked = true;
 //     }
 // })();
+
+(function setActiveMenuItem() {
+  const activePage = document.body.dataset.activePage;
+  const homeMenuItem = document.querySelector('[data-home-btn]');
+  const shoppingMenuItem = document.querySelector('[data-shopping-btn]');
+
+  if (activePage === 'home') {
+    shoppingMenuItem.classList.remove('active');
+    homeMenuItem.classList.add('active');
+  } else {
+    homeMenuItem.classList.remove('active');
+    shoppingMenuItem.classList.add('active');
+  }
+})();

@@ -8,6 +8,7 @@ export class Users {
   setActiveUser(name, email) {
     const user = { name, email };
     localStorage.setItem('active-user', JSON.stringify(user));
+    this.checkSignInStatus();
   }
 
   getActiveUser() {
@@ -71,25 +72,19 @@ export class Users {
   }
 }
 
-const signUpButton = document.querySelectorAll('[data-sign-up]');
-const logOutButton = document.querySelectorAll('[data-sign-logout]');
+const user = new Users();
+user.checkSignInStatus();
 
+const signUpButton = document.querySelectorAll('[data-sign-up]');
 for (const element of signUpButton) {
   element.onclick = () => {
     for (const el of logOutButton) {
-      el.classList.remove('hidden');
+      el.classList.toggle('hidden');
     }
   };
 }
 
+const logOutButton = document.querySelectorAll('[data-sign-logout]');
 for (const element of logOutButton) {
   element.onclick = () => user.onUserSignOut();
 }
-
-// =========== Перевірка роботи =========== 
-
-const user = new Users();
-user.setActiveUser('Ivan Ivanov', 'i.ivanov@gmail.com');
-// user.removeActiveUser();
-
-user.checkSignInStatus();

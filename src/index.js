@@ -14,4 +14,3 @@ import './js/array-of-funds';
 import './js/scroll-up';
 import './js/mobile-menu-2';
 import './js/btn-home-shopping'
-import './js/users'
