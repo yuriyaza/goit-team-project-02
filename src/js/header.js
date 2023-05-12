@@ -76,15 +76,23 @@
 
 (function setActiveMenuItem() {
   const activePage = document.body.dataset.activePage;
-  const homeMenuItem = document.querySelector('[data-home-btn]');
-  const shoppingMenuItem = document.querySelector('[data-shopping-btn]');
+  const homeMenuItem = document.querySelectorAll('[data-home-btn]');
+  const shoppingMenuItem = document.querySelectorAll('[data-shopping-btn]');
 
   if (activePage === 'home') {
-    shoppingMenuItem.classList.remove('active');
-    homeMenuItem.classList.add('active');
+    for (const item of shoppingMenuItem) { 
+      item.classList.remove('active');
+    }
+    for (const item of homeMenuItem) { 
+      item.classList.add('active');
+    }
   } else {
-    homeMenuItem.classList.remove('active');
-    shoppingMenuItem.classList.add('active');
+    for (const item of homeMenuItem) {
+      item.classList.remove('active');
+    }
+    for (const item of shoppingMenuItem) {
+      item.classList.add('active');
+    }
   }
 })();
 
