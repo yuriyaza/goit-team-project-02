@@ -173,7 +173,16 @@ body.theme-dark .icon-menu-burger:hover {
 
   box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
-
+.ui-switcher:hover{
+  box-shadow: rgba(234, 198, 69, 0.05) 0px 1px 0px, rgba(79, 46, 232, 0.9) 0px 0px 15px;
+    transition: all var(--transition-rule);
+    background-color: rgba(79, 46, 232, 0.7);
+}
+.theme-dark.ui-switcher:hover{
+  box-shadow: rgba(234, 198, 69, 0.05) 0px 1px 0px, rgba(234, 198, 69, 0.9) 0px 0px 15px;
+    transition: all var(--transition-rule);
+    background-color: #C7A83A;
+}
 @media screen and (min-width: 768px) {
   .ui-switcher {
     margin-right: 184px;
