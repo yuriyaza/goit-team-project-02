@@ -95,37 +95,39 @@
 
 // ==================
 
-// const localStorageName = 'theme';
-// let themeName = 'theme-light';
+const localStorageName = 'theme';
+let themeName = 'theme-light';
 
-// const checkboxEl = document.querySelector('.form-check-input');
-// checkboxEl.addEventListener('click', onClickFun);
+const checkboxEl = document.querySelector('.form-check-input');
+checkboxEl.addEventListener('click', onClickFun);
 
-// function onClickFun() {
-//   const checkboxStatus = checkboxEl.checked;
-//   if (checkboxStatus === true) {
-//     themeName = 'theme-dark';
-//     setTheme(themeName);
-//     return;
-//   }
-//   localStorage.removeItem(localStorageName);
-//   themeName = 'theme-light';
-//   setTheme(themeName);
-// }
+function onClickFun() {
+  const checkboxStatus = checkboxEl.checked;
+  if (checkboxStatus === true) {
+    themeName = 'theme-dark';
+    setTheme(themeName);
+    return;
+  }
+  localStorage.removeItem(localStorageName);
+  themeName = 'theme-light';
+  setTheme(themeName);
+}
 
-// function setTheme(themeName) {
-//   localStorage.setItem('theme', themeName);
-//   console.log('hi im-', themeName); //-  этот консоль потом удали просто показываю что он работает
-//   // сюда нужно прописать куда применятся стили в themeName (основная отрисовка стилей)
-// }
+function setTheme(themeName) {
+  localStorage.setItem('theme', themeName);
+  // console.log('hi im-', themeName); //-  этот консоль потом удали просто показываю что он работает
+  // сюда нужно прописать куда применятся стили в themeName (основная отрисовка стилей)
+}
 
-// (function () {
-//   if (localStorage.getItem('theme') === 'theme-dark') {
-//     setTheme('theme-dark');
-//     checkboxEl.checked = true;
-//     return;
-//   } else {
-//     setTheme('theme-light');
-//     checkboxEl.checked = false;
-//   }
-// })();
+(function () {
+  if (localStorage.getItem('theme') === 'theme-dark') {
+    setTheme('theme-dark');
+    checkboxEl.checked = true;
+    document.body.classList.add('theme-dark');
+    return;
+  } else {
+    setTheme('theme-light');
+    checkboxEl.checked = false;
+    document.body.classList.remove('theme-dark');
+  }
+})();
