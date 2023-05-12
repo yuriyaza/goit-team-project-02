@@ -25,18 +25,12 @@ function toggleMenu() {
 // Close mobile menu on device orientation changes
 window.matchMedia('(min-width: 768px)').addEventListener('change', onChangeOrientation);
 function onChangeOrientation(event) {
-  if (!event.matches) return;
+  const menuIsOpen = menu.className.includes('showMenu');
+  if (!event.matches || !menuIsOpen) return;
     menu.classList.remove('showMenu');
     closeIcon.style.display = 'block';
     menuIcon.style.display = 'none';
     scrollLock.enablePageScroll(document.body);
-
-  // mobileMenuContainerEl.classList.remove('is-open');
-  // mobileMenuEl.classList.remove('is-open');
-  // menuButtonEl.classList.remove('is-open');
-
-  // menuButtonEl.setAttribute('aria-expanded', false);
-  // scrollLock.enablePageScroll(document.body);
 }
 
 closeIcon.addEventListener('click', toggleMenu);
