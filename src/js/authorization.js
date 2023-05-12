@@ -25,7 +25,7 @@ function signup() {
     email: email.value,
     password: password.value,
   };
-  console.log(userInfo);
+  // console.log(userInfo);
 
   localStorage.setItem(userInfo.email, JSON.stringify(userInfo));
   user.setActiveUser(userInfo.name, userInfo.email);
