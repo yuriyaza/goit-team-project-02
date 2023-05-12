@@ -123,9 +123,9 @@
 }
 .books-all-wrapp:hover{
   -webkit-box-shadow: 0px -10px 24px -8px rgba(5, 17, 250, 0.75);
-    -moz-box-shadow: 0px -10px 24px -8px rgba(5, 17, 250, 0.75);
-    box-shadow: 0px -10px 24px -8px rgba(5, 17, 250, 0.75);
-    transition: var(--transition-rule);
+  -moz-box-shadow: 0px -10px 24px -8px rgba(5, 17, 250, 0.75);
+  box-shadow: 0px -10px 24px -8px rgba(5, 17, 250, 0.75);
+  transition: var(--transition-rule);
 }
 
 .books-all-wrapp:hover .quick-view {
@@ -197,4 +197,10 @@
   background: var(--color-violet);
   color: var(--color-white);
   transition: var(--transition-rule);
- }
+}
+.theme-dark .books-all-wrapp:hover {
+  -webkit-box-shadow: 0px -10px 24px -8px rgba(227, 215, 41, 0.75);
+  -moz-box-shadow: 0px -10px 24px -8px rgba(227, 215, 41, 0.75);
+  box-shadow: 0px -10px 24px -8px rgba(227, 215, 41, 0.75);
+  transition: var(--transition-rule);
+}

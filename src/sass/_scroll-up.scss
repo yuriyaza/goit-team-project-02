@@ -24,7 +24,7 @@
     opacity: 1;
     animation: pulse 2s infinite;
 }
-// 79,46,232
+
 @keyframes pulse {
     0% {
         transform: scale(0.95);
@@ -41,9 +41,34 @@
         box-shadow: 0 0 0 0 rgba(79, 46, 232, 0);
     }
 }
+@keyframes pulse-dark {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(98, 93, 255, 0.7);
+    }
+//rgb(98, 93, 255)
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 10px rgba(98, 93, 255, 0);
+    }
 
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 10px rgba(98, 93, 255, 0);
+    }
+}
 @media screen and (min-device-pixel-ratio: 2){
     .scroll-up-btn {
         background: url(../images/up@2x.png);
     }
+}
+
+.theme-dark .scroll-up-btn.active {
+    width: 64px;
+    height: 64px;
+    bottom: 40px;
+    right: 40px;
+    visibility: visible;
+    opacity: 1;
+    animation: pulse-dark 2s infinite;
 }
