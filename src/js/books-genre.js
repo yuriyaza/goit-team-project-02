@@ -3,22 +3,19 @@ import { Notify } from 'notiflix';
 import { openModalBookDetails } from './modal-window';
 
 const bookApi = new BookAPI();
-const spinner = document.querySelector('.spinner-wrapper');
 
 Notify.init({ showOnlyTheLastOne: true, clickToClose: true });
 
 export async function renderSectionBooksGenre(genreName, categoryName) {
   document.querySelector('.books-content').innerHTML = '';
-  spinner.classList.remove('hidden');
 
   const backEndData = await bookApi.getCategory(genreName);
   if (backEndData.length === 0) Notify.failure('Books not found');
 
   const markup = booksGenreCreateMarkup(categoryName, backEndData);
   document.querySelector('.books-content').innerHTML = markup;
-  window.scrollTo(0, 0);
 
-  spinner.classList.add('hidden');
+  window.scrollTo(0, 0);
   addUserClickListener();
 }
 

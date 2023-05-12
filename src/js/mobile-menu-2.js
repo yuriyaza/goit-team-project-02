@@ -1,3 +1,5 @@
+import scrollLock from 'scroll-lock';
+
 const menu = document.querySelector('.header-menu');
 const menuItems = document.querySelectorAll('.menuItem');
 
@@ -11,11 +13,30 @@ function toggleMenu() {
     menu.classList.remove('showMenu');
     closeIcon.style.display = 'block';
     menuIcon.style.display = 'none';
+    scrollLock.enablePageScroll(document.body);
   } else {
     menu.classList.add('showMenu');
     closeIcon.style.display = 'none';
     menuIcon.style.display = 'block';
+    scrollLock.disablePageScroll(document.body);
   }
+}
+
+// Close mobile menu on device orientation changes
+window.matchMedia('(min-width: 768px)').addEventListener('change', onChangeOrientation);
+function onChangeOrientation(event) {
+  if (!event.matches) return;
+    menu.classList.remove('showMenu');
+    closeIcon.style.display = 'block';
+    menuIcon.style.display = 'none';
+    scrollLock.enablePageScroll(document.body);
+
+  // mobileMenuContainerEl.classList.remove('is-open');
+  // mobileMenuEl.classList.remove('is-open');
+  // menuButtonEl.classList.remove('is-open');
+
+  // menuButtonEl.setAttribute('aria-expanded', false);
+  // scrollLock.enablePageScroll(document.body);
 }
 
 closeIcon.addEventListener('click', toggleMenu);

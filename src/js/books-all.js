@@ -9,23 +9,22 @@ import { renderSectionBooksGenre } from './books-genre';
 import { openModalBookDetails } from './modal-window';
 
 const bookApi = new BookAPI();
-const spinner = document.querySelector('.spinner-wrapper');
 
 Notify.init({ showOnlyTheLastOne: true, clickToClose: true });
 window.addEventListener('resize', hideInvisibleBooks);
 
 export async function renderSectionBooksAll() {
   document.querySelector('.books-content').innerHTML = '';
-  spinner.classList.remove('hidden');
+
   const backEndData = loadFromLocalStorage();
   // const backEndData = await bookApi.getTopBooks();
   if (backEndData.length === 0) Notify.failure('Books not found');
+  
   const markup = booksAllCreateMarkup(backEndData);
   document.querySelector('.books-content').innerHTML = markup;
   hideInvisibleBooks();
-  window.scrollTo(0, 0);
   
-  spinner.classList.add('hidden');
+  window.scrollTo(0, 0);
   addUserClickListener();
 }
 function loadFromLocalStorage() {
