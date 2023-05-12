@@ -58,7 +58,7 @@ function switchAuthPopUp2() {
 
 // Общие функции
 
-function closeAuthPopUp() {
+export function closeAuthPopUp() {
   popUp1.classList.remove('active');
   popUp2.classList.remove('active');
   scrollLock.enablePageScroll(document.body);
