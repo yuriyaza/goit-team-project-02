@@ -7,7 +7,6 @@ const menuIcon = document.querySelector('.header-menu-closed');
 const menuIconShopping = document.querySelector('.header-menu-closed-shopping');
 
 function toggleMenu() {
-  console.log('qw');
   if (menu.classList.contains('showMenu')) {
     menu.classList.remove('showMenu');
     closeIcon.style.display = 'block';
