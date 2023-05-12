@@ -76,10 +76,10 @@ export function removeUpperCase() {
 
 export function seeMoreFunc(data) {
     removeUpperCase();
-    const newDom = document.querySelectorAll('.category');
+    const newDom = document.querySelectorAll('.category-span');
     newDom.forEach(el => {
-        if (el.textContent===data) el.classList.add('upper-case')
-    })
+        if (el.textContent === data) el.classList.add('upper-case')
+    });
 }
 
 
