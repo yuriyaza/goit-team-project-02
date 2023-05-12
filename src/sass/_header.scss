@@ -151,6 +151,12 @@ body.theme-dark .icon-menu-burger:hover {
   gap: 4px;
   align-items: center;
 }
+.logo-bookshelf:hover {
+  box-shadow: rgba(234, 198, 69, 0.05) 0px 1px 0px, rgba(234, 198, 69, 0.9) 0px 0px 10px;
+  transition: all var(--transition-rule);
+  padding: 5px 0;
+  border-radius: 18px;
+}
 .form-check {
   margin: 0;
   padding: 0;
@@ -208,7 +214,12 @@ body.theme-dark .icon-menu-burger:hover {
 .ui-switcher[aria-checked='true']:after {
   left: 21px;
 }
-
+.header-sign-btn:hover{
+  box-shadow: rgba(234, 198, 69, 0.05) 0px 1px 0px, rgba(79, 46, 232, 0.7) 0px 0px 15px;
+    transition: all var(--transition-rule);
+    background-color: #C7A83A;
+    border-radius: 10px;
+}
 @media screen and (max-width: 767px) {
   .header-nav {
     display: none;
@@ -694,7 +705,9 @@ body.theme-dark .icon-menu-burger:hover {
   height: 34px;
   margin-bottom: 24px;
 }
-
+.header-home-btn:hover {
+  border: #111111;
+}
 @media screen and (min-width: 768px) {
   .header-home-btn {
     margin-bottom: 0;
@@ -720,6 +733,7 @@ body.theme-dark .icon-menu-burger:hover {
   color: var(--color-white);
   border-radius: 36px;
   background-color: transparent;
+  transition: all var(--transition-rule);
 }
 
 @media screen and (min-width: 768px) {
@@ -738,6 +752,28 @@ body.theme-dark .icon-menu-burger:hover {
 .header-shopping-btn.active {
   font-weight: 700;
   background: #eac645;
+  // ++++
+}
+.header-home-btn:hover,
+.header-shopping-btn:hover{
+  // color: #eac645;
+  box-shadow: rgba(234, 198, 69, 0.05) 0px 1px 0px, rgba(234, 198, 69, 0.9) 0px 0px 10px;
+  transition: all var(--transition-rule);
+  
+}
+// 234,198,69
+
+.theme-dark .header-home-btn:hover.active,
+.theme-dark .header-shopping-btn:hover.active {
+// 98,93,255,0.7
+box-shadow: rgba(234, 198, 69, 0.05) 0px 1px 0px, rgba(234, 198, 69, 0.9) 0px 0px 15px;
+  transition: all var(--transition-rule);
+  background-color: #C7A83A;
+}
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 var(--hover);
+  }
 }
 
 .header-shopping-logo {

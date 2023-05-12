@@ -196,6 +196,7 @@
 .theme-dark .amazon-icon {
   filter: invert(100%) grayscale(100%);
 }
+
 .pagination {
   display: flex;
     gap: 5px;
@@ -214,13 +215,15 @@
     line-height: 22px;
     border: 1px solid #111111;
 }
+
 .firstClass, .prevClass {
   background: var(--color-black);
   color: #B4AFAF;;
 }
 .nextClass, .lastClass {
-  background: #EAC645;
+  background-color: #EAC645;
 }
+
 .page-link:hover, .remove-book:hover {
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
@@ -236,13 +239,24 @@
   color: var(--color-violet);
   transition: all var(--transition-rule)
 }
-
+.theme-dark .page-link{
+  background-color: var(--color-black);
+  color: var(--color-white);
+}
 .page-link.active{
   background-color: var(--color-black);
   color: var(--color-white);
   transition: all var(--transition-rule)
 }
-
+.theme-dark .page-link.active {
+  background-color: var(--color-white);
+  color: var(--color-black);
+}
+.theme-dark .nextClass,
+.theme-dark .lastClass {
+  background: #EAC645;
+  color: #111111;
+}
 @media screen and (min-width: 480px) {
 }
 @media screen and (max-width: 768px) {
