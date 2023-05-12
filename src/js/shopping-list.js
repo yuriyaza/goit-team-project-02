@@ -81,17 +81,17 @@ const easyPagination = ({
       nextBtn.classList.add('nextClass');
       nextBtn.innerHTML = nextText;
 
-      let firstBtn = document.createElement('button');
-      firstBtn.setAttribute('type', 'button');
-      firstBtn.classList.add('page-link');
-      firstBtn.classList.add('firstClass');
-      firstBtn.innerHTML = firstText;
+      // let firstBtn = document.createElement('button');
+      // firstBtn.setAttribute('type', 'button');
+      // firstBtn.classList.add('page-link');
+      // firstBtn.classList.add('firstClass');
+      // firstBtn.innerHTML = firstText;
 
-      let lastBtn = document.createElement('button');
-      lastBtn.setAttribute('type', 'button');
-      lastBtn.classList.add('page-link');
-      lastBtn.classList.add('lastClass');
-      lastBtn.innerHTML = lastText;
+      // let lastBtn = document.createElement('button');
+      // lastBtn.setAttribute('type', 'button');
+      // lastBtn.classList.add('page-link');
+      // lastBtn.classList.add('lastClass');
+      // lastBtn.innerHTML = lastText;
 
       prevBtn.addEventListener('click', () => {
         self.prev();
@@ -101,19 +101,19 @@ const easyPagination = ({
         self.next();
       });
 
-      firstBtn.addEventListener('click', () => {
-        self.first();
-      });
-      lastBtn.addEventListener('click', () => {
-        self.last();
-      });
+      // firstBtn.addEventListener('click', () => {
+      //   self.first();
+      // });
+      // lastBtn.addEventListener('click', () => {
+      //   self.last();
+      // });
 
-      return { prevBtn, nextBtn, firstBtn, lastBtn };
+      return { prevBtn, nextBtn };
     };
 
-    const { prevBtn, nextBtn, firstBtn, lastBtn } = prevNextBtns();
+    const { prevBtn, nextBtn } = prevNextBtns();
 
-    paginationButtons.appendChild(firstBtn);
+    // paginationButtons.appendChild(firstBtn);
     paginationButtons.appendChild(prevBtn);
 
     for (let i = 1; i < pageCount + 1; i++) {
@@ -122,7 +122,7 @@ const easyPagination = ({
     }
 
     paginationButtons.appendChild(nextBtn);
-    paginationButtons.appendChild(lastBtn);
+    // paginationButtons.appendChild(lastBtn);
 
     wrapper.appendChild(paginationButtons);
   };
@@ -158,45 +158,45 @@ const easyPagination = ({
         handlePaginatedItems(paginatedItems);
       } else return paginatedItems;
     },
-    first: () => {
-      if (currentPage === 0) return;
-      currentPage = 0;
-      let page = currentPage;
-      let start = rows * page;
-      let end = start + rows;
-      let paginatedItems = items.slice(start, end);
+    // first: () => {
+    //   if (currentPage === 0) return;
+    //   currentPage = 0;
+    //   let page = currentPage;
+    //   let start = rows * page;
+    //   let end = start + rows;
+    //   let paginatedItems = items.slice(start, end);
 
-      if (hasButtons) {
-        let current_btn = getActiveBtn();
-        if (currentPage != 0) {
-          current_btn.classList.remove('active');
-          current_btn.nextElementSibling.classList.add('active');
-        }
-      }
+    //   if (hasButtons) {
+    //     let current_btn = getActiveBtn();
+    //     if (currentPage != 0) {
+    //       current_btn.classList.remove('active');
+    //       current_btn.nextElementSibling.classList.add('active');
+    //     }
+    //   }
 
-      if (handlePaginatedItems) {
-        handlePaginatedItems(paginatedItems);
-      } else return paginatedItems;
-    },
-    last: () => {
-      if (currentPage === pageCount) return;
-      currentPage = pageCount - 1;
-      let page = currentPage;
-      let start = rows * page;
-      let end = start + rows;
-      let paginatedItems = items.slice(start, end);
+    //   if (handlePaginatedItems) {
+    //     handlePaginatedItems(paginatedItems);
+    //   } else return paginatedItems;
+    // },
+    // last: () => {
+    //   if (currentPage === pageCount) return;
+    //   currentPage = pageCount - 1;
+    //   let page = currentPage;
+    //   let start = rows * page;
+    //   let end = start + rows;
+    //   let paginatedItems = items.slice(start, end);
 
-      if (hasButtons) {
-        let current_btn = getActiveBtn();
+    //   if (hasButtons) {
+    //     let current_btn = getActiveBtn();
 
-        current_btn.classList.remove('active');
-        current_btn.nextElementSibling.classList.add('active');
-      }
+    //     current_btn.classList.remove('active');
+    //     current_btn.nextElementSibling.classList.add('active');
+    //   }
 
-      if (handlePaginatedItems) {
-        handlePaginatedItems(paginatedItems);
-      } else return paginatedItems;
-    },
+    //   if (handlePaginatedItems) {
+    //     handlePaginatedItems(paginatedItems);
+    //   } else return paginatedItems;
+    // },
     next: () => {
       if (currentPage >= pageCount) return;
       currentPage++;
