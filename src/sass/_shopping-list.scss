@@ -212,6 +212,7 @@
     font-size: 18px;
     line-height: 22px;
     border: 1px solid #111111;
+    transition: var(--transition-rule)
 }
 .firstClass, .prevClass {
   background: var(--color-black);
@@ -225,6 +226,7 @@
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   border-color: var(--color-violet);
   color: var(--color-violet);
+  transition: var(--transition-rule)
 }
 
 .page-link:active, .remove-book:active {
@@ -232,11 +234,13 @@
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   border-color: var(--color-violet);
   color: var(--color-violet);
+  transition: var(--transition-rule)
 }
 
 .page-link.active{
   background-color: var(--color-black);
   color: var(--color-white);
+  transition: var(--transition-rule)
 }
 
 @media screen and (min-width: 480px) {
