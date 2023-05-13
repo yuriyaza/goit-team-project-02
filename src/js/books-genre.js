@@ -67,3 +67,6 @@ function onUserClick(event) {
     openModalBookDetails(bookID);
   }
 }
+// Функція `onUserClick` приймає об'єкт події як аргумент. Якщо натиснутий елемент має атрибут
+// `data-action` зі значенням 'quick-view', вона витягує ID книги з атрибута `data-id` і передає
+//  його до функції `openModalBookDetails` для відображення детальної інформації про книгу в модальному вікні.
