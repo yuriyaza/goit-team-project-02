@@ -2,20 +2,20 @@
   "name": "goit-team-project-02",
   "version": "1.0.0",
   "description": "",
-  "homepage": "https://yuriyaza.github.io/goit-team-project-02",
+  "homepage": "https://PovaliiLudmila.github.io/goit-team-project-02",
   "scripts": {
     "start": "parcel src/*.html",
     "build": "parcel build src/*.html --public-url /goit-team-project-02/"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yuriyaza/goit-team-project-02.git"
+    "url": "git+https://github.com/PovaliiLudmila/goit-team-project-02.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/yuriyaza/goit-team-project-02/issues"
+    "url": "https://github.com/PovaliiLudmila/goit-team-project-02/issues"
   },
   "dependencies": {
     "axios": "^1.4.0",
